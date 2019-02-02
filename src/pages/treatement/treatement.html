@@ -1,0 +1,56 @@
+<!--
+  Generated template for the TreatementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>treatement</ion-title>
+    <img src="assets/imgs/app%20logo.png">
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <label>
+     SELECT TREATEMENT
+    </label>
+  </ion-row>
+  <ion-slides>
+    <ion-slide *ngFor="let slide of treatementList">
+      <ion-row *ngFor="let itm of slide.data">
+        <input type="radio">
+        <label>{{itm?.title}}</label>
+        <label>{{itm?.cost}}</label>
+        <label>{{itm?.description}}</label>
+      </ion-row>
+      <hr>
+      <ion-row>
+        {{slide.type}}
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      SET BEAUTICIANS
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let nms of beauticiansList" col-3>
+        <button ionic ion-button clear>
+          {{nms?.name}}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button (click)="nextView()">
+        NEXT
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-grid>
+</ion-content>

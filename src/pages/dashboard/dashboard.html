@@ -1,0 +1,104 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>dashboard</ion-title>
+    <img src="assets/imgs/app%20logo.png">
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<input placeholder="Search Payments and Customers"><ion-icon name="search"></ion-icon>
+  <ion-row>
+    <ion-col col-6>
+      <img src="assets/imgs/salon%20invoice%20Icon.png">
+      <label>Saloon Invoices</label>
+      <label>{{salInvsCnt}}</label>
+      <label>Daily Income</label>
+      <label>{{salIncome}}</label>
+      <label>{{crntDate}}</label>
+    </ion-col>
+    <ion-col col-6>
+      <img src="assets/imgs/Bridel%20information%20icon.png">
+      <label>Bridal Invoices</label>
+      <label>{{brdInvsCnt}}</label>
+      <label>Daily Income</label>
+      <label>{{brdlIncome}}</label>
+      <label>{{crntDate}}</label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <button (click)="newJob()" ion-button>New Job</button>
+  </ion-row>
+
+  <ion-row>
+    <button ion-button>Bank Reciept</button>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <button (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>
+    </ion-col>
+    <ion-col>
+      <button (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <img src="assets/imgs/payment%20icon.png">
+  <label>Payment History</label>
+</ion-row>
+  <ion-grid *ngIf="salView">
+    <ion-card *ngFor="let saloon of slnPymnt">
+      <ion-row>
+        <ion-col>
+          {{saloon?.name}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.balance}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{saloon?.invId}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.job}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.date}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+  <ion-grid *ngIf="brdView">
+    <ion-card *ngFor="let saloon of brdPymnt">
+      <ion-row>
+        <ion-col>
+          {{saloon?.name}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.balance}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{saloon?.invId}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.job}}
+        </ion-col>
+        <ion-col>
+          {{saloon?.date}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>
