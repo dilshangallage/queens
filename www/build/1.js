@@ -158,16 +158,27 @@ var TreatementPage = /** @class */ (function () {
     TreatementPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TreatementPage');
     };
+    // select beautician //
+    TreatementPage.prototype.activeBtn = function () {
+        // this.beautiNm = nm;
+    };
     // load next view //
     TreatementPage.prototype.nextView = function () {
-        this.navCtrl.push('CustomerinfoPage');
+        console.log('Beautician name', this.beautiNm);
+        this.navCtrl.push('CustomerinfoPage', { 'data': { 'treatement': {
+                    'title': 'Hair Cut - Baby Girl',
+                    'cost': ' LKR 550.00',
+                    'description': 'Hair wash blow dry'
+                },
+                'beautician': {
+                    'name': 'Amal'
+                } } });
     };
-    var _a, _b;
     TreatementPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>treatement</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-grid>\n  <ion-row>\n    <label>\n     SELECT TREATEMENT\n    </label>\n  </ion-row>\n  <ion-slides>\n    <ion-slide *ngFor="let slide of treatementList">\n      <ion-row *ngFor="let itm of slide.data">\n        <input type="radio">\n        <label>{{itm?.title}}</label>\n        <label>{{itm?.cost}}</label>\n        <label>{{itm?.description}}</label>\n      </ion-row>\n      <hr>\n      <ion-row>\n        {{slide.type}}\n      </ion-row>\n    </ion-slide>\n  </ion-slides>\n  <ion-grid>\n    <ion-row>\n      SET BEAUTICIANS\n    </ion-row>\n    <ion-row>\n      <ion-col *ngFor="let nms of beauticiansList" col-3>\n        <button ionic ion-button clear>\n          {{nms?.name}}\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <button ion-button (click)="nextView()">\n        NEXT\n      </button>\n    </ion-row>\n  </ion-grid>\n</ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/,
+            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>treatement</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-grid>\n  <ion-row>\n    <label>\n     SELECT TREATEMENT\n    </label>\n  </ion-row>\n  <ion-slides>\n    <ion-slide *ngFor="let slide of treatementList">\n      <ion-row *ngFor="let itm of slide.data">\n        <input type="radio">\n        <label>{{itm?.title}}</label>\n        <label>{{itm?.cost}}</label>\n        <label>{{itm?.description}}</label>\n      </ion-row>\n      <hr>\n      <ion-row>\n        {{slide.type}}\n      </ion-row>\n    </ion-slide>\n  </ion-slides>\n  <ion-grid>\n    <ion-row>\n      SET BEAUTICIANS\n    </ion-row>\n    <ion-row>\n      <ion-col *ngFor="let nms of beauticiansList" col-3>\n        <button ionic ion-button clear name="beautiNm" (click)="activeBtn()">\n          {{nms?.name}}\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <button ion-button (click)="nextView()">\n        NEXT\n      </button>\n    </ion-row>\n  </ion-grid>\n</ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" ? _b : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], TreatementPage);
     return TreatementPage;
 }());

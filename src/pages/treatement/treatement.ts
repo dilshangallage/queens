@@ -17,6 +17,8 @@ export class TreatementPage {
   public treatementList: any;
   public beauticiansList: any;
 
+  public beautiNm: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.treatementList = [
       {
@@ -112,9 +114,24 @@ export class TreatementPage {
     console.log('ionViewDidLoad TreatementPage');
   }
 
+  // select beautician //
+  activeBtn() {
+    // this.beautiNm = nm;
+  }
+
   // load next view //
   nextView() {
-    this.navCtrl.push('CustomerinfoPage');
+    console.log('Beautician name', this.beautiNm);
+    this.navCtrl.push('CustomerinfoPage',
+      {'data':
+          {'treatement': {
+          'title': 'Hair Cut - Baby Girl',
+          'cost': ' LKR 550.00',
+          'description': 'Hair wash blow dry'
+        },
+            'beautician': {
+          'name': 'Amal'
+        }}});
   }
 
 }

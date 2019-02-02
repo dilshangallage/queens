@@ -8,11 +8,74 @@
 
   <ion-navbar>
     <ion-title>invoice</ion-title>
+    <img src="assets/imgs/app%20logo.png">
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<ion-row>
+  INVOICE
+</ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Invoice ID
+        <label>
+          QBR_000000771#
+        </label>
+      </ion-col>
+      <ion-col>
+        <img src="assets/imgs/Quees%20Salon%20logo.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      Beautician
+      <label>
+        Aisha Ramanayaka
+      </label>
+    </ion-row>
+    <ion-row>
+      Invoice Date and Time
+      <label>
+        29.11.2018 3:20 PM
+      </label>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col>
+        Hair Cut Baby Girl
+      </ion-col>
+      <ion-col>
+        LKR 1250.00
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      Hair wash blow dry
+    </ion-row>
 
+    <ion-row>
+      <ion-col>
+        Customer
+      </ion-col>
+      <ion-col>
+        Dhanushka
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      Mobile
+      <label>
+        0723456281
+      </label>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col>TOTAL AMOUNT</ion-col>
+      <ion-col>LKR 123455.00</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row>
+    <button ion-button (click)="submit()">SUBMIT</button>
+  </ion-row>
 </ion-content>

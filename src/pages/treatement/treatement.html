@@ -41,7 +41,7 @@
     </ion-row>
     <ion-row>
       <ion-col *ngFor="let nms of beauticiansList" col-3>
-        <button ionic ion-button clear>
+        <button ionic ion-button clear name="beautiNm" (click)="activeBtn()">
           {{nms?.name}}
         </button>
       </ion-col>

@@ -22,4 +22,8 @@ export class InvoicePage {
     console.log('ionViewDidLoad InvoicePage');
   }
 
+  // submit the data in to backend //
+  submit() {
+    // this.navCtrl.push()
+  }
 }

@@ -72,7 +72,7 @@ var InvoicePage = /** @class */ (function () {
     };
     InvoicePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-invoice',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/invoice/invoice.html"*/`<!--\n  Generated template for the InvoicePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>invoice</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/invoice/invoice.html"*/,
+            selector: 'page-invoice',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/invoice/invoice.html"*/`<!--\n  Generated template for the InvoicePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>invoice</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/invoice/invoice.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], InvoicePage);

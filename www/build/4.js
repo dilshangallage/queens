@@ -66,13 +66,34 @@ var CustomerinfoPage = /** @class */ (function () {
     function CustomerinfoPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.selectedData = this.navParams.get('data');
+        if (this.selectedData) {
+            this.treatement = this.selectedData.treatement;
+            this.beautician = this.selectedData.beautician;
+        }
+        this.sttlBll = true;
+        this.payAdvnc = false;
     }
     CustomerinfoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CustomerinfoPage');
     };
+    // settle bill //
+    CustomerinfoPage.prototype.settleBill = function () {
+        this.sttlBll = true;
+        this.payAdvnc = false;
+    };
+    // pay advance //
+    CustomerinfoPage.prototype.payAdvance = function () {
+        this.sttlBll = false;
+        this.payAdvnc = true;
+    };
+    // next view //
+    CustomerinfoPage.prototype.nextView = function () {
+        this.navCtrl.push('InvoicePage');
+    };
     CustomerinfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-customerinfo',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/customerinfo/customerinfo.html"*/`<!--\n  Generated template for the CustomerinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>customerinfo</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/customerinfo/customerinfo.html"*/,
+            selector: 'page-customerinfo',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/customerinfo/customerinfo.html"*/`<!--\n  Generated template for the CustomerinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>customerinfo</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      CUSTOMER INFORMATION\n    </ion-row>\n    <ion-row>\n      <label>{{treatement?.title}}</label>\n      <label>{{treatement?.cost}}</label>\n      <label>{{treatement?.description}}</label>\n    </ion-row>\n    <ion-row>\n      <label>\n        {{beautician?.name}}\n      </label>\n      <label>\n        Beautician\n      </label>\n    </ion-row>\n  </ion-grid>\n  <ion-grid>\n    <ion-row>\n      <input placeholder="card no">\n    </ion-row>\n    <ion-row>\n      <input placeholder="customer name">\n    </ion-row>\n  </ion-grid>\n  <ion-grid>\n    <ion-row>\n      PAYMENT OPTION\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button ion-button (click)="settleBill()">\n          Settle the Bill\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button (click)="payAdvance()">\n          Pay Advance\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="sttlBll">\n      <ion-col>\n        <input type="radio">\n        <img src="assets/imgs/visa.png">\n      </ion-col>\n      <ion-col>\n        <input type="radio">\n        Pay by Cash\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="payAdvnc">\n      <ion-datetime placeholder="Event Date"></ion-datetime>\n      <input placeholder="Advance Amount">\n    </ion-row>\n  </ion-grid>\n  <ion-row>\n    <button ion-button (click)="nextView()">\n      NEXT\n    </button>\n  </ion-row>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/customerinfo/customerinfo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], CustomerinfoPage);

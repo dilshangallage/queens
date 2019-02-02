@@ -66,13 +66,117 @@ var TreatementPage = /** @class */ (function () {
     function TreatementPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.treatementList = [
+            {
+                'type': 'Hair Cut',
+                'data': [
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 321.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    }
+                ]
+            },
+            {
+                'type': 'Hair Color',
+                'data': [
+                    {
+                        'title': 'Hair Color - Baby Girl',
+                        'cost': ' LKR 1300.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 321.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    },
+                    {
+                        'title': 'Hair Cut - Baby Girl',
+                        'cost': ' LKR 550.00',
+                        'description': 'Hair wash blow dry'
+                    }
+                ]
+            }
+        ];
+        this.beauticiansList = [
+            {
+                'name': 'Amal'
+            },
+            {
+                'name': 'Nimak'
+            },
+            {
+                'name': 'Kaml'
+            },
+            {
+                'name': 'Dila'
+            },
+            {
+                'name': 'Dala'
+            },
+            {
+                'name': 'Sanduni'
+            },
+            {
+                'name': 'Amaraweera'
+            },
+            {
+                'name': 'Mapalagamage'
+            }
+        ];
     }
     TreatementPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TreatementPage');
     };
+    // select beautician //
+    TreatementPage.prototype.activeBtn = function () {
+        // this.beautiNm = nm;
+    };
+    // load next view //
+    TreatementPage.prototype.nextView = function () {
+        console.log('Beautician name', this.beautiNm);
+        this.navCtrl.push('CustomerinfoPage', { 'data': { 'treatement': {
+                    'title': 'Hair Cut - Baby Girl',
+                    'cost': ' LKR 550.00',
+                    'description': 'Hair wash blow dry'
+                },
+                'beautician': {
+                    'name': 'Amal'
+                } } });
+    };
     TreatementPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>treatement</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/,
+            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>treatement</ion-title>\n    <img src="assets/imgs/app%20logo.png">\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-grid>\n  <ion-row>\n    <label>\n     SELECT TREATEMENT\n    </label>\n  </ion-row>\n  <ion-slides>\n    <ion-slide *ngFor="let slide of treatementList">\n      <ion-row *ngFor="let itm of slide.data">\n        <input type="radio">\n        <label>{{itm?.title}}</label>\n        <label>{{itm?.cost}}</label>\n        <label>{{itm?.description}}</label>\n      </ion-row>\n      <hr>\n      <ion-row>\n        {{slide.type}}\n      </ion-row>\n    </ion-slide>\n  </ion-slides>\n  <ion-grid>\n    <ion-row>\n      SET BEAUTICIANS\n    </ion-row>\n    <ion-row>\n      <ion-col *ngFor="let nms of beauticiansList" col-3>\n        <button ionic ion-button clear name="beautiNm" (click)="activeBtn()">\n          {{nms?.name}}\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <button ion-button (click)="nextView()">\n        NEXT\n      </button>\n    </ion-row>\n  </ion-grid>\n</ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/treatement/treatement.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], TreatementPage);
