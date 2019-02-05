@@ -4,60 +4,96 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
+<ion-header class="app-hdr">
   <ion-navbar>
-    <ion-title>dashboard</ion-title>
-    <img src="assets/imgs/app%20logo.png">
+    <img src="assets/imgs/app-logo.png" class="hdr-logo">
+    <ion-buttons end>
+      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-<input placeholder="Search Payments and Customers"><ion-icon name="search"></ion-icon>
-  <ion-row>
-    <ion-col col-6>
-      <img src="assets/imgs/salon%20invoice%20Icon.png">
-      <label>Saloon Invoices</label>
-      <label>{{salInvsCnt}}</label>
-      <label>Daily Income</label>
-      <label>{{salIncome}}</label>
-      <label>{{crntDate}}</label>
-    </ion-col>
-    <ion-col col-6>
-      <img src="assets/imgs/Bridel%20information%20icon.png">
-      <label>Bridal Invoices</label>
-      <label>{{brdInvsCnt}}</label>
-      <label>Daily Income</label>
-      <label>{{brdlIncome}}</label>
-      <label>{{crntDate}}</label>
-    </ion-col>
-  </ion-row>
+<ion-content padding class="app-page-bg">
 
-  <ion-row>
-    <button (click)="newJob()" ion-button>New Job</button>
-  </ion-row>
-
-  <ion-row>
-    <button ion-button>Bank Reciept</button>
-  </ion-row>
-
-  <ion-row>
-    <ion-col>
-      <button (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>
-    </ion-col>
-    <ion-col>
-      <button (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>
-    </ion-col>
-  </ion-row>
-<ion-row>
-  <img src="assets/imgs/payment%20icon.png">
-  <label>Payment History</label>
+<ion-row class="search-fld">
+    <input class="flx-1" placeholder="Search Payments and Customers"> <button ion-button> <ion-icon name="search"></ion-icon> </button>
 </ion-row>
-  <ion-grid *ngIf="salView">
-    <ion-card *ngFor="let saloon of slnPymnt">
-      <ion-row>
+
+  <ion-row class="app-card-1 db-card">
+    <ion-col no-padding>
+        <ion-row class="cd-uper-row">
+          <ion-col col-6 class="sec-col">
+            <img class="sec-img" src="assets/imgs/salon%20invoice%20Icon.png">
+            <div class="sec-hdr">Saloon Invoices</div>
+            <div class="sec-vlue">{{salInvsCnt}}</div>
+          </ion-col>
+
+          <ion-col col-6 class="sec-col">
+            <img class="sec-img" src="assets/imgs/Bridel%20information%20icon.png">
+            <div class="sec-hdr">Saloon Invoices</div>
+            <div class="sec-vlue">{{brdInvsCnt}}</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 class="sub-sec">
+            <div class="hdr">Daily Income</div>
+            <div class="inc-valu">{{salIncome}}</div>
+            <div class="date">{{crntDate}}</div>
+          </ion-col>
+
+          <ion-col col-6 class="sub-sec">
+            <div class="hdr">Daily Income</div>
+            <div class="inc-valu">{{brdlIncome}}</div>
+            <div class="date">{{crntDate}}</div>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-row>
+    <button (click)="newJob()" ion-button>New Job</button>
+  </ion-row> -->
+
+<!--   one button -->
+  <ion-row class="app-button-row">
+    <button (click)="newJob()" ion-button class="gren-btn app-button">Add Bank Reciept</button>
+  </ion-row>
+
+  <!-- tab button 2 -->
+  <!-- <ion-row class="tab-btn-row">
+      <button class="btn-lft active-btn-brwn" ion-button>Settle the Bill</button>
+      <button class="btn-rgt active-btn-gren" ion-button>Pay Advance</button>
+  </ion-row> -->
+
+<!-- tab-button 1 -->
+  <ion-row class="tab-btn-row">
+      <button class="btn-lft active-btn-brwn" (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>
+      <button class="btn-rgt" (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>
+  </ion-row>
+
+<ion-row class="tab-sec-hdr">
+  <img src="assets/imgs/payment%20icon.png">
+  <div class="hdr flx-1">Payment History</div>
+</ion-row>
+
+  <ion-grid *ngIf="salView" class="tab-sec-cnt">
+    
+    <ion-row *ngFor="let saloon of slnPymnt" class="one-payment-rec">
+      <div class="flx-1">
+        <div class="flx-layout pers-info">
+          <div class="flx-1">{{saloon?.name}}</div>
+          <div>{{saloon?.balance}}</div>
+        </div>
+        <div class="flx-layout bil-info">
+          <div>{{saloon?.invId}}</div>
+          <div class="flx-1">{{saloon?.job}}</div>
+          <div>{{saloon?.date}}</div>
+        </div>
+      </div>
+      <div><ion-icon name="checkmark-circle"></ion-icon></div>
+      <!-- <ion-row>
         <ion-col>
           {{saloon?.name}}
         </ion-col>
@@ -75,10 +111,12 @@
         <ion-col>
           {{saloon?.date}}
         </ion-col>
-      </ion-row>
-    </ion-card>
+      </ion-row> -->
+    </ion-row>
+
   </ion-grid>
-  <ion-grid *ngIf="brdView">
+  
+  <!-- <ion-grid *ngIf="brdView">
     <ion-card *ngFor="let saloon of brdPymnt">
       <ion-row>
         <ion-col>
@@ -100,5 +138,5 @@
         </ion-col>
       </ion-row>
     </ion-card>
-  </ion-grid>
+  </ion-grid> -->
 </ion-content>

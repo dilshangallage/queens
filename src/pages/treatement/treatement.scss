@@ -1,3 +1,224 @@
+.scroll-content{
+		margin-top: 60px !important;
+	}
+
+.pg-cnt-hdr{
+	text-align: center;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.l-txt{
+	font-size: 1.8rem;
+    color: #3d3d3d;
+    font-weight: 500;
+}
+
+.l1-txt{
+    font-size: 1.5rem;
+    color: #3d3d3d;
+    font-weight: 500;
+}
+
+.brwn-txt{
+	font-size: 1.5rem;
+    color: #a87e56;
+    font-weight: 500;
+}
+
+.l2-txt{
+	color: #707070;
+font-size: 1.3rem;
+font-weight: normal;
+}
+
+.l3-txt{
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+.pg-cnt-hdr-2{
+	text-align: center;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+
+.app-card-pad{
+	padding-top: 30px;
+}
+
+.bacic-app-card{
+	padding: 24px;
+	margin-bottom: 40px;
+
+	.app-logo{
+		width: 26%;
+		text-align: center;
+	}
+}
+
+.slect-btn-set{
+
+	/*col{
+		height: auto;
+	}*/
+
+	button{
+		height: 3rem;
+		background-color: #fff;
+		border-radius: 100px;
+		border: 1px solid #acacac;
+		width: 100%;
+		height: 100%;
+		color: #4e4e4e;
+		margin: 0;
+		font-size: 1.3rem;
+		font-weight: 200;
+		padding: 6px 30px;
+
+	}
+
+	.selected-btn{
+		background-color: #3ab54a;
+		font-weight: 500;
+		color: #fff;
+		border: 1px solid #3ab54a;
+		-webkit-box-shadow: 0px 0px 16px -3px rgba(0,0,0,0.52);
+-moz-box-shadow: 0px 0px 16px -3px rgba(0,0,0,0.52);
+box-shadow: 0px 0px 16px -3px rgba(0,0,0,0.52);
+	}
+}
+
+.pg-btm-btn-foot{
+	text-align: center;
+	padding: 10px;
+}
+
+.brwn-grd-btn{
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d5bc9d+0,a87e56+100 */
+				background: #d5bc9d; /* Old browsers */
+				background: -moz-linear-gradient(top, #d5bc9d 0%, #a87e56 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #d5bc9d 0%,#a87e56 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #d5bc9d 0%,#a87e56 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5bc9d', endColorstr='#a87e56',GradientType=0 ); /* IE6-9 */
+			width: 80%;
+			text-transform: uppercase;
+			border-radius: 	100px;
+						-webkit-box-shadow: 0px 12px 17px -10px rgba(0,0,0,0.48);
+		-moz-box-shadow: 0px 12px 17px -10px rgba(0,0,0,0.48);
+		box-shadow: 0px 12px 17px -10px rgba(0,0,0,0.48);
+		font-weight: bold;
+}
+
+.footer-md::before{
+				display: none;
+			}
+
+.app-form-inpt-row{
+margin-bottom: 14px;
+border-bottom: 1px solid #a7a7a7;
+
+	input{
+		padding: 6px;
+	height: 46px;
+	background-color: transparent;
+	border: none;
+	color: #707070;
+	width: 100%;
+	}
+
+	ion-datetime{
+		padding: 12px 6px;
+	}
+}
+
+.app-pay-opt{
+
+	margin-top: 10px;
+	margin-bottom: 20px;
+
+	ion-col{
+		margin: auto;
+	}
+
+	.pay-opt-row{
+		align-items: center;
+
+		img{
+			width: 40%;
+			margin-left: 10px;
+		}
+
+		.opt-txt{
+			font-size: 1.4rem;
+			font-weight: 500;
+			margin-left: 14px;
+		}
+	}
+}
+
+.cust-info-trt{
+		margin-bottom: 20px;
+	}
+
+	.cust-info-trt:last-of-type{
+		margin-bottom: 0;
+	}
+
+.invo-card{
+	.invo-sec{
+		margin-bottom: 30px;
+		border-bottom: 1px solid #dadada;
+		padding-bottom: 30px;
+	}
+
+	.invo-sec:last-of-type{
+		margin-bottom: 0px;
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.total-sec{
+		ion-row{
+			align-items: center;
+		}
+
+		div{
+			margin-left: 10px;
+		}
+	}
+}
+
 page-treatement {
+
+	.trt-row{
+		margin-bottom: 16px;
+    	padding: 0 20px;
+    	font-size: 1.5rem;
+    	color:  #3d3d3d;
+    	align-items: center;
+    	font-weight: 500;
+
+    	.trt-info{
+    		text-align: left;
+    		margin-left: 16px;
+
+
+    		.discript{
+    			color: #707070;
+    			font-size: 1.3rem;
+    			font-weight: normal;
+    		}
+    	}
+	}
+
+	.trt-type{
+		padding: 20px;
+		border-top: 1px solid #dadada;
+		font-weight: bold;
+	}
 
 }

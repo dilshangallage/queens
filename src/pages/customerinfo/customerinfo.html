@@ -4,26 +4,50 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
+<ion-header class="app-hdr">
   <ion-navbar>
-    <ion-title>customerinfo</ion-title>
-    <img src="assets/imgs/app%20logo.png">
+    <img src="assets/imgs/app-logo.png" class="hdr-logo">
+    <ion-buttons end>
+      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="app-page-bg">
   <ion-grid>
-    <ion-row>
-      CUSTOMER INFORMATION
+    
+    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
+    
+    <ion-row class="app-card-1 bacic-app-card">
+      <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 1500
+      </div>
     </ion-row>
-    <ion-row>
+
+    
+    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
+    
+
+    <!-- <ion-row>
       <label>{{treatement?.title}}</label>
       <label>{{treatement?.cost}}</label>
       <label>{{treatement?.description}}</label>
     </ion-row>
+
     <ion-row>
       <label>
         {{beautician?.name}}
@@ -31,50 +55,79 @@
       <label>
         Beautician
       </label>
+    </ion-row> -->
+
+    <ion-row class="app-form-inpt-row">
+      <input placeholder="Contact number">
     </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <input placeholder="card no">
+
+    <ion-row class="app-form-inpt-row">
+      <input placeholder="Coustommer name">
     </ion-row>
-    <ion-row>
-      <input placeholder="customer name">
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      PAYMENT OPTION
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <button ion-button (click)="settleBill()">
-          Settle the Bill
-        </button>
+
+    <div class="pg-cnt-hdr">PAYMENT OPTION</div>
+
+    <ion-row class="tab-btn-row">
+      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
+      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>
+  </ion-row>
+
+    <ion-row *ngIf="sttlBll" class="app-pay-opt">
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+        </ion-row>
       </ion-col>
-      <ion-col>
-        <button ion-button (click)="payAdvance()">
-          Pay Advance
-        </button>
-      </ion-col>
-    </ion-row>
-    <ion-row *ngIf="sttlBll">
-      <ion-col>
-        <input type="radio">
-        <img src="assets/imgs/visa.png">
-      </ion-col>
-      <ion-col>
-        <input type="radio">
-        Pay by Cash
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="opt-txt">Pay by Cash</div>
+        </ion-row>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="payAdvnc">
+
+    <!-- <ion-row *ngIf="payAdvnc" class="app-form-inpt-row">
       <ion-datetime placeholder="Event Date"></ion-datetime>
       <input placeholder="Advance Amount">
+    </ion-row> -->
+
+    <ion-row *ngIf="payAdvnc" class="app-pay-opt">
+
+    <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
+        <input placeholder="Advance Amount">
+      </ion-col>
+
+      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
+        <ion-datetime placeholder="Event Date"></ion-datetime>
+      </ion-col>
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+        </ion-row>
+      </ion-col>
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="opt-txt">Pay by Cash</div>
+        </ion-row>
+      </ion-col>
     </ion-row>
+
   </ion-grid>
-  <ion-row>
-    <button ion-button (click)="nextView()">
-      NEXT
-    </button>
-  </ion-row>
+
 </ion-content>
+
+<ion-footer class="pg-btm-btn-foot">
+  <ion-row>
+    <ion-col>
+      <button ion-button (click)="nextView()" class="brwn-grd-btn">
+        NEXT
+      </button>
+    </ion-col>
+    </ion-row>
+</ion-footer>
