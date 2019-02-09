@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 274:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerinfoPageModule", function() { return CustomerinfoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customerinfo__ = __webpack_require__(408);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,98 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = /** @class */ (function () {
-    function LoginPageModule() {
+var CustomerinfoPageModule = /** @class */ (function () {
+    function CustomerinfoPageModule() {
     }
-    LoginPageModule = __decorate([
+    CustomerinfoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_2__customerinfo__["a" /* CustomerinfoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__customerinfo__["a" /* CustomerinfoPage */]),
             ],
         })
-    ], LoginPageModule);
-    return LoginPageModule;
+    ], CustomerinfoPageModule);
+    return CustomerinfoPageModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=customerinfo.module.js.map
+
+/***/ }),
+
+/***/ 408:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomerinfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the CustomerinfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CustomerinfoPage = /** @class */ (function () {
+    function CustomerinfoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.saloonView = false;
+        this.bridalView = false;
+        this.selectedData = this.navParams.get('data');
+        var viewName = this.navParams.get('view');
+        if (viewName && viewName === 'saloonView') {
+            this.saloonView = true;
+        }
+        else if (viewName === 'bridalView') {
+            this.bridalView = true;
+        }
+        if (this.selectedData) {
+            this.treatement = this.selectedData.treatement;
+            this.beautician = this.selectedData.beautician;
+        }
+        this.sttlBll = true;
+        this.payAdvnc = false;
+    }
+    CustomerinfoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CustomerinfoPage');
+    };
+    // settle bill //
+    CustomerinfoPage.prototype.settleBill = function () {
+        this.sttlBll = true;
+        this.payAdvnc = false;
+    };
+    // pay advance //
+    CustomerinfoPage.prototype.payAdvance = function () {
+        this.sttlBll = false;
+        this.payAdvnc = true;
+    };
+    // next view //
+    CustomerinfoPage.prototype.nextView = function () {
+        this.navCtrl.push('InvoicePage');
+    };
+    CustomerinfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-customerinfo',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/`<!--\n  Generated template for the CustomerinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n  <!-- customer details for saloon job-->\n  <ion-grid *ngIf="saloonView">\n    \n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n    \n    <ion-row class="app-card-1 bacic-app-card">\n      <div class="flx-1">\n        \n        <div class="cust-info-trt">\n          <div class="l1-txt">Hair Cut Baby Girl</div>\n          <div class="l2-txt">Hair wash blow dry</div>\n        </div>\n\n        <div class="cust-info-trt">\n          <div class="l1-txt">Ashani Gunathilaka</div>\n          <div class="l2-txt">Beautician</div>\n        </div>\n      </div>\n\n      <div class="l1-txt">\n        LKR 1500\n      </div>\n    </ion-row>\n\n    \n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n    \n\n    <!-- <ion-row>\n      <label>{{treatement?.title}}</label>\n      <label>{{treatement?.cost}}</label>\n      <label>{{treatement?.description}}</label>\n    </ion-row>\n\n    <ion-row>\n      <label>\n        {{beautician?.name}}\n      </label>\n      <label>\n        Beautician\n      </label>\n    </ion-row> -->\n\n    <ion-row class="app-form-inpt-row">\n      <input placeholder="Contact number">\n    </ion-row>\n\n    <ion-row class="app-form-inpt-row">\n      <input placeholder="Coustommer name">\n    </ion-row>\n\n    <div class="pg-cnt-hdr">PAYMENT OPTION</div>\n\n    <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>\n  </ion-row>\n\n    <ion-row *ngIf="sttlBll" class="app-pay-opt">\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n    <!-- <ion-row *ngIf="payAdvnc" class="app-form-inpt-row">\n      <ion-datetime placeholder="Event Date"></ion-datetime>\n      <input placeholder="Advance Amount">\n    </ion-row> -->\n\n    <ion-row *ngIf="payAdvnc" class="app-pay-opt">\n\n    <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <input placeholder="Advance Amount">\n      </ion-col>\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <ion-datetime placeholder="Event Date"></ion-datetime>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n\n  <!-- customer details for bridal job-->\n  <ion-grid *ngIf="bridalView"></ion-grid>\n\n</ion-content>\n\n<ion-footer class="pg-btm-btn-foot">\n  <ion-row>\n    <ion-col>\n      <button ion-button (click)="nextView()" class="brwn-grd-btn">\n        NEXT\n      </button>\n    </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], CustomerinfoPage);
+    return CustomerinfoPage;
+}());
+
+//# sourceMappingURL=customerinfo.js.map
 
 /***/ })
 

@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([8],{
 
 /***/ 110:
 /***/ (function(module, exports) {
@@ -21,28 +21,36 @@ webpackEmptyAsyncContext.id = 110;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/customerinfo/customerinfo.module": [
+	"../pages/bankreceipt/bankreceipt.module": [
 		271,
-		4
+		6
+	],
+	"../pages/customerinfo/customerinfo.module": [
+		272,
+		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		272,
+		273,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		273,
+		274,
+		4
+	],
+	"../pages/invoicesettle/invoicesettle.module": [
+		275,
 		3
 	],
 	"../pages/login/login.module": [
-		274,
-		5
+		276,
+		7
 	],
 	"../pages/register/register.module": [
-		275,
+		277,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		276,
+		278,
 		1
 	]
 };
@@ -114,9 +122,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/bankreceipt/bankreceipt.module#BankreceiptPageModule', name: 'BankreceiptPage', segment: 'bankreceipt', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/customerinfo/customerinfo.module#CustomerinfoPageModule', name: 'CustomerinfoPage', segment: 'customerinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
@@ -200,7 +210,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/app/app.html"*/`<ion-menu [content]="content">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Pages</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/app/app.html"*/`<ion-menu [content]="content">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Pages</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */],
@@ -233,7 +243,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the LoginPage page.
+ *  Generated class for the LoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -253,7 +263,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/dilshan/Documents/private/saloon/Queens/src/pages/login/login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding>\n<ion-row>\n  <img src="assets/imgs/Quees%20Salon%20logo.png">\n</ion-row>\n  <ion-row>\n    <label>Welcome</label>\n  </ion-row>\n  <ion-row>\n    <label><ion-icon name="person"></ion-icon><input placeholder="unm"></label>\n  </ion-row>\n  <ion-row>\n    <label><ion-icon name="key"></ion-icon><input type="password"></label>\n  </ion-row>\n  <ion-row>\n    <button ion-button>Forgot Password</button>\n  </ion-row>\n  <ion-row>\n    <button ion-button (click)="loginClick()">Login</button>\n  </ion-row>\n  <ion-row>\n    <label>NOT A MEMBER</label><button ion-button>REGISTER</button>\n  </ion-row>\n  <ion-row>\n    <label>Powerd by Smart Saloon Management System</label><br/>\n    <label>Queens Salon - Galle 2019 @ All rights reserved</label>\n  </ion-row>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/private/saloon/Queens/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="log_pg">\n\n<ion-grid>\n  \n  <div class="log_logo">\n      <img src="assets/imgs/quee-logo.png">\n  </div>\n\n    <div class="welcom-msg">\n          Welcome\n    </div>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="person"></ion-icon><input placeholder="Username">\n    </ion-row>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="key"></ion-icon><input type="password" placeholder="Password">\n    </ion-row>\n\n    <ion-row class="fgt-pw-link">\n      <div class="flx-1"></div><button ion-button>Forgot Password</button>\n    </ion-row>\n\n    <ion-row class="log-btn">\n      <button ion-button (click)="loginClick()">Login</button>\n    </ion-row>\n\n    <ion-row class="reg-link">\n      <div class="flx-1"></div>\n      <div>NOT A MEMBER ?</div> <button ion-button>REGISTER</button>\n      <div class="flx-1"></div>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer class="rights-txt">\n  <ion-row >\n      <ion-col no-padding>\n          Powerd by Smart Saloon Management System\n          <div>Queens Salon - Galle 2019 @ All rights reserved</div>\n      </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], LoginPage);

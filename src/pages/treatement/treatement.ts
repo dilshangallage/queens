@@ -131,7 +131,7 @@ export class TreatementPage {
         },
             'beautician': {
           'name': 'Amal'
-        }}});
+        }}, 'view' : 'saloonView'});
   }
 
 }

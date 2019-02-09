@@ -15,7 +15,7 @@
 
 
 <ion-content padding class="app-page-bg">
-  <ion-grid>
+  <ion-grid *ngIf="invoiceView">
 <div class="pg-cnt-hdr">INVOICE</div>
 
 <ion-row class="app-card-1 bacic-app-card invo-card">
@@ -134,14 +134,27 @@
       <ion-col>LKR 123455.00</ion-col>
     </ion-row> -->
   </ion-grid>
+
+    <ion-grid *ngIf="successView">
+        <ion-row>
+            PAYMENT SUCCESSFULL
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-footer class="pg-btm-btn-foot">
-  <ion-row>
+  <ion-row *ngIf="invoiceView">
     <ion-col>
       <button ion-button (click)="submit()" class="brwn-grd-btn">
         SUBMIT
       </button>
     </ion-col>
+    </ion-row>
+    <ion-row *ngIf="successView">
+        <ion-col>
+            <button ion-button (click)="close()">
+                CLOSE
+            </button>
+        </ion-col>
     </ion-row>
 </ion-footer>

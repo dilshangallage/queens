@@ -101,8 +101,24 @@ export class DashboardPage {
     this.brdView = true;
   }
 
-  // make a new job //
-  newJob() {
+  // new saloon job //
+  newsaloonJob() {
     this.navCtrl.push('TreatementPage');
+  }
+
+  // new bridal job //
+  newBridalJob() {
+    this.navCtrl.push('CustomerinfoPage', {'view' : 'bridalView'});
+  }
+
+  // bank receipt page //
+  bankReceiptView() {
+    this.navCtrl.push('BankreceiptPage');
+    // this.navCtrl.push('TreatementPage');
+  }
+
+  // search receipt details by ref id //
+  searchRef() {
+    this.navCtrl.push('InvoicesettlePage');
   }
 }

@@ -25673,3 +25673,610 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-customerinfo .pay-dadv-input {
+  margin-bottom: 16px !important;
+}
+
+.scroll-content {
+  margin-top: 60px !important;
+}
+
+.flx-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flx-layout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hgt-100 {
+  height: 100%;
+}
+
+.app-hdr ion-navbar button {
+  color: #a87e56;
+  width: 44px;
+}
+
+.app-hdr .hdr-logo {
+  width: 30%;
+}
+
+.app-hdr .toolbar-background {
+  background-color: #fff;
+  border: none;
+}
+
+.app-hdr .toolbar-content {
+  text-align: center;
+}
+
+.app-hdr .toolbar {
+  min-height: 60px;
+}
+
+.app-hdr .menu-ioc {
+  font-size: 2rem;
+}
+
+.header-md::after {
+  display: none;
+}
+
+.app-page-bg .scroll-content {
+  margin-top: 60px;
+  padding-top: 4px !important;
+}
+
+.app-card-1 {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  -webkit-box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  margin-bottom: 16px;
+}
+
+.app-button-row {
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  margin-bottom: 16px;
+}
+
+.app-button {
+  border-radius: 100px;
+  margin: 0;
+  width: 100%;
+}
+
+.gren-btn {
+  background-color: #3ab54a;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tab-btn-row {
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.22);
+  margin-bottom: 16px;
+}
+
+.tab-btn-row button {
+  width: 50%;
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+.tab-btn-row .btn-lft {
+  border-radius: 100px 0 0 100px;
+}
+
+.tab-btn-row .btn-rgt {
+  border-radius: 0 100px 100px 0;
+}
+
+.tab-btn-row .active-btn-brwn {
+  background-color: #a87e56;
+  color: #fff;
+}
+
+.tab-btn-row .active-btn-gren {
+  background-color: #3ab54a;
+  color: #fff;
+}
+
+page-dashboard .search-fld {
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 16px 22px -16px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 16px 22px -16px rgba(0, 0, 0, 0.64);
+  margin-bottom: 22px;
+}
+
+page-dashboard .search-fld button {
+  min-width: 6rem;
+  margin: 0;
+  border-radius: 0 8px 8px 0;
+  background-color: #a87e56;
+}
+
+page-dashboard .search-fld input {
+  border-radius: 8px 0px 0px 8px;
+  padding: 4px 10px;
+  border: none;
+  border: 1px solid #eee;
+  border-right: none;
+}
+
+page-dashboard .db-card .sec-col {
+  text-align: center;
+  padding: 18px;
+}
+
+page-dashboard .db-card .sec-col .sec-img {
+  width: 68%;
+}
+
+page-dashboard .db-card .sec-hdr {
+  line-height: 3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+page-dashboard .db-card .sec-vlue {
+  font-size: 2rem;
+}
+
+page-dashboard .db-card .sub-sec {
+  text-align: center;
+  padding: 18px;
+}
+
+page-dashboard .db-card .sub-sec .hdr {
+  font-size: 1.4rem;
+}
+
+page-dashboard .db-card .sub-sec .inc-valu {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+}
+
+page-dashboard .db-card .sub-sec .date {
+  font-size: 1.2rem;
+}
+
+page-dashboard .db-card .cd-uper-row {
+  border-bottom: 1px solid #a87e56;
+}
+
+page-dashboard .tab-sec-hdr {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+page-dashboard .tab-sec-hdr .hdr {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+page-dashboard .tab-sec-hdr img {
+  width: 14%;
+  margin-right: 18px;
+}
+
+page-dashboard .tab-sec-cnt {
+  padding: 0;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec {
+  padding-bottom: 14px;
+  border-bottom: 1px solid;
+  margin-bottom: 14px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec .pers-info {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: #3d3d3d;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec .bil-info {
+  font-size: 1.3rem;
+  color: #707070;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec .bil-info div {
+  margin-right: 14px;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec .bil-info div:last-of-type {
+  margin-right: 0;
+}
+
+page-dashboard .tab-sec-cnt .one-payment-rec ion-icon {
+  font-size: 3rem;
+  margin-left: 14px;
+  color: #32ba7c;
+}
+
+.flx-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.hgt-100 {
+  height: 100%;
+}
+
+page-login .log_pg {
+  background: #1b1b1b;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#1b1b1b), color-stop(50%, #242424), to(#d1d1d1));
+  background: linear-gradient(to bottom, #1b1b1b 0%, #242424 50%, #d1d1d1 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b1b1b', endColorstr='#d1d1d1',GradientType=0 );
+  /* IE6-9 */
+}
+
+page-login .log_pg .scroll-content {
+  padding: 0 32px !important;
+  margin-top: 30px !important;
+}
+
+page-login .log_logo {
+  text-align: center;
+  /*height: 20%;
+		margin-top: 24%;*/
+}
+
+page-login img {
+  width: 34%;
+}
+
+page-login .welcom-msg {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  height: 20%;
+  margin-top: 16px;
+  margin-bottom: 14%;
+}
+
+page-login .un-pw-input {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 12px;
+  border-bottom: 1px solid #a3a3a3;
+}
+
+page-login .un-pw-input input {
+  padding: 6px;
+  height: 46px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+page-login .un-pw-input ion-icon {
+  color: #fff;
+  font-size: 3rem;
+  margin-right: 10px;
+}
+
+page-login .fgt-pw-link {
+  /*.button-md:activated{
+			background-color: transparent !important;
+			color: 	#a87e56;
+		}*/
+}
+
+page-login .fgt-pw-link button {
+  height: 2em;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+page-login .log-btn button {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d5bc9d+0,a87e56+100 */
+  background: #d5bc9d;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#d5bc9d), to(#a87e56));
+  background: linear-gradient(to bottom, #d5bc9d 0%, #a87e56 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5bc9d', endColorstr='#a87e56',GradientType=0 );
+  /* IE6-9 */
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 25px 47px -8px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 25px 47px -8px rgba(0, 0, 0, 0.48);
+  margin: 20px 0px;
+}
+
+page-login .reg-link {
+  font-size: 1.4rem;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-login .reg-link button {
+  background-color: transparent;
+  text-decoration: underline;
+  height: 44px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+page-login .rights-txt {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+page-login .footer-md::before {
+  display: none;
+}
+
+.scroll-content {
+  margin-top: 60px !important;
+}
+
+.pg-cnt-hdr {
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.l-txt {
+  font-size: 1.8rem;
+  color: #3d3d3d;
+  font-weight: 500;
+}
+
+.l1-txt {
+  font-size: 1.5rem;
+  color: #3d3d3d;
+  font-weight: 500;
+}
+
+.brwn-txt {
+  font-size: 1.5rem;
+  color: #a87e56;
+  font-weight: 500;
+}
+
+.l2-txt {
+  color: #707070;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.l3-txt {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.pg-cnt-hdr-2 {
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.app-card-pad {
+  padding-top: 30px;
+}
+
+.bacic-app-card {
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.bacic-app-card .app-logo {
+  width: 26%;
+  text-align: center;
+}
+
+.slect-btn-set {
+  /*col{
+		height: auto;
+	}*/
+}
+
+.slect-btn-set button {
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 100px;
+  border: 1px solid #acacac;
+  width: 100%;
+  height: 100%;
+  color: #4e4e4e;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 200;
+  padding: 6px 30px;
+}
+
+.slect-btn-set .selected-btn {
+  background-color: #3ab54a;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid #3ab54a;
+  -webkit-box-shadow: 0px 0px 16px -3px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 0px 16px -3px rgba(0, 0, 0, 0.52);
+}
+
+.pg-btm-btn-foot {
+  text-align: center;
+  padding: 10px;
+}
+
+.brwn-grd-btn {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d5bc9d+0,a87e56+100 */
+  background: #d5bc9d;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#d5bc9d), to(#a87e56));
+  background: linear-gradient(to bottom, #d5bc9d 0%, #a87e56 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5bc9d', endColorstr='#a87e56',GradientType=0 );
+  /* IE6-9 */
+  width: 80%;
+  text-transform: uppercase;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 12px 17px -10px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 12px 17px -10px rgba(0, 0, 0, 0.48);
+  font-weight: bold;
+}
+
+.footer-md::before {
+  display: none;
+}
+
+.app-form-inpt-row {
+  margin-bottom: 14px;
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.app-form-inpt-row input {
+  padding: 6px;
+  height: 46px;
+  background-color: transparent;
+  border: none;
+  color: #707070;
+  width: 100%;
+}
+
+.app-form-inpt-row ion-datetime {
+  padding: 12px 6px;
+}
+
+.app-pay-opt {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.app-pay-opt ion-col {
+  margin: auto;
+}
+
+.app-pay-opt .pay-opt-row {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.app-pay-opt .pay-opt-row img {
+  width: 40%;
+  margin-left: 10px;
+}
+
+.app-pay-opt .pay-opt-row .opt-txt {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 14px;
+}
+
+.cust-info-trt {
+  margin-bottom: 20px;
+}
+
+.cust-info-trt:last-of-type {
+  margin-bottom: 0;
+}
+
+.invo-card .invo-sec {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 30px;
+}
+
+.invo-card .invo-sec:last-of-type {
+  margin-bottom: 0px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.invo-card .total-sec ion-row {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.invo-card .total-sec div {
+  margin-left: 10px;
+}
+
+page-treatement .trt-row {
+  margin-bottom: 16px;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  color: #3d3d3d;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+page-treatement .trt-row .trt-info {
+  text-align: left;
+  margin-left: 16px;
+}
+
+page-treatement .trt-row .trt-info .discript {
+  color: #707070;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+page-treatement .trt-type {
+  padding: 20px;
+  border-top: 1px solid #dadada;
+  font-weight: bold;
+}

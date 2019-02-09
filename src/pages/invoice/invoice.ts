@@ -14,6 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'invoice.html',
 })
 export class InvoicePage {
+  public invoiceView: boolean = true;
+  public successView: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,6 +26,12 @@ export class InvoicePage {
 
   // submit the data in to backend //
   submit() {
-    // this.navCtrl.push()
+    this.invoiceView = false;
+    this.successView = true;
+  }
+
+  // close invoice view //
+  close() {
+    this.navCtrl.push('DashboardPage');
   }
 }

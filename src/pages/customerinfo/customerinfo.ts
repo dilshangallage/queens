@@ -21,8 +21,18 @@ export class CustomerinfoPage {
   public sttlBll: boolean;
   public payAdvnc: boolean;
 
+  public saloonView: boolean = false;
+  public bridalView: boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.selectedData = this.navParams.get('data');
+    let viewName = this.navParams.get('view');
+    if (viewName && viewName === 'saloonView') {
+      this.saloonView = true;
+    } else if (viewName === 'bridalView') {
+      this.bridalView = true;
+    }
+
     if (this.selectedData) {
       this.treatement = this.selectedData.treatement;
       this.beautician = this.selectedData.beautician;

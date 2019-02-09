@@ -15,7 +15,8 @@
 
 
 <ion-content padding class="app-page-bg">
-  <ion-grid>
+  <!-- customer details for saloon job-->
+  <ion-grid *ngIf="saloonView">
     
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
     
@@ -119,6 +120,9 @@
     </ion-row>
 
   </ion-grid>
+
+  <!-- customer details for bridal job-->
+  <ion-grid *ngIf="bridalView"></ion-grid>
 
 </ion-content>
 

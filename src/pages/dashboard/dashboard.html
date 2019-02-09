@@ -17,19 +17,19 @@
 <ion-content padding class="app-page-bg">
 
 <ion-row class="search-fld">
-    <input class="flx-1" placeholder="Search Payments and Customers"> <button ion-button> <ion-icon name="search"></ion-icon> </button>
+    <input class="flx-1" placeholder="Search Payments and Customers"> <button ion-button (click)="searchRef()"> <ion-icon name="search"></ion-icon> </button>
 </ion-row>
 
   <ion-row class="app-card-1 db-card">
     <ion-col no-padding>
         <ion-row class="cd-uper-row">
-          <ion-col col-6 class="sec-col">
+          <ion-col col-6 class="sec-col" (click)="newsaloonJob()">
             <img class="sec-img" src="assets/imgs/salon%20invoice%20Icon.png">
             <div class="sec-hdr">Saloon Invoices</div>
             <div class="sec-vlue">{{salInvsCnt}}</div>
           </ion-col>
 
-          <ion-col col-6 class="sec-col">
+          <ion-col col-6 class="sec-col" (click)="newBridalJob()">
             <img class="sec-img" src="assets/imgs/Bridel%20information%20icon.png">
             <div class="sec-hdr">Saloon Invoices</div>
             <div class="sec-vlue">{{brdInvsCnt}}</div>
@@ -58,7 +58,7 @@
 
 <!--   one button -->
   <ion-row class="app-button-row">
-    <button (click)="newJob()" ion-button class="gren-btn app-button">Add Bank Reciept</button>
+    <button (click)="bankReceiptView()" ion-button class="gren-btn app-button">Add Bank Reciept</button>
   </ion-row>
 
   <!-- tab button 2 -->
