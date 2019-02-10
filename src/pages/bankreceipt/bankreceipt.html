@@ -14,6 +14,28 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="app-page-bg">
+	<ion-grid>
+		<ion-row class="app-form-inpt-row">
+      		<input placeholder="Bank Account Ref#">
+    	</ion-row>
 
+    	<ion-row class="app-form-inpt-row">
+      		<input placeholder="Receipt reference number">
+    	</ion-row>
+
+    	<ion-row class="app-form-inpt-row">
+      		<input placeholder="Receipt amount">
+    	</ion-row>
+	</ion-grid>
 </ion-content>
+
+<ion-footer class="pg-btm-btn-foot">
+  <ion-row>
+    <ion-col>
+      <button ion-button class="gren-btn app-button">
+        Add Bank Receipt
+      </button>
+    </ion-col>
+    </ion-row>
+</ion-footer>

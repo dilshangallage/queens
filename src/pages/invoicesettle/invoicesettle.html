@@ -14,31 +14,104 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="app-page-bg">
+  <ion-grid>
+  <div class="pg-cnt-hdr">INVOICE</div>
   <ion-row class="search-fld">
     <input class="flx-1" placeholder="Search Payments and Customers"> <button ion-button (click)="searchRef()"> <ion-icon name="search"></ion-icon> </button>
   </ion-row>
-  <!-- bridal view in receipt with advanced payment-->
-  <ion-grid >
-    <ion-row>
+
+    <!-- <ion-row>
       <label>
         BALANCE - LKR 1000.00
       </label>
     </ion-row>
-    <!-- invoice data-->
     <input placeholder="Receipt Amount">
     <button ion-button (click)="settlePayment()">
       Settle the Payment
-    </button>
-  </ion-grid>
+    </button> -->
 
-  <!-- saloon view in receipt there is no advance payment things-->
-  <ion-grid >
-    <ion-row>
-      <label>
-        BALANCE - LKR 1000.00
-      </label>
+    <ion-row class="app-card-1 bacic-app-card invo-card">
+      
+      <ion-col no-padding col-12 class="top-sec invo-sec">
+      <ion-row>
+      <div class="flx-1">
+
+        <div class="cust-info-trt">
+          <div class="blance-txt">BALANCE - LKR 1000.00</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="l2-txt">Invoice ID</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Advance invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+          <div class="l2-txt ">Event date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+      </div>
+
+      <div class="app-logo">
+        <img src="assets/imgs/quee-logo.png">
+        <div class="l3-txt">Salon Reg#:2395</div>
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="mid-sec invo-sec">
+      <ion-row>
+        <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 2500.00
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="total-sec invo-sec">
+      <ion-row class="marg-b-24">
+        <div class="flx-1"></div>
+        <div class="l2-txt">ADVANCE</div>
+        <div class="l1-txt gray-txt">LKR 1500.00</div>
+      </ion-row>
+
+      <ion-row class="app-form-inpt-row">
+        <input placeholder="Receipt amount">
+      </ion-row>
+      </ion-col>
+
     </ion-row>
-    <!-- invoice data-->
   </ion-grid>
 </ion-content>
+
+<ion-footer class="pg-btm-btn-foot">
+  <ion-row>
+    <ion-col>
+      <button class="gren-btn app-button" ion-button (click)="settlePayment()">Settle the Payment</button>
+      <!-- <button class="brwn-grd-btn app-button" ion-button>SUBMITt</button>
+      <button class="" ion-button >CLOSE</button> -->
+    </ion-col>
+    </ion-row>
+</ion-footer>

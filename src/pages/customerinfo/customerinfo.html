@@ -15,6 +15,7 @@
 
 
 <ion-content padding class="app-page-bg">
+  
   <!-- customer details for saloon job-->
   <ion-grid *ngIf="saloonView">
     
@@ -41,22 +42,7 @@
 
     
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
-    
 
-    <!-- <ion-row>
-      <label>{{treatement?.title}}</label>
-      <label>{{treatement?.cost}}</label>
-      <label>{{treatement?.description}}</label>
-    </ion-row>
-
-    <ion-row>
-      <label>
-        {{beautician?.name}}
-      </label>
-      <label>
-        Beautician
-      </label>
-    </ion-row> -->
 
     <ion-row class="app-form-inpt-row">
       <input placeholder="Contact number">
@@ -89,11 +75,6 @@
       </ion-col>
     </ion-row>
 
-    <!-- <ion-row *ngIf="payAdvnc" class="app-form-inpt-row">
-      <ion-datetime placeholder="Event Date"></ion-datetime>
-      <input placeholder="Advance Amount">
-    </ion-row> -->
-
     <ion-row *ngIf="payAdvnc" class="app-pay-opt">
 
     <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
@@ -120,11 +101,82 @@
     </ion-row>
 
   </ion-grid>
+  <!-- customer details for saloon job-->
+
 
   <!-- customer details for bridal job-->
-  <ion-grid *ngIf="bridalView"></ion-grid>
+  <!-- <ion-grid>
+    
+    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
 
-</ion-content>
+    <ion-row class="app-form-inpt-row">
+      <input placeholder="Coustommer name">
+    </ion-row>
+
+    <ion-row class="app-form-inpt-row">
+      <input placeholder="Contact number">
+    </ion-row>
+
+    <ion-col no-padding col-12 class="app-form-inpt-row">
+        <ion-datetime placeholder="Event Date"></ion-datetime>
+    </ion-col>
+
+    <ion-col no-padding col-12 class="app-form-inpt-row">
+        <input placeholder="Amount">
+      </ion-col>
+
+    <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>
+
+    <ion-row class="tab-btn-row">
+      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
+      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>
+  </ion-row>
+
+    <ion-row *ngIf="sttlBll" class="app-pay-opt">
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+        </ion-row>
+      </ion-col>
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="opt-txt">Pay by Cash</div>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="payAdvnc" class="app-pay-opt">
+
+      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
+        <input placeholder="Advance Amount">
+      </ion-col>
+
+      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
+        <ion-datetime placeholder="Event Date"></ion-datetime>
+      </ion-col>
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+        </ion-row>
+      </ion-col>
+
+      <ion-col no-padding>
+        <ion-row class="pay-opt-row">
+          <div><input type="radio"></div>
+          <div class="opt-txt">Pay by Cash</div>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid> -->
+  <!-- customer details for bridal job-->
+
+  </ion-content>
 
 <ion-footer class="pg-btm-btn-foot">
   <ion-row>

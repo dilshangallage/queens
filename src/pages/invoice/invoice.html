@@ -15,7 +15,94 @@
 
 
 <ion-content padding class="app-page-bg">
-  <ion-grid *ngIf="invoiceView">
+
+<!-- invoice search -->
+<ion-grid *ngIf="invoiceView">
+
+<ion-row class="app-card-1 bacic-app-card invo-card">
+      
+      <ion-col no-padding col-12 class="top-sec invo-sec">
+      <ion-row>
+      <div class="flx-1">
+
+        <div class="cust-info-trt">
+          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="l2-txt">Invoice ID</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Advance invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+          <div class="l2-txt ">Event date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+
+      </div>
+
+      <div class="app-logo">
+        <img src="assets/imgs/quee-logo.png">
+        <div class="l3-txt">Salon Reg#:2395</div>
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="mid-sec invo-sec">
+      <ion-row>
+        <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 2500.00
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="total-sec invo-sec">
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">ADVANCE</div>
+        <div class="l1-txt gray-txt">LKR 1500.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">BALANCE</div>
+        <div class="l1-txt gray-txt">LKR 1000.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">TOTAL AMOUNT</div>
+        <div class="l-txt">LKR 2500.00</div>
+      </ion-row>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <!-- invoice search -->
+
+
+
+<!-- saloon service invoic -->
+<!-- <ion-grid *ngIf="invoiceView">
 <div class="pg-cnt-hdr">INVOICE</div>
 
 <ion-row class="app-card-1 bacic-app-card invo-card">
@@ -30,14 +117,15 @@
         </div>
 
         <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
           <div class="l1-txt">Ashani Gunathilaka</div>
           <div class="l2-txt">Beautician</div>
         </div>
 
-        <div class="cust-info-trt">
-          <div class="l1-txt">28.11.2018  3:20PM</div>
-          <div class="l2-txt">Invoice date and time</div>
-        </div>
       </div>
 
       <div class="app-logo">
@@ -69,92 +157,372 @@
       </ion-col>
 
       <ion-col no-padding col-12 class="total-sec invo-sec">
-      <ion-row>
+
+      <ion-row class="marg-b-10">
         <div class="flx-1"></div>
         <div class="l2-txt">TOTAL AMOUNT</div>
-        <div class="l-txt">LKR 123455.00</div>
+        <div class="l-txt">LKR 2500.00</div>
       </ion-row>
       </ion-col>
 
     </ion-row>
+  </ion-grid> -->
+  <!-- saloon service invoic -->
 
-    <!-- <ion-row>
-      <ion-col>
-        Invoice ID
-        <label>
-          QBR_000000771#
-        </label>
-      </ion-col>
-      <ion-col>
-        <img src="assets/imgs/Quees%20Salon%20logo.png">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      Beautician
-      <label>
-        Aisha Ramanayaka
-      </label>
-    </ion-row>
-    <ion-row>
-      Invoice Date and Time
-      <label>
-        29.11.2018 3:20 PM
-      </label>
-    </ion-row>
-    <hr>
-    <ion-row>
-      <ion-col>
-        Hair Cut Baby Girl
-      </ion-col>
-      <ion-col>
-        LKR 1250.00
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      Hair wash blow dry
-    </ion-row>
 
-    <ion-row>
-      <ion-col>
-        Customer
-      </ion-col>
-      <ion-col>
-        Dhanushka
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      Mobile
-      <label>
-        0723456281
-      </label>
-    </ion-row>
-    <hr>
-    <ion-row>
-      <ion-col>TOTAL AMOUNT</ion-col>
-      <ion-col>LKR 123455.00</ion-col>
-    </ion-row> -->
-  </ion-grid>
 
-    <ion-grid *ngIf="successView">
+  <!-- Bridel Job invoic -->
+<!--   <ion-grid *ngIf="invoiceView">
+
+    <ion-row class="app-card-1 bacic-app-card invo-card">
+        
+        <ion-col no-padding col-12 class="top-sec invo-sec">
         <ion-row>
-            PAYMENT SUCCESSFULL
+        <div class="flx-1">
+
+          <div class="cust-info-trt">
+            <div class="brwn-txt">QBR_00000771#</div>
+            <div class="l2-txt">Invoice ID</div>
+          </div>
+
+          <div class="cust-info-trt">
+            <div class="l1-txt">28.11.2018  3:20PM</div>
+            <div class="l2-txt">Advance invoice date and time</div>
+          </div>
+
+          <div class="cust-info-trt">
+            <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+            <div class="l2-txt ">Event date and time</div>
+          </div>
+
+          <div class="cust-info-trt">
+            <div class="l1-txt">Ashani Gunathilaka</div>
+            <div class="l2-txt">Beautician</div>
+          </div>
+
+        </div>
+
+        <div class="app-logo">
+          <img src="assets/imgs/quee-logo.png">
+          <div class="l3-txt">Salon Reg#:2395</div>
+        </div>
         </ion-row>
-    </ion-grid>
+        </ion-col>
+
+        <ion-col no-padding col-12 class="mid-sec invo-sec">
+        <ion-row>
+          <div class="flx-1">
+          
+          <div class="cust-info-trt">
+            <div class="l1-txt">Hair Cut Baby Girl</div>
+            <div class="l2-txt">Hair wash blow dry</div>
+          </div>
+
+          <div class="cust-info-trt">
+            <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+            <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+          </div>
+        </div>
+
+        <div class="l1-txt">
+          LKR 2500.00
+        </div>
+        </ion-row>
+        </ion-col>
+
+        <ion-col no-padding col-12 class="total-sec invo-sec">
+        <ion-row class="marg-b-10">
+          <div class="flx-1"></div>
+          <div class="l2-txt gren-txt">ADVANCE</div>
+          <div class="l1-txt gren-txt">LKR 1500.00</div>
+        </ion-row>
+
+        <ion-row class="marg-b-10">
+          <div class="flx-1"></div>
+          <div class="l2-txt red-txt">BALANCE</div>
+          <div class="l1-txt red-txt">LKR 1000.00</div>
+        </ion-row>
+
+        <ion-row class="marg-b-10">
+          <div class="flx-1"></div>
+          <div class="l2-txt">TOTAL AMOUNT</div>
+          <div class="l-txt">LKR 2500.00</div>
+        </ion-row>
+        </ion-col>
+
+      </ion-row>
+  </ion-grid> -->
+  <!-- Bridel Job invoic -->
+
+
+
+
+  <!-- invoice search successView-->
+<!--   <ion-grid *ngIf="successView">
+      <div class="pg-cnt-hdr gren-txt">PAYMENT SUCCESSFUL</div>
+      <ion-row class="app-card-1 bacic-app-card invo-card">
+      
+      <ion-col no-padding col-12 class="top-sec invo-sec">
+      <ion-row>
+      <div class="flx-1">
+
+        <div class="cust-info-trt">
+          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="l2-txt">Invoice ID</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Advance invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+          <div class="l2-txt ">Event date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+
+      </div>
+
+      <div class="app-logo">
+        <img src="assets/imgs/quee-logo.png">
+        <div class="l3-txt">Salon Reg#:2395</div>
+        <ion-icon name="checkmark-circle" class="success-ioc"></ion-icon>
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="mid-sec invo-sec">
+      <ion-row>
+        <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 2500.00
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="total-sec invo-sec">
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">ADVANCE</div>
+        <div class="l1-txt gray-txt">LKR 1500.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">BALANCE</div>
+        <div class="l1-txt gray-txt">LKR 1000.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">TOTAL AMOUNT</div>
+        <div class="l-txt">LKR 2500.00</div>
+      </ion-row>
+
+      </ion-col>
+
+      <ion-col class="gren-txt txt-alg-cent">Invoice printed _PBP_1258</ion-col>
+    </ion-row>
+
+  </ion-grid> -->
+  <!-- invoice search successView-->
+
+
+
+    <!-- saloon service successView-->
+  <ion-grid *ngIf="successView">
+      <div class="pg-cnt-hdr gren-txt">PAYMENT SUCCESSFUL</div>
+      <ion-row class="app-card-1 bacic-app-card invo-card">
+      
+      <ion-col no-padding col-12 class="top-sec invo-sec">
+      <ion-row>
+      <div class="flx-1">
+
+        <div class="cust-info-trt">
+          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="l2-txt">Invoice ID</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+
+      </div>
+
+      <div class="app-logo">
+        <img src="assets/imgs/quee-logo.png">
+        <div class="l3-txt">Salon Reg#:2395</div>
+        <ion-icon name="checkmark-circle" class="success-ioc"></ion-icon>
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="mid-sec invo-sec">
+      <ion-row>
+        <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 2500.00
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="total-sec invo-sec">
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">TOTAL AMOUNT</div>
+        <div class="l-txt">LKR 2500.00</div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col class="gren-txt txt-alg-cent">Invoice printed _PBP_1258</ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <!-- saloon service successView-->
+
+
+
+
+    <!-- Bridel Job successView-->
+  <!-- <ion-grid *ngIf="successView">
+      <div class="pg-cnt-hdr gren-txt">BRIDEL INFOMATIONS ADDED</div>
+      <ion-row class="app-card-1 bacic-app-card invo-card">
+      
+      <ion-col no-padding col-12 class="top-sec invo-sec">
+      <ion-row>
+      <div class="flx-1">
+
+        <div class="cust-info-trt">
+          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="l2-txt">Invoice ID</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l2-txt">Advance invoice date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+          <div class="l2-txt ">Event date and time</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l2-txt">Beautician</div>
+        </div>
+
+      </div>
+
+      <div class="app-logo">
+        <img src="assets/imgs/quee-logo.png">
+        <div class="l3-txt">Salon Reg#:2395</div>
+        <ion-icon name="checkmark-circle" class="success-ioc"></ion-icon>
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="mid-sec invo-sec">
+      <ion-row>
+        <div class="flx-1">
+        
+        <div class="cust-info-trt">
+          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l2-txt">Hair wash blow dry</div>
+        </div>
+
+        <div class="cust-info-trt">
+          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
+          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+        </div>
+      </div>
+
+      <div class="l1-txt">
+        LKR 2500.00
+      </div>
+      </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 class="total-sec invo-sec">
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt gren-txt">ADVANCE</div>
+        <div class="l1-txt gren-txt">LKR 1500.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt red-txt">BALANCE</div>
+        <div class="l1-txt red-txt">LKR 1000.00</div>
+      </ion-row>
+
+      <ion-row class="marg-b-10">
+        <div class="flx-1"></div>
+        <div class="l2-txt">TOTAL AMOUNT</div>
+        <div class="l-txt">LKR 2500.00</div>
+      </ion-row>
+
+      </ion-col>
+
+      <ion-col class="gren-txt txt-alg-cent">Invoice printed _PBP_1258</ion-col>
+    </ion-row>
+
+  </ion-grid> -->
+  <!-- Bridel Job successView-->
+
 </ion-content>
 
 <ion-footer class="pg-btm-btn-foot">
   <ion-row *ngIf="invoiceView">
+    
     <ion-col>
       <button ion-button (click)="submit()" class="brwn-grd-btn">
         SUBMIT
       </button>
     </ion-col>
     </ion-row>
+
     <ion-row *ngIf="successView">
         <ion-col>
-            <button ion-button (click)="close()">
+            <button ion-button (click)="close()" class="close-btn">
                 CLOSE
             </button>
         </ion-col>
     </ion-row>
+
 </ion-footer>
