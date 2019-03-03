@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {RestcallProvider} from '../../providers/restcall/restcall';
 
 /**
  * Generated class for the TreatementPage page.
@@ -19,7 +20,7 @@ export class TreatementPage {
 
   public beautiNm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
     this.treatementList = [
       {
         'type': 'Hair Cut',
@@ -117,6 +118,20 @@ export class TreatementPage {
   // select beautician //
   activeBtn() {
     // this.beautiNm = nm;
+  }
+
+  // load treatements //
+  loadTreatements() {
+    this.restCall.allTreatements().subscribe(function (res) {
+      console.log('load treatements');
+    });
+  }
+
+  // get all beatuticians //
+  loadBeaticians() {
+    this.restCall.allBeatucianse().subscribe(function (res) {
+      console.log('load beauticians');
+    });
   }
 
   // load next view //

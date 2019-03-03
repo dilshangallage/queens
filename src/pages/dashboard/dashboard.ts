@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment'
+import {RestcallProvider} from '../../providers/restcall/restcall';
 
 /**
  * Generated class for the DashboardPage page.
@@ -30,7 +31,7 @@ export class DashboardPage {
   public salView: boolean;
   public brdView: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
     this.salInvsCnt =275;
     this.brdInvsCnt =75;
     this.salDailyIncm = 3800.00
@@ -88,6 +89,7 @@ export class DashboardPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
+
   }
 
   // saloon payment history //
@@ -120,5 +122,26 @@ export class DashboardPage {
   // search receipt details by ref id //
   searchRef() {
     this.navCtrl.push('InvoicesettlePage');
+  }
+
+  // load daily invoices counts and amounts //
+  loadDailyInvoices() {
+    this.restCall.loadInvoicesDestails().subscribe(function (res) {
+      console.log('load invoice');
+    });
+  }
+
+  // search invoice by id //
+  searchInvoice(id: string) {
+    this.restCall.searchInvoice(id).subscribe(function (res) {
+      console.log('search invoice');
+    });
+  }
+
+  // load history data //
+  loadHistory(type: string) {
+    this.restCall.dailyHistorycalData(type).subscribe(function (res) {
+      console.log('history invoice');
+    });
   }
 }
