@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {RestcallProvider} from '../../providers/restcall/restcall';
 
 /**
@@ -20,7 +20,7 @@ export class TreatementPage {
 
   public beautiNm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private toastCtrl: ToastController) {
     this.treatementList = [
       {
         'type': 'Hair Cut',
@@ -83,48 +83,18 @@ export class TreatementPage {
         ]
       }
     ];
-    this.beauticiansList = [
-      {
-        'name': 'Amal'
-      },
-      {
-        'name': 'Nimak'
-      },
-      {
-        'name': 'Kaml'
-      },
-      {
-        'name': 'Dila'
-      },
-      {
-        'name': 'Dala'
-      },
-      {
-        'name': 'Sanduni'
-      },
-      {
-        'name': 'Amaraweera'
-      },
-      {
-        'name': 'Mapalagamage'
-      }
-    ]
+    this.loadBeauticianse();
+    this.loadTreatements();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TreatementPage');
+    // this.loadBeauticianse();
   }
 
   // select beautician //
   activeBtn() {
     // this.beautiNm = nm;
-  }
-
-  // load treatements //
-  loadTreatements() {
-    this.restCall.allTreatements().subscribe(function (res) {
-      console.log('load treatements');
-    });
   }
 
   // get all beatuticians //
@@ -147,6 +117,43 @@ export class TreatementPage {
             'beautician': {
           'name': 'Amal'
         }}, 'view' : 'saloonView'});
+  }
+
+  // load all beauticianse //
+  loadBeauticianse() {
+    this.restCall.allBeatucianse().subscribe(function (res) {
+      if (res) {
+        if (res['success']) {
+          this.beauticiansList = res['data'];
+        }
+      }
+    });
+  }
+
+  // load treatements //
+  loadTreatements() {
+    this.restCall.allTreatements().subscribe(function (res) {
+      if (res) {
+        if (res['success']) {
+          let d = res['data'];
+        } else {
+          this.presentToast(res['error']['errorMessage']);
+        }
+      }
+    });
+  }
+
+  // present toast //
+  presentToast(msg: string) {
+    let tst = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'middle'
+    });
+    tst.onDidDismiss(function () {
+
+    });
+    tst.present();
   }
 
 }

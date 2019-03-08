@@ -25,6 +25,16 @@ export class CustomerinfoPage {
   public saloonView: boolean = false;
   public bridalView: boolean = false;
 
+  public invoiceType: string = '';
+  public customerName: string = '';
+  public customerContactNumber: string = '';
+  public eventDate: string = '';
+  public beauticianId: number;
+  public treatmentId: number;
+  public advance: number;
+  public balance: number;
+  public total: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
     this.selectedData = this.navParams.get('data');
     let viewName = this.navParams.get('view');
@@ -44,6 +54,14 @@ export class CustomerinfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CustomerinfoPage');
+    this.restCall.loadCustomer('0715260606').subscribe(function (res) {
+      console.log('++++++++++++++++++++++++');
+      console.log(res)
+    },
+    err => {
+      console.log('------------------');
+      console.log(err);
+    });
   }
 
   // settle bill //
@@ -67,7 +85,18 @@ export class CustomerinfoPage {
 
   // next view //
   nextView() {
-    this.navCtrl.push('InvoicePage');
+    let data = new Object();
+    data['invoiceType'] = this.invoiceType;
+    data['customerName'] = this.customerName;
+    data['customerContactNumber'] = this.customerContactNumber;
+    data['eventDate'] = this.eventDate;
+    data['beauticianId'] = this.beauticianId;
+    data['treatmentId'] = this.treatmentId;
+    data['advance'] = this.advance;
+    data['balance'] = this.balance;
+    data['total'] = this.total;
+    data['advanceDate'] = new Date().getMilliseconds();
+    this.navCtrl.push('InvoicePage', {'data': data});
   }
 
 }

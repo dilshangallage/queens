@@ -45,11 +45,11 @@
 
 
     <ion-row class="app-form-inpt-row">
-      <input placeholder="Contact number">
+      <input (ng-model)="customerContactNumber" placeholder="Contact number">
     </ion-row>
 
     <ion-row class="app-form-inpt-row">
-      <input placeholder="Coustommer name">
+      <input (ng-model)="customerName" placeholder="Coustommer name">
     </ion-row>
 
     <div class="pg-cnt-hdr">PAYMENT OPTION</div>
@@ -78,11 +78,11 @@
     <ion-row *ngIf="payAdvnc" class="app-pay-opt">
 
     <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <input placeholder="Advance Amount">
+        <input (ng-model)="advance" placeholder="Advance Amount">
       </ion-col>
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <ion-datetime placeholder="Event Date"></ion-datetime>
+        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
       </ion-col>
 
       <ion-col no-padding>
@@ -110,19 +110,19 @@
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
 
     <ion-row class="app-form-inpt-row">
-      <input placeholder="Coustommer name">
+      <input (ng-model)="customerName" placeholder="Coustommer name">
     </ion-row>
 
     <ion-row class="app-form-inpt-row">
-      <input placeholder="Contact number">
+      <input (ng-model)="customerContactNumber" placeholder="Contact number">
     </ion-row>
 
     <ion-col no-padding col-12 class="app-form-inpt-row">
-        <ion-datetime placeholder="Event Date"></ion-datetime>
+        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
     </ion-col>
 
     <ion-col no-padding col-12 class="app-form-inpt-row">
-        <input placeholder="Amount">
+        <input (ng-model)="total" placeholder="Amount">
       </ion-col>
 
     <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>
@@ -151,11 +151,11 @@
     <ion-row *ngIf="payAdvnc" class="app-pay-opt">
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <input placeholder="Advance Amount">
+        <input (ng-model)="advance" placeholder="Advance Amount">
       </ion-col>
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <ion-datetime placeholder="Event Date"></ion-datetime>
+        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
       </ion-col>
 
       <ion-col no-padding>

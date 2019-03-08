@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpHeaders, HttpClient} from "@angular/common/http";
+import {ENVURL} from '../env/envVaribles';
 
 /*
   Generated class for the RestcallProvider provider.
@@ -17,7 +18,6 @@ export class RestcallProvider {
   };
 
   constructor(public http: HttpClient) {
-    console.log('Hello RestcallProvider Provider');
   }
 
   // login credentials verificcation //
@@ -27,8 +27,7 @@ export class RestcallProvider {
         'userName': usnm,
         'password': pwd
       });
-      let url: any = 'http://localhost:9000';
-      // url = url.replace('$data_type', dataType);
+      let url: any = ENVURL + 'saloon-app/auth/login'
 
       return this.http.post(url, body, this.httpOptions);
     } catch (e) {
@@ -41,7 +40,7 @@ export class RestcallProvider {
     try {
       let body = JSON.stringify({
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + '';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -56,7 +55,7 @@ export class RestcallProvider {
       let body = JSON.stringify({
         'invoiceNumber': id
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + '';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -71,7 +70,7 @@ export class RestcallProvider {
       let body = JSON.stringify({
         'type': type
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + 'saloon-app/get-history';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -89,7 +88,7 @@ export class RestcallProvider {
         'receiptAmount': amount
 
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + 'saloon-app/add-bank-receipt';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -101,12 +100,10 @@ export class RestcallProvider {
   // load treatements //
   allTreatements() {
     try {
-      let body = JSON.stringify({
-      });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + 'saloon-app/get-treatments';
       // url = url.replace('$data_type', dataType);
 
-      return this.http.post(url, body, this.httpOptions);
+      return this.http.get(url, this.httpOptions);
     } catch (e) {
       console.log('ERR:-', e);
     }
@@ -115,12 +112,10 @@ export class RestcallProvider {
   // load beauticianse //
   allBeatucianse() {
     try {
-      let body = JSON.stringify({
-      });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + 'saloon-app/get-beauticians';
       // url = url.replace('$data_type', dataType);
 
-      return this.http.post(url, body, this.httpOptions);
+      return this.http.get(url, this.httpOptions);
     } catch (e) {
       console.log('ERR:-', e);
     }
@@ -142,7 +137,7 @@ export class RestcallProvider {
         'total': total
 
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + '';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -152,12 +147,12 @@ export class RestcallProvider {
   }
 
   // load customer details using customer contact id //
-  loadCustomer(customerId: number) {
+  loadCustomer(customerId: string) {
     try {
       let body = JSON.stringify({
         'customerContactNumber': customerId
       });
-      let url: any = 'http://localhost:9000';
+      let url: any = ENVURL + 'saloon-app/get-customer';
       // url = url.replace('$data_type', dataType);
 
       return this.http.post(url, body, this.httpOptions);
@@ -165,4 +160,17 @@ export class RestcallProvider {
       console.log('ERR:-', e);
     }
   }
+
+  // get summary details //
+  getSummary() {
+    try {
+      let url: any = ENVURL + 'saloon-app/get-summary-details';
+      // url = url.replace('$data_type', dataType);
+
+      return this.http.get(url, this.httpOptions);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
 }

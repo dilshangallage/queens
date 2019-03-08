@@ -17,7 +17,7 @@
 <ion-content padding class="app-page-bg">
 
 <ion-row class="search-fld">
-    <input class="flx-1" placeholder="Search Payments and Customers"> <button ion-button (click)="searchRef()"> <ion-icon name="search"></ion-icon> </button>
+    <input (ng-model)="payemntInvoice" class="flx-1" placeholder="Search Payments and Customers"> <button ion-button (click)="searchRef(payemntInvoice)"> <ion-icon name="search"></ion-icon> </button>
 </ion-row>
 
   <ion-row class="app-card-1 db-card">
@@ -116,7 +116,7 @@
 
   </ion-grid>
   
-  <!-- <ion-grid *ngIf="brdView">
+   <ion-grid *ngIf="brdView" class="tab-sec-cnt">
     <ion-card *ngFor="let saloon of brdPymnt">
       <ion-row>
         <ion-col>
@@ -138,5 +138,5 @@
         </ion-col>
       </ion-row>
     </ion-card>
-  </ion-grid> -->
+  </ion-grid>
 </ion-content>

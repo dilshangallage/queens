@@ -27,11 +27,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams, restSrv, alrtCtrl) {
+    function LoginPage(navCtrl, navParams, restSrv, alrtCtrl, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.restSrv = restSrv;
         this.alrtCtrl = alrtCtrl;
+        this.toastCtrl = toastCtrl;
     }
     LoginPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoginPage');
@@ -39,26 +40,50 @@ var LoginPage = /** @class */ (function () {
     // login for main dashboard //
     LoginPage.prototype.loginClick = function (unm, pwd) {
         var _this = this;
+        this.navCtrl.push('DashboardPage');
         this.restSrv.login(unm, pwd).subscribe(function (res) {
-            _this.navCtrl.push('DashboardPage');
+            if (res) {
+                console.log('response', res);
+                // if (res['success']) {
+                //   this.navCtrl.push('DashboardPage');
+                // } else {
+                //   this.wrongUserAlert();
+                // }
+            }
+            else {
+                _this.wrongUserAlert();
+            }
         }, function (err) {
-            _this.navCtrl.push('DashboardPage');
-            // this.wrongUserAlert();
+            _this.wrongUserAlert();
         });
     };
     // credential are wrong alert //
     LoginPage.prototype.wrongUserAlert = function () {
         var alert = this.alrtCtrl.create({
-            title: 'Error',
-            subTitle: 'Login user password is incorrect'
+            title: 'Login Failed!',
+            subTitle: 'Please check your credentials...'
         });
         alert.present();
     };
+    // create toast //
+    LoginPage.prototype.unsuccessToast = function () {
+        var tst = this.toastCtrl.create({
+            message: 'Wrong Credentials',
+            duration: 3000,
+            position: 'middle'
+        });
+        tst.onDidDismiss(function () {
+        });
+        tst.present();
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="log_pg">\n\n<ion-grid>\n  \n  <div class="log_logo">\n      <img src="assets/imgs/quee-logo.png">\n  </div>\n\n    <div class="welcom-msg">\n          Welcome\n    </div>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="person"></ion-icon><input placeholder="Username">\n    </ion-row>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="key"></ion-icon><input type="password" placeholder="Password">\n    </ion-row>\n\n    <ion-row class="fgt-pw-link">\n      <div class="flx-1"></div><button ion-button>Forgot Password</button>\n    </ion-row>\n\n    <ion-row class="log-btn">\n      <button ion-button (click)="loginClick()">Login</button>\n    </ion-row>\n\n    <ion-row class="reg-link">\n      <div class="flx-1"></div>\n      <div>NOT A MEMBER ?</div> <button ion-button>REGISTER</button>\n      <div class="flx-1"></div>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer class="rights-txt">\n  <ion-row >\n      <ion-col no-padding>\n          Powerd by Smart Saloon Management System\n          <div>Queens Salon - Galle 2019 @ All rights reserved</div>\n      </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="log_pg">\n\n<ion-grid>\n  \n  <div class="log_logo">\n      <img src="assets/imgs/quee-logo.png">\n  </div>\n\n    <div class="welcom-msg">\n          Welcome\n    </div>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="person"></ion-icon><input ngModel="unm" placeholder="Username">\n    </ion-row>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="key"></ion-icon><input ngModel="pwd" type="password" placeholder="Password">\n    </ion-row>\n\n    <ion-row class="fgt-pw-link">\n      <div class="flx-1"></div><button ion-button>Forgot Password</button>\n    </ion-row>\n\n    <ion-row class="log-btn">\n      <button ion-button (click)="loginClick(unm, pwd)">Login</button>\n    </ion-row>\n\n    <ion-row class="reg-link">\n      <div class="flx-1"></div>\n      <div>NOT A MEMBER ?</div> <button ion-button>REGISTER</button>\n      <div class="flx-1"></div>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer class="rights-txt">\n  <ion-row >\n      <ion-col no-padding>\n          Powerd by Smart Saloon Management System\n          <div>Queens Salon - Galle 2019 @ All rights reserved</div>\n      </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__["a" /* RestcallProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__["a" /* RestcallProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -89,35 +114,35 @@ webpackEmptyAsyncContext.id = 113;
 
 var map = {
 	"../pages/bankreceipt/bankreceipt.module": [
-		278,
+		279,
 		6
 	],
 	"../pages/customerinfo/customerinfo.module": [
-		279,
+		280,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		280,
+		281,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		281,
+		282,
 		4
 	],
 	"../pages/invoicesettle/invoicesettle.module": [
-		282,
+		283,
 		3
 	],
 	"../pages/login/login.module": [
-		283,
+		284,
 		7
 	],
 	"../pages/register/register.module": [
-		284,
+		285,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		285,
+		286,
 		1
 	]
 };
@@ -159,7 +184,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(100);
@@ -225,7 +250,20 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 269:
+/***/ 252:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ENVURL; });
+/**
+ * Created by dilshan on 3/5/19.
+ */
+var ENVURL = 'http://13.58.81.91:8080/';
+//# sourceMappingURL=envVaribles.js.map
+
+/***/ }),
+
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -304,6 +342,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestcallProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__ = __webpack_require__(252);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -313,6 +352,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /*
@@ -329,7 +369,6 @@ var RestcallProvider = /** @class */ (function () {
                 'Content-Type': 'application/json'
             })
         };
-        console.log('Hello RestcallProvider Provider');
     }
     // login credentials verificcation //
     RestcallProvider.prototype.login = function (usnm, pwd) {
@@ -338,8 +377,7 @@ var RestcallProvider = /** @class */ (function () {
                 'userName': usnm,
                 'password': pwd
             });
-            var url = 'http://localhost:9000';
-            // url = url.replace('$data_type', dataType);
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/auth/login';
             return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
@@ -350,7 +388,7 @@ var RestcallProvider = /** @class */ (function () {
     RestcallProvider.prototype.loadInvoicesDestails = function () {
         try {
             var body = JSON.stringify({});
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -364,7 +402,7 @@ var RestcallProvider = /** @class */ (function () {
             var body = JSON.stringify({
                 'invoiceNumber': id
             });
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -378,7 +416,7 @@ var RestcallProvider = /** @class */ (function () {
             var body = JSON.stringify({
                 'type': type
             });
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -394,7 +432,7 @@ var RestcallProvider = /** @class */ (function () {
                 'receiptRefNumber': recpRef,
                 'receiptAmount': amount
             });
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-bank-receipt';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -405,10 +443,9 @@ var RestcallProvider = /** @class */ (function () {
     // load treatements //
     RestcallProvider.prototype.allTreatements = function () {
         try {
-            var body = JSON.stringify({});
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
             // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
+            return this.http.get(url, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -417,10 +454,9 @@ var RestcallProvider = /** @class */ (function () {
     // load beauticianse //
     RestcallProvider.prototype.allBeatucianse = function () {
         try {
-            var body = JSON.stringify({});
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-beauticians';
             // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
+            return this.http.get(url, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -441,7 +477,7 @@ var RestcallProvider = /** @class */ (function () {
                 'balance': balance,
                 'total': total
             });
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -455,7 +491,7 @@ var RestcallProvider = /** @class */ (function () {
             var body = JSON.stringify({
                 'customerContactNumber': customerId
             });
-            var url = 'http://localhost:9000';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -463,10 +499,20 @@ var RestcallProvider = /** @class */ (function () {
             console.log('ERR:-', e);
         }
     };
-    var _a;
+    // get summary details //
+    RestcallProvider.prototype.getSummary = function () {
+        try {
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
+            // url = url.replace('$data_type', dataType);
+            return this.http.get(url, this.httpOptions);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    };
     RestcallProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" ? _a : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], RestcallProvider);
     return RestcallProvider;
 }());

@@ -16,6 +16,9 @@ import {RestcallProvider} from '../../providers/restcall/restcall';
 })
 export class BankreceiptPage {
 
+  public bankAccountRef: string = '';
+  public receiptRefNumber: string = '';
+  public receiptAmount: number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alrt: AlertController) {
   }
 
@@ -25,9 +28,19 @@ export class BankreceiptPage {
 
   // save bank details //
   saveBankReceipt(accRef: string, recpRef: string, amount: number) {
-    this.restCall.addReceipt(accRef, recpRef, amount).subscribe(function (res) {
-      console.log('add bank details');
-    });
+    try {
+      this.restCall.addReceipt(accRef, recpRef, amount).subscribe(function (res) {
+        if (res['success']) {
+          this.successAlert();
+        } else {
+          this.retryAlert();
+        }
+      }, err => {
+        this.retryAlert();
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   // success alert //
@@ -37,5 +50,14 @@ export class BankreceiptPage {
       subTitle: 'Successfully added new receipt'
     });
     msg.present();
+  }
+
+  // retry alert //
+  retryAlert() {
+    let rty = this.alrt.create({
+      title: 'Failed!',
+      subTitle: 'Please try again'
+    });
+    rty.present();
   }
 }
