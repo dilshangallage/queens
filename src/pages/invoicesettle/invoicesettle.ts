@@ -50,10 +50,8 @@ export class InvoicesettlePage {
 
   // settle the payment in advance payment receipt //
   settlePayment(data: any) {
-    if (parseInt( this.amount) === data['balance']) {
-      data['invoiceType'] = 'BD';
-      this.navCtrl.push('InvoicePage', {'data': data});
-    }
+    data['invoiceType'] = 'BD';
+    this.navCtrl.push('InvoicePage', {'data': data});
   }
 
   // show error msg //

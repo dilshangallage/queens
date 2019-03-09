@@ -55,21 +55,21 @@
     <div class="pg-cnt-hdr">PAYMENT OPTION</div>
 
     <ion-row class="tab-btn-row">
-      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
-      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>
+      <button class="btn-lft active-btn-gren" ion-button (click)="settleBill()">Settle the Bill</button>
+      <button [disabled]="true" class="btn-rgt active-btn-brwn" ion-button (click)="payAdvance()">Pay Advance</button>
   </ion-row>
 
     <ion-row *ngIf="sttlBll" class="app-pay-opt">
         <ion-col no-padding>
             <ion-row class="pay-opt-row">
-                <div><input name="payment" type="radio" value="cardPayment" checked></div>
+                <div><input name="payment" type="radio" value="cardPayment"></div>
                 <div class="flx-1"><img src="assets/imgs/visa.png"></div>
             </ion-row>
         </ion-col>
 
         <ion-col no-padding>
             <ion-row class="pay-opt-row">
-                <div><input name="payment" type="radio" value="cashPayment"></div>
+                <div><input name="payment" type="radio" value="cashPayment" checked></div>
                 <div class="opt-txt">Pay by Cash</div>
             </ion-row>
         </ion-col>
@@ -87,14 +87,14 @@
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input name="payment" type="radio" value="cardPayment" checked></div>
+          <div><input name="payment" type="radio" value="cardPayment"></div>
           <div class="flx-1"><img src="assets/imgs/visa.png"></div>
         </ion-row>
       </ion-col>
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input name="payment" type="radio" value="cashPayment"></div>
+          <div><input name="payment" type="radio" value="cashPayment" checked></div>
           <div class="opt-txt">Pay by Cash</div>
         </ion-row>
       </ion-col>
@@ -128,21 +128,21 @@
     <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>
 
     <ion-row class="tab-btn-row">
-      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
+      <button [disabled]="true" class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
       <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>
   </ion-row>
 
     <ion-row *ngIf="sttlBll" class="app-pay-opt">
         <ion-col no-padding>
             <ion-row class="pay-opt-row">
-                <div><input name="payment" type="radio" value="cardPayment" checked></div>
+                <div><input name="payment" type="radio" value="cardPayment"></div>
                 <div class="flx-1"><img src="assets/imgs/visa.png"></div>
             </ion-row>
         </ion-col>
 
         <ion-col no-padding>
             <ion-row class="pay-opt-row">
-                <div><input name="payment" type="radio" value="cashPayment"></div>
+                <div><input name="payment" type="radio" value="cashPayment" checked></div>
                 <div class="opt-txt">Pay by Cash</div>
             </ion-row>
         </ion-col>
@@ -160,14 +160,14 @@
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
+          <div><input name="payment" type="radio" value="cardPayment"></div>
           <div class="flx-1"><img src="assets/imgs/visa.png"></div>
         </ion-row>
       </ion-col>
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
+          <div><input name="payment" type="radio" value="cashPayment" checked></div>
           <div class="opt-txt">Pay by Cash</div>
         </ion-row>
       </ion-col>

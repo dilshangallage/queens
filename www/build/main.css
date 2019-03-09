@@ -25790,12 +25790,12 @@ page-customerinfo .pay-dadv-input {
 }
 
 .tab-btn-row .active-btn-brwn {
-  background-color: #a87e56;
+  background-color: #a87e56 !important;
   color: #fff;
 }
 
 .tab-btn-row .active-btn-gren {
-  background-color: #3ab54a;
+  background-color: #3ab54a !important;
   color: #fff;
 }
 
@@ -26333,4 +26333,13 @@ page-treatement .trt-type {
   padding: 20px;
   border-top: 1px solid #dadada;
   font-weight: bold;
+}
+
+page-treatement .active-btn-gren {
+  background-color: #3ab54a !important;
+  color: #fff !important;
+}
+
+page-treatement button-md:hover:not(.disable-hover) {
+  background-color: #3ab54a !important;
 }

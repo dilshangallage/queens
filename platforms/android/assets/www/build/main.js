@@ -43,28 +43,26 @@ var LoginPage = /** @class */ (function () {
     };
     // login for main dashboard //
     LoginPage.prototype.loginClick = function () {
-        var _this = this;
-        if (this.nm && this.pwd) {
-            this.navCtrl.push('DashboardPage');
-            this.restSrv.login(this.nm, this.pwd).subscribe(function (res) {
-                if (res) {
-                    if (!res['success']) {
-                        _this.wrongUserAlert();
-                    }
-                    else {
-                        _this.navCtrl.push('DashboardPage');
-                    }
-                }
-                else {
-                    _this.wrongUserAlert();
-                }
-            }, function (err) {
-                _this.connectionErr();
-            });
-        }
-        else {
-            this.emptyFields();
-        }
+        this.navCtrl.push('DashboardPage');
+        // if (this.nm && this.pwd) {
+        //   this.navCtrl.push('DashboardPage');
+        //   this.restSrv.login(this.nm, this.pwd).subscribe(res => {
+        //         if (res) {
+        //           if (!res['success']) {
+        //             this.wrongUserAlert();
+        //           } else {
+        //             this.navCtrl.push('DashboardPage');
+        //           }
+        //         } else {
+        //           this.wrongUserAlert();
+        //         }
+        //       },
+        //       err => {
+        //         this.connectionErr();
+        //       });
+        // } else {
+        //   this.emptyFields();
+        // }
     };
     // credential are wrong alert //
     LoginPage.prototype.wrongUserAlert = function () {
@@ -160,15 +158,15 @@ var map = {
 		3
 	],
 	"../pages/login/login.module": [
-		287,
+		285,
 		7
 	],
 	"../pages/register/register.module": [
-		285,
+		286,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		286,
+		287,
 		1
 	]
 };
@@ -250,9 +248,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -284,7 +282,7 @@ var AppModule = /** @class */ (function () {
 /**
  * Created by dilshan on 3/5/19.
  */
-var ENVURL = 'http://192.168.8.103:8080/';
+var ENVURL = 'http://13.58.81.91:8080/';
 //# sourceMappingURL=envVaribles.js.map
 
 /***/ }),
@@ -451,13 +449,25 @@ var RestcallProvider = /** @class */ (function () {
     };
     // loading history daily data //
     RestcallProvider.prototype.dailyHistorycalData = function (type) {
+        var _this = this;
         try {
-            var body = JSON.stringify({
-                'type': type
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'type': type
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
+                // url = url.replace('$data_type', dataType);
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
-            // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -481,10 +491,22 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load treatements //
     RestcallProvider.prototype.allTreatements = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -492,10 +514,22 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load beauticianse //
     RestcallProvider.prototype.allBeatucianse = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-beauticians';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-beauticians';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -526,13 +560,25 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load customer details using customer contact id //
     RestcallProvider.prototype.loadCustomer = function (customerId) {
+        var _this = this;
         try {
-            var body = JSON.stringify({
-                'customerContactNumber': customerId
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'customerContactNumber': customerId
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
+                // url = url.replace('$data_type', dataType);
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
-            // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -540,24 +586,48 @@ var RestcallProvider = /** @class */ (function () {
     };
     // get summary details //
     RestcallProvider.prototype.getSummary = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log(e);
         }
     };
     // search invoice history //
-    RestcallProvider.prototype.searchInvoiceHistory = function (invoiceId) {
+    RestcallProvider.prototype.searchInvoiceHistory = function (invoiceID) {
+        var _this = this;
         try {
-            var body = JSON.stringify({
-                'invoiceNumber': invoiceId
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'invoiceNumber': invoiceID
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/search-history';
+                // url = url.replace('$data_type', dataType);
+                return _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/search-history';
-            // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);

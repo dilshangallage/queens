@@ -23,6 +23,7 @@ export class TreatementPage {
   public invType: string;
 
   public beautiNm: string;
+  public buttonColor: any = 'active-btn-gren';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private toastCtrl: ToastController, private alrt: AlertController) {
     this.viewNm = this.navParams.get('viewNm');
@@ -37,8 +38,17 @@ export class TreatementPage {
   }
 
   // select beautician //
-  activeBtn(bt: string) {
+  activeBtn(bt: string, ind: number) {
     // this.beautiNm = nm;
+    if (this.beauticiansList.length > 0) {
+      this.beauticiansList.forEach((dt, index) => {
+        if (ind === index) {
+          dt['class'] = 'active-btn-gren';
+        } else {
+          dt['class'] = 'deactive-btn-gren';
+        }
+      });
+    }
     this.selectButician = bt;
   }
 
@@ -66,6 +76,11 @@ export class TreatementPage {
       if (res) {
         if (res['success']) {
           _self.beauticiansList = res['data'];
+          if (_self.beauticiansList.length > 0) {
+            _self.beauticiansList.forEach((dt, index) => {
+              dt['class'] = 'deactive-btn-gren';
+            });
+          }
         }
       }
     });

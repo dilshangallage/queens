@@ -32,11 +32,16 @@ export class DashboardPage {
     public salView: boolean;
     public brdView: boolean;
 
+    public saloonClz: any;
+    public bridalClz: any;
+
     public payemntInvoice: string = null;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alrt: AlertController) {
         this.slnPymnt = [];
         this.brdPymnt = [];
+        this.saloonClz = 'active-btn-gren';
+        this.bridalClz = 'active-btn-brwn';
         // this.salInvsCnt = 999;
         // this.brdInvsCnt = 0;
         // this.salDailyIncm = 0
@@ -60,12 +65,16 @@ export class DashboardPage {
     saloonDailyPymntHstry() {
         this.salView = true;
         this.brdView = false;
+        this.saloonClz = 'active-btn-gren';
+        this.bridalClz = 'active-btn-brwn';
     }
 
     // bridal payment history //
     bridalDailyPymntHstry() {
         this.salView = false;
         this.brdView = true;
+        this.saloonClz = 'active-btn-brwn';
+        this.bridalClz = 'active-btn-gren';
     }
 
     // new saloon job //

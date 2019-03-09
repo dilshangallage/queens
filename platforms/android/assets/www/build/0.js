@@ -16887,15 +16887,15 @@ var DashboardPage = /** @class */ (function () {
         this.navParams = navParams;
         this.restCall = restCall;
         this.alrt = alrt;
+        this.payemntInvoice = null;
         this.slnPymnt = [];
         this.brdPymnt = [];
-        this.payemntInvoice = null;
-        this.salInvsCnt = 999;
-        this.brdInvsCnt = 0;
-        this.salDailyIncm = 0;
-        this.salIncome = 'LKR ' + 0;
-        this.brdlDailyIncm = 0;
-        this.brdlIncome = 'LKR ' + 0;
+        // this.salInvsCnt = 999;
+        // this.brdInvsCnt = 0;
+        // this.salDailyIncm = 0
+        // this.salIncome = 'LKR ' + 0;
+        // this.brdlDailyIncm = 0
+        // this.brdlIncome = 'LKR ' + 0;
         this.crntDate = __WEBPACK_IMPORTED_MODULE_2_moment__().format("MMMM D");
         this.salView = true;
         this.brdView = false;
@@ -16904,7 +16904,7 @@ var DashboardPage = /** @class */ (function () {
         this.loadHistory('SA');
         console.log('constructor-call');
     }
-    DashboardPage.prototype.ionViewWillEnter = function () {
+    DashboardPage.prototype.ngOnInit = function () {
         console.log('ionViewDidLoad DashboardPage');
     };
     // saloon payment history //
@@ -16923,7 +16923,7 @@ var DashboardPage = /** @class */ (function () {
     };
     // new bridal job //
     DashboardPage.prototype.newBridalJob = function () {
-        this.navCtrl.push('CustomerinfoPage', { 'view': 'bridalView', 'type': 'BD' });
+        this.navCtrl.push('CustomerinfoPage', { 'view': 'bridalView', 'type': 'BD', 'invType': 'BD' });
     };
     // bank receipt page //
     DashboardPage.prototype.bankReceiptView = function () {
@@ -16953,42 +16953,49 @@ var DashboardPage = /** @class */ (function () {
     };
     // load history data //
     DashboardPage.prototype.loadHistory = function (type) {
-        console.log('load-history.....1');
-        this.restCall.dailyHistorycalData(type).subscribe(function (res) {
-            console.log('load-history.....2');
-            if (res['success']) {
-                console.log('load-history.....3');
-                if (type === 'BD') {
-                    console.log('load-history.....BD');
-                    this.brdPymnt = res['data'];
-                    console.log('type ', type, res['data']);
+        var _this = this;
+        try {
+            this.restCall.dailyHistorycalData(type).then(function (res) {
+                if (res['success']) {
+                    console.log('load-history.....3');
+                    if (type === 'BD') {
+                        console.log('load-history.....BD');
+                        _this.brdPymnt = res['data'];
+                        console.log('type ', type, res['data']);
+                    }
+                    else if (type === 'SA') {
+                        console.log('load-history.....SA');
+                        console.log('type ', type, res['data']);
+                        _this.slnPymnt = res['data'];
+                    }
                 }
-                else if (type === 'SA') {
-                    console.log('load-history.....SA');
-                    console.log('type ', type, res['data']);
-                    this.slnPymnt = res['data'];
-                }
-            }
-        });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
     };
     // load details daily summary //
     DashboardPage.prototype.loadSummary = function () {
+        var _this = this;
         console.log('load-summary.....1');
-        this.restCall.getSummary().subscribe(function (res) {
-            console.log('load-summary.....2');
+        this.restCall.getSummary().then(function (res) {
             if (res) {
                 console.log('load-summary.....3');
                 if (res['success']) {
                     console.log('load-summary.....4');
                     var d = res['data'];
-                    this.salIncome = d['saloonInvoices'];
-                    this.salDailyIncm = d['saloonDailyIncome'];
-                    this.brdlIncome = d['bridalInvoices'];
-                    this.brdlDailyIncm = d['bridalDailyIncome'];
+                    _this.salInvsCnt = d['saloonInvoices'];
+                    _this.salDailyIncm = d['saloonDailyIncome'];
+                    _this.salIncome = 'LKR ' + _this.salDailyIncm;
+                    _this.brdInvsCnt = d['bridalInvoices'];
+                    _this.brdlDailyIncm = d['bridalDailyIncome'];
+                    _this.brdlIncome = 'LKR ' + _this.brdlDailyIncm;
                 }
                 else {
                 }
-                this.navCtrl.push('page-dashboard');
             }
         });
     };
@@ -17325,7 +17332,7 @@ webpackContext.id = 420;
 /**
  * Created by dilshan on 3/8/19.
  */
-var DASHBOARDTEMPLATE = "\n<ion-header class=\"app-hdr\">\n  <ion-navbar>\n    <img src=\"assets/imgs/app-logo.png\" class=\"hdr-logo\">\n    <ion-buttons end>\n      <button ion-button class=\"menu-ioc\"><ion-icon name=\"menu\"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class=\"app-page-bg\">\n\n<ion-row class=\"search-fld\">\n    <input [(ngModel)]=\"payemntInvoice\" class=\"flx-1\" placeholder=\"Search Payments and Customers\"> <button ion-button (click)=\"searchRef(payemntInvoice)\"> <ion-icon name=\"search\"></ion-icon> </button>\n</ion-row>\n\n  <ion-row class=\"app-card-1 db-card\">\n    <ion-col no-padding>\n        <ion-row class=\"cd-uper-row\">\n          <ion-col col-6 class=\"sec-col\" (click)=\"newsaloonJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/salon%20invoice%20Icon.png\">\n            <div class=\"sec-hdr\">Saloon Invoices</div>\n            <div class=\"sec-vlue\">{{salInvsCnt}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sec-col\" (click)=\"newBridalJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/Bridel%20information%20icon.png\">\n            <div class=\"sec-hdr\">Bridal Invoices</div>\n            <div class=\"sec-vlue\">{{brdInvsCnt}}</div>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{salIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{brdlIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n        </ion-row>\n    </ion-col>\n  </ion-row>\n\n  <!-- <ion-row>\n    <button (click)=\"newJob()\" ion-button>New Job</button>\n  </ion-row> -->\n\n<!--   one button -->\n  <ion-row class=\"app-button-row\">\n    <button (click)=\"bankReceiptView()\" ion-button class=\"gren-btn app-button\">Add Bank Reciept</button>\n  </ion-row>\n\n  <!-- tab button 2 -->\n  <!-- <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" ion-button>Settle the Bill</button>\n      <button class=\"btn-rgt active-btn-gren\" ion-button>Pay Advance</button>\n  </ion-row> -->\n\n<!-- tab-button 1 -->\n  <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" (click)=\"saloonDailyPymntHstry()\" ion-button>Saloon Payments</button>\n      <button class=\"btn-rgt active-btn-brwn\" (click)=\"bridalDailyPymntHstry()\" ion-button>Bridal Payments</button>\n  </ion-row>\n\n<ion-row class=\"tab-sec-hdr\">\n  <img src=\"assets/imgs/payment%20icon.png\">\n  <div class=\"hdr flx-1\">Payment History</div>\n</ion-row>\n\n  <ion-grid *ngIf=\"salView\" class=\"tab-sec-cnt\">\n    \n    <ion-row *ngFor=\"let saloon of slnPymnt\" class=\"one-payment-rec\">\n      <div class=\"flx-1\">\n        <div class=\"flx-layout pers-info\">\n          <div class=\"flx-1\">{{saloon.customrtName}}</div>\n          <div>LKR{{saloon?.balance}}</div>\n        </div>\n        <div class=\"flx-layout bil-info\">\n          <div>{{saloon.invoiceNumber}}</div>\n          <div class=\"flx-1\">{{saloon.treatment}}</div>\n          <div>{{crntDate}}</div>\n        </div>\n      </div>\n      <div><ion-icon name=\"checkmark-circle\"></ion-icon></div>\n      <!-- <ion-row>\n        <ion-col>\n          {{saloon?.name}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invId}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.job}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.date}}\n        </ion-col>\n      </ion-row> -->\n    </ion-row>\n\n  </ion-grid>\n  \n   <ion-grid *ngIf=\"brdView\" class=\"tab-sec-cnt\">\n    <ion-card *ngFor=\"let saloon of brdPymnt\">\n      <ion-row>\n        <ion-col>\n          {{saloon?.customrtName}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invoiceNumber}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.treatment}}\n        </ion-col>\n        <ion-col>\n          {{crntDate}}\n        </ion-col>\n      </ion-row>\n    </ion-card>\n  </ion-grid>\n</ion-content>\n";
+var DASHBOARDTEMPLATE = "\n<ion-header class=\"app-hdr\">\n  <ion-navbar>\n    <img src=\"assets/imgs/app-logo.png\" class=\"hdr-logo\">\n    <ion-buttons end>\n      <button ion-button class=\"menu-ioc\"><ion-icon name=\"menu\"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class=\"app-page-bg\">\n\n<ion-row class=\"search-fld\">\n    <input [(ngModel)]=\"payemntInvoice\" class=\"flx-1\" placeholder=\"Search Payments and Customers\"> <button ion-button (click)=\"searchRef(payemntInvoice)\"> <ion-icon name=\"search\"></ion-icon> </button>\n</ion-row>\n\n  <ion-row class=\"app-card-1 db-card\">\n    <ion-col no-padding>\n        <ion-row class=\"cd-uper-row\">\n          <ion-col col-6 class=\"sec-col\" (click)=\"newsaloonJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/salon%20invoice%20Icon.png\">\n            <div class=\"sec-hdr\">Saloon Invoices</div>\n            <div class=\"sec-vlue\">{{salInvsCnt}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sec-col\" (click)=\"newBridalJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/Bridel%20information%20icon.png\">\n            <div class=\"sec-hdr\">Bridal Invoices</div>\n            <div class=\"sec-vlue\">{{brdInvsCnt}}</div>\n          </ion-col>\n        </ion-row>\n\n        <ion-row *ngIf=\"salIncome\">\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{salIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{brdlIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n        </ion-row>\n    </ion-col>\n  </ion-row>\n\n  <!-- <ion-row>\n    <button (click)=\"newJob()\" ion-button>New Job</button>\n  </ion-row> -->\n\n<!--   one button -->\n  <ion-row class=\"app-button-row\">\n    <button (click)=\"bankReceiptView()\" ion-button class=\"gren-btn app-button\">Add Bank Reciept</button>\n  </ion-row>\n\n  <!-- tab button 2 -->\n  <!-- <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" ion-button>Settle the Bill</button>\n      <button class=\"btn-rgt active-btn-gren\" ion-button>Pay Advance</button>\n  </ion-row> -->\n\n<!-- tab-button 1 -->\n  <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" (click)=\"saloonDailyPymntHstry()\" ion-button>Saloon Payments</button>\n      <button class=\"btn-rgt active-btn-brwn\" (click)=\"bridalDailyPymntHstry()\" ion-button>Bridal Payments</button>\n  </ion-row>\n\n<ion-row class=\"tab-sec-hdr\">\n  <img src=\"assets/imgs/payment%20icon.png\">\n  <div class=\"hdr flx-1\">Payment History</div>\n</ion-row>\n\n  <ion-grid *ngIf=\"salView\" class=\"tab-sec-cnt\">\n    <ion-row *ngFor=\"let saloon of slnPymnt\" class=\"one-payment-rec\">\n      <div class=\"flx-1\">\n        <div class=\"flx-layout pers-info\">\n          <div class=\"flx-1\">{{saloon.customrtName}}</div>\n          <div>LKR{{saloon.advance + saloon.balance}}</div>\n        </div>\n        <div class=\"flx-layout bil-info\">\n          <div>{{saloon.invoiceNumber}}</div>\n          <div class=\"flx-1\">{{saloon.treatment}}</div>\n          <div>{{crntDate}}</div>\n        </div>\n      </div>\n      <div><ion-icon name=\"checkmark-circle\"></ion-icon></div>\n      <!-- <ion-row>\n        <ion-col>\n          {{saloon?.name}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invId}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.job}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.date}}\n        </ion-col>\n      </ion-row> -->\n    </ion-row>\n\n  </ion-grid>\n  \n   <ion-grid *ngIf=\"brdView\" class=\"tab-sec-cnt\">\n    <ion-card *ngFor=\"let saloon of brdPymnt\">\n      <ion-row>\n        <ion-col>\n          {{saloon?.customrtName}}\n        </ion-col>\n        <ion-col>\n          {{saloon.advance + saloon.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invoiceNumber}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.treatment}}\n        </ion-col>\n        <ion-col>\n          {{crntDate}}\n        </ion-col>\n      </ion-row>\n    </ion-card>\n  </ion-grid>\n</ion-content>\n";
 //# sourceMappingURL=dashboardTemplate.js.map
 
 /***/ })

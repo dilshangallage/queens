@@ -67,8 +67,8 @@ export const DASHBOARDTEMPLATE = `
 
 <!-- tab-button 1 -->
   <ion-row class="tab-btn-row">
-      <button class="btn-lft active-btn-brwn" (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>
-      <button class="btn-rgt active-btn-brwn" (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>
+      <button class="btn-lft" [(ngClass)]="saloonClz" (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>
+      <button class="btn-rgt" [(ngClass)]="bridalClz" (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>
   </ion-row>
 
 <ion-row class="tab-sec-hdr">
@@ -81,7 +81,7 @@ export const DASHBOARDTEMPLATE = `
       <div class="flx-1">
         <div class="flx-layout pers-info">
           <div class="flx-1">{{saloon.customrtName}}</div>
-          <div>LKR{{saloon?.balance}}</div>
+          <div>LKR{{saloon.advance + saloon.balance}}</div>
         </div>
         <div class="flx-layout bil-info">
           <div>{{saloon.invoiceNumber}}</div>
@@ -120,7 +120,7 @@ export const DASHBOARDTEMPLATE = `
           {{saloon?.customrtName}}
         </ion-col>
         <ion-col>
-          {{saloon?.balance}}
+          {{saloon.advance + saloon.balance}}
         </ion-col>
       </ion-row>
       <ion-row>
@@ -137,4 +137,4 @@ export const DASHBOARDTEMPLATE = `
     </ion-card>
   </ion-grid>
 </ion-content>
-`
+`;

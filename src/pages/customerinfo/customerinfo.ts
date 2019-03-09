@@ -31,9 +31,9 @@ export class CustomerinfoPage {
   public eventDate: string = '';
   public beauticianId: number;
   public treatmentId: number;
-  public advance: number = 0;
-  public balance: number = 0;
-  public total: number = 0;
+  public advance: number;
+  public balance: number;
+  public total: number;
   public customerId: number = 0;
   public invType: string;
 
@@ -84,9 +84,10 @@ export class CustomerinfoPage {
     data['invoiceType'] = this.invType;
     data['customrtName'] = this.customerName;
     data['customrtMobile'] = this.customerContactNumber;
-    data['eventDateTime'] = new Date(this.eventDate).getTime();
+    data['eventDateTime'] = (this.invType === 'BD')? new Date(this.eventDate).getTime(): new Date().getMilliseconds();
     data['beautician'] = (this.invType === 'BD')? null: this.beautician.id;
     data['beautician'] = (this.invType === 'BD')? null: this.beautician.name;
+    data['treatment'] = (this.invType === 'BD')? null: this.treatement.description;
     data['treatmentId'] = (this.invType === 'BD')? 1000: this.treatement.id;
     data['advance'] = (this.invType === 'SA')? this.treatement.price: this.advance;
     data['balance'] = (this.invType === 'SA')? 0: this.balance;

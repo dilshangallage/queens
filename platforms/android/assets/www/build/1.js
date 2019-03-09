@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 286:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -86,60 +86,42 @@ var TreatementPage = /** @class */ (function () {
         // this.beautiNm = nm;
         this.selectButician = bt;
     };
-    // get all beatuticians //
-    TreatementPage.prototype.loadBeaticians = function () {
-        this.restCall.allBeatucianse().subscribe(function (res) {
-            console.log('load beauticians');
-        });
-    };
     // load next view //
     TreatementPage.prototype.nextView = function () {
         console.log('Beautician name', this.beautiNm);
-        // if (JSON.stringify(this.selectButician) !== '{}') {
-        this.selectButician['view'] = 'saloonView';
-        //   this.navCtrl.push('CustomerinfoPage',
-        //       {'data': {
-        //           'treatement': {
-        //               'title': 'Hair Cut - Baby Girl',
-        //               'cost': ' LKR 550.00',
-        //               'description': 'Hair wash blow dry'
-        //           },
-        //           'beautician': this.selectButician
-        //       }});
-        // } else
-        // {
-        //     this.emptyButicianse();
-        // }
-        this.navCtrl.push('CustomerinfoPage', { 'data': { 'treatement': {
-                    'title': 'Hair Cut - Baby Girl',
-                    'cost': ' LKR 550.00',
-                    'description': 'Hair wash blow dry'
-                },
-                'beautician': {
-                    'name': 'Amal'
-                } }, 'view': this.viewNm,
-            'invType': this.invType
-        });
+        if (JSON.stringify(this.selectButician) !== '{}') {
+            this.navCtrl.push('CustomerinfoPage', { 'data': {
+                    'treatement': this.selecttreatement,
+                    'beautician': this.selectButician,
+                }, 'view': this.viewNm,
+                'invType': this.invType
+            });
+        }
+        else {
+            this.emptyButicianse();
+        }
     };
     // load all beauticianse //
     TreatementPage.prototype.loadBeauticianse = function () {
-        this.restCall.allBeatucianse().subscribe(function (res) {
+        var _self = this;
+        this.restCall.allBeatucianse().then(function (res) {
             if (res) {
                 if (res['success']) {
-                    this.beauticiansList = res['data'];
+                    _self.beauticiansList = res['data'];
                 }
             }
         });
     };
     // load treatements //
     TreatementPage.prototype.loadTreatements = function () {
-        this.restCall.allTreatements().subscribe(function (res) {
+        var _self = this;
+        this.restCall.allTreatements().then(function (res) {
             if (res) {
                 if (res['success']) {
-                    this.treatementList = res['data'];
+                    _self.treatementList = res['data'];
                 }
                 else {
-                    this.presentToast(res['error']['errorMessage']);
+                    _self.presentToast(res['error']['errorMessage']);
                 }
             }
         });
@@ -163,9 +145,12 @@ var TreatementPage = /** @class */ (function () {
         });
         empty.present();
     };
+    TreatementPage.prototype.onChangeHandler = function (event) {
+        console.log(event);
+    };
     TreatementPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n<ion-grid>\n  \n  <div class="pg-cnt-hdr">SELECT TREATEMENT</div>\n\n  <ion-slides class="app-card-1 app-card-pad">\n    <ion-slide *ngFor="let slide of treatementList">\n        <ion-list radio-group [(ngModel)]="selecttreatement">\n          <ion-item *ngFor="let itm of slide.treatmentList" class="trt-row">\n            <ion-label>{{itm?.description}}</ion-label>\n            <ion-label>{{itm?.cost}}</ion-label>\n            <ion-radio value="itm?.description"></ion-radio>\n          </ion-item>\n        </ion-list>\n\n      <ion-row class="trt-type">\n        <ion-col no-padding>\n        {{slide.type}}\n        </ion-col>\n      </ion-row>\n\n    </ion-slide>\n  </ion-slides>\n\n  <ion-grid>\n    <div class="pg-cnt-hdr-2">SELECT BEAUTICIANS</div>\n    <ion-row class="slect-btn-set">\n      <ion-col *ngFor="let nms of beauticiansList">\n        <button ionic ion-button clear name="beautiNm" (click)="activeBtn(nms)">\n          {{nms?.name}}\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-grid>\n</ion-content>\n\n<ion-footer class="pg-btm-btn-foot">\n  <ion-row>\n    <ion-col>\n      <button ion-button (click)="nextView()" class="brwn-grd-btn">\n        NEXT\n      </button>\n    </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/treatement/treatement.html"*/,
+            selector: 'page-treatement',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/treatement/treatement.html"*/`<!--\n  Generated template for the TreatementPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n<ion-grid>\n  \n  <div class="pg-cnt-hdr">SELECT TREATEMENT</div>\n\n  <ion-slides class="app-card-1 app-card-pad">\n    <ion-slide *ngFor="let slide of treatementList">\n      <ion-row *ngFor="let itm of slide.treatmentList" class="trt-row">\n        <div><input type="radio" [value]="itm" [(ngModel)]="selecttreatement" name="treatement"></div>\n        <div class="flx-1 trt-info">\n          <div>{{itm.title}}</div>\n          <div class="discript">{{itm.description}}</div>\n        </div>\n        <div class="price">{{itm.price}}</div>\n      </ion-row>\n\n      <ion-row class="trt-type">\n        <ion-col no-padding>\n        {{slide.type}}\n        </ion-col>\n      </ion-row>\n\n    </ion-slide>\n  </ion-slides>\n\n  <ion-grid>\n    <div class="pg-cnt-hdr-2">SELECT BEAUTICIANS</div>\n    <ion-row class="slect-btn-set">\n      <ion-col *ngFor="let nms of beauticiansList">\n        <button ionic ion-button clear name="beautiNm" (click)="activeBtn(nms)">\n          {{nms?.name}}\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-grid>\n</ion-content>\n\n<ion-footer class="pg-btm-btn-foot">\n  <ion-row>\n    <ion-col>\n      <button ion-button (click)="nextView()" class="brwn-grd-btn">\n        NEXT\n      </button>\n    </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/treatement/treatement.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__["a" /* RestcallProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], TreatementPage);

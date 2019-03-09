@@ -21,13 +21,14 @@
 
   <ion-slides class="app-card-1 app-card-pad">
     <ion-slide *ngFor="let slide of treatementList">
-        <ion-list radio-group [(ngModel)]="selecttreatement" (ionChange)="onChangeHandler($event)">
-          <ion-item *ngFor="let itm of slide.treatmentList" class="trt-row">
-            <ion-label>{{itm?.description}}</ion-label>
-            <ion-label>{{itm?.price}}</ion-label>
-            <ion-radio [value]="itm"></ion-radio>
-          </ion-item>
-        </ion-list>
+      <ion-row *ngFor="let itm of slide.treatmentList" class="trt-row">
+        <div><input type="radio" [value]="itm" [(ngModel)]="selecttreatement" name="treatement"></div>
+        <div class="flx-1 trt-info">
+          <div>{{itm.title}}</div>
+          <div class="discript">{{itm.description}}</div>
+        </div>
+        <div class="price">LKR {{itm.price}}</div>
+      </ion-row>
 
       <ion-row class="trt-type">
         <ion-col no-padding>
@@ -41,8 +42,8 @@
   <ion-grid>
     <div class="pg-cnt-hdr-2">SELECT BEAUTICIANS</div>
     <ion-row class="slect-btn-set">
-      <ion-col *ngFor="let nms of beauticiansList">
-        <button ionic ion-button clear name="beautiNm" (click)="activeBtn(nms)">
+      <ion-col *ngFor="let nms of beauticiansList; let i = index">
+        <button ionic ion-button name="beautiNm" (click)="activeBtn(nms, i)" [ngClass]="nms.class">
           {{nms?.name}}
         </button>
       </ion-col>

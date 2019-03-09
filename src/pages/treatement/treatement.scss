@@ -288,4 +288,15 @@ page-treatement {
 		font-weight: bold;
 	}
 
+	.active-btn-gren{
+		background-color: #3ab54a !important;
+		color: #fff !important;
+	}
+
+	.deactive-btn-gren{
+	}
+
+	button-md:hover:not(.disable-hover) {
+		background-color:#3ab54a !important;
+	}
 }

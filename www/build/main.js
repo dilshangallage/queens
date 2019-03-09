@@ -162,11 +162,11 @@ var map = {
 		7
 	],
 	"../pages/register/register.module": [
-		286,
+		287,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		287,
+		286,
 		1
 	]
 };
@@ -249,8 +249,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
