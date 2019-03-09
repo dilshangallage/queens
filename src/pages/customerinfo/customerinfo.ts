@@ -31,13 +31,16 @@ export class CustomerinfoPage {
   public eventDate: string = '';
   public beauticianId: number;
   public treatmentId: number;
-  public advance: number;
-  public balance: number;
-  public total: number;
+  public advance: number = 0;
+  public balance: number = 0;
+  public total: number = 0;
+  public customerId: number = 0;
+  public invType: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
     this.selectedData = this.navParams.get('data');
     let viewName = this.navParams.get('view');
+    this.invType = this.navParams.get('invType');
     if (viewName && viewName === 'saloonView') {
       this.saloonView = true;
     } else if (viewName === 'bridalView') {
@@ -54,14 +57,6 @@ export class CustomerinfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CustomerinfoPage');
-    this.restCall.loadCustomer('0715260606').subscribe(function (res) {
-      console.log('++++++++++++++++++++++++');
-      console.log(res)
-    },
-    err => {
-      console.log('------------------');
-      console.log(err);
-    });
   }
 
   // settle bill //
@@ -78,7 +73,7 @@ export class CustomerinfoPage {
 
   // save customer details //
   saveCustomer(type: string, nm: string, contact: string, beautId: number, eventDt: string, customerId: number, treatId: number, advance: number, balance: number, total: number) {
-    this.restCall.saveCustomerDetails(type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total).subscribe(function (res) {
+    this.restCall.saveCustomerDetails(this.invType, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total).subscribe(function (res) {
       console.log('save custmer detailse');
     });
   }
@@ -86,17 +81,41 @@ export class CustomerinfoPage {
   // next view //
   nextView() {
     let data = new Object();
-    data['invoiceType'] = this.invoiceType;
-    data['customerName'] = this.customerName;
-    data['customerContactNumber'] = this.customerContactNumber;
-    data['eventDate'] = this.eventDate;
-    data['beauticianId'] = this.beauticianId;
-    data['treatmentId'] = this.treatmentId;
-    data['advance'] = this.advance;
-    data['balance'] = this.balance;
-    data['total'] = this.total;
-    data['advanceDate'] = new Date().getMilliseconds();
+    data['invoiceType'] = this.invType;
+    data['customrtName'] = this.customerName;
+    data['customrtMobile'] = this.customerContactNumber;
+    data['eventDateTime'] = new Date(this.eventDate).getTime();
+    data['beautician'] = (this.invType === 'BD')? null: this.beautician.id;
+    data['beautician'] = (this.invType === 'BD')? null: this.beautician.name;
+    data['treatmentId'] = (this.invType === 'BD')? 1000: this.treatement.id;
+    data['advance'] = (this.invType === 'SA')? this.treatement.price: this.advance;
+    data['balance'] = (this.invType === 'SA')? 0: this.balance;
+    data['total'] = (this.invType === 'SA')? this.treatement.price: this.total;
+    data['createdDateTime'] = new Date().getMilliseconds();
     this.navCtrl.push('InvoicePage', {'data': data});
+  }
+
+  // load customer details //
+  loadCustomerDetails() {
+    let _self = this;
+    this.restCall.loadCustomer(this.customerContactNumber).then(function (res) {
+      if (res['success']) {
+        if (res['data']) {
+          let d = res['data'];
+          _self.customerId = d['id'];
+          _self.customerName = d['customerName'];
+        } else {
+          _self.customerId = 0;
+          _self.customerName = '';
+        }
+      } else {
+        _self.customerId = 0;
+        _self.customerName = '';
+      }
+    }, err => {
+      _self.customerId = 0;
+      _self.customerName = '';
+    });
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController, AlertController} from 'ionic-angular';
 import {RestcallProvider} from '../../providers/restcall/restcall';
 
 /**
@@ -17,72 +17,16 @@ import {RestcallProvider} from '../../providers/restcall/restcall';
 export class TreatementPage {
   public treatementList: any;
   public beauticiansList: any;
+  public selecttreatement: any;
+  public selectButician: any = {};
+  public viewNm: string;
+  public invType: string;
 
   public beautiNm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private toastCtrl: ToastController) {
-    this.treatementList = [
-      {
-        'type': 'Hair Cut',
-        'data': [
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 321.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          }
-        ]
-      },
-      {
-        'type': 'Hair Color',
-        'data': [
-          {
-            'title': 'Hair Color - Baby Girl',
-            'cost': ' LKR 1300.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 321.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          },
-          {
-            'title': 'Hair Cut - Baby Girl',
-            'cost': ' LKR 550.00',
-            'description': 'Hair wash blow dry'
-          }
-        ]
-      }
-    ];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private toastCtrl: ToastController, private alrt: AlertController) {
+    this.viewNm = this.navParams.get('viewNm');
+    this.invType = this.navParams.get('type');
     this.loadBeauticianse();
     this.loadTreatements();
   }
@@ -93,38 +37,35 @@ export class TreatementPage {
   }
 
   // select beautician //
-  activeBtn() {
+  activeBtn(bt: string) {
     // this.beautiNm = nm;
-  }
-
-  // get all beatuticians //
-  loadBeaticians() {
-    this.restCall.allBeatucianse().subscribe(function (res) {
-      console.log('load beauticians');
-    });
+    this.selectButician = bt;
   }
 
   // load next view //
   nextView() {
     console.log('Beautician name', this.beautiNm);
-    this.navCtrl.push('CustomerinfoPage',
-      {'data':
-          {'treatement': {
-          'title': 'Hair Cut - Baby Girl',
-          'cost': ' LKR 550.00',
-          'description': 'Hair wash blow dry'
-        },
-            'beautician': {
-          'name': 'Amal'
-        }}, 'view' : 'saloonView'});
+    if (JSON.stringify(this.selectButician) !== '{}') {
+      this.navCtrl.push('CustomerinfoPage',
+          {'data': {
+              'treatement': this.selecttreatement,
+              'beautician': this.selectButician,
+          }, 'view': this.viewNm,
+            'invType': this.invType
+          });
+    } else
+    {
+        this.emptyButicianse();
+    }
   }
 
   // load all beauticianse //
   loadBeauticianse() {
-    this.restCall.allBeatucianse().subscribe(function (res) {
+    let _self = this;
+    this.restCall.allBeatucianse().then(function (res) {
       if (res) {
         if (res['success']) {
-          this.beauticiansList = res['data'];
+          _self.beauticiansList = res['data'];
         }
       }
     });
@@ -132,12 +73,13 @@ export class TreatementPage {
 
   // load treatements //
   loadTreatements() {
-    this.restCall.allTreatements().subscribe(function (res) {
+    let _self = this;
+    this.restCall.allTreatements().then(function (res) {
       if (res) {
         if (res['success']) {
-          let d = res['data'];
+          _self.treatementList = res['data'];
         } else {
-          this.presentToast(res['error']['errorMessage']);
+          _self.presentToast(res['error']['errorMessage']);
         }
       }
     });
@@ -154,6 +96,21 @@ export class TreatementPage {
 
     });
     tst.present();
+  }
+
+  // select buticiance are empty //
+  emptyButicianse() {
+        let empty = this.alrt.create(
+            {
+              title: 'Error',
+              subTitle: 'Please select a beauticiance'
+            }
+        );
+    empty.present();
+  }
+
+  onChangeHandler(event) {
+    console.log(event);
   }
 
 }

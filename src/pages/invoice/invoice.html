@@ -31,17 +31,17 @@
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l1-txt">{{pageView?.createdDateTime |  date:'MMM d, y, h:mm:ss a'}}</div>
           <div class="l2-txt">Advance invoice date and time</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt gren-txt">21.12.2018  3:20PM</div>
+          <div class="l1-txt gren-txt">{{pageView?.eventDateTime |  date:'MMM d, y, h:mm:ss a'}}</div>
           <div class="l2-txt ">Event date and time</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l1-txt">{{pageView?.beautician}}</div>
           <div class="l2-txt">Beautician</div>
         </div>
 
@@ -59,18 +59,18 @@
         <div class="flx-1">
         
         <div class="cust-info-trt">
-          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l1-txt">{{pageView?.treatment}}</div>
           <div class="l2-txt">Hair wash blow dry</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
-          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+          <div class="l2-txt">Customer : <b>{{pageView?.customrtName}}</b></div>
+          <div class="l2-txt">Mobile : <b>{{pageView?.customrtMobile}}</b></div>
         </div>
       </div>
 
       <div class="l1-txt">
-        LKR 2500.00
+        LKR {{pageView?.advance + pageView?.balance}}
       </div>
       </ion-row>
       </ion-col>
@@ -79,19 +79,19 @@
       <ion-row class="marg-b-10">
         <div class="flx-1"></div>
         <div class="l2-txt">ADVANCE</div>
-        <div class="l1-txt gray-txt">LKR 1500.00</div>
+        <div class="l1-txt gray-txt">LKR {{pageView?.advance}}</div>
       </ion-row>
 
       <ion-row class="marg-b-10">
         <div class="flx-1"></div>
         <div class="l2-txt">BALANCE</div>
-        <div class="l1-txt gray-txt">LKR 1000.00</div>
+        <div class="l1-txt gray-txt">LKR {{pageView?.balance}}</div>
       </ion-row>
 
       <ion-row class="marg-b-10">
         <div class="flx-1"></div>
         <div class="l2-txt">TOTAL AMOUNT</div>
-        <div class="l-txt">LKR 2500.00</div>
+        <div class="l-txt">LKR {{pageView?.advance + pageView?.balance}}</div>
       </ion-row>
       </ion-col>
 
@@ -356,17 +356,17 @@
       <div class="flx-1">
 
         <div class="cust-info-trt">
-          <div class="brwn-txt">QBR_00000771#</div>
+          <div class="brwn-txt">{{invoiceID}}</div>
           <div class="l2-txt">Invoice ID</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt">28.11.2018  3:20PM</div>
+          <div class="l1-txt">{{pageView?.createdDateTime |  date:'MMM d, y, h:mm:ss a'}}</div>
           <div class="l2-txt">Invoice date and time</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l1-txt">{{pageView?.beautician}}</div>
           <div class="l2-txt">Beautician</div>
         </div>
 
@@ -385,13 +385,13 @@
         <div class="flx-1">
         
         <div class="cust-info-trt">
-          <div class="l1-txt">Hair Cut Baby Girl</div>
+          <div class="l1-txt">{{pageView?.treatment}}</div>
           <div class="l2-txt">Hair wash blow dry</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l2-txt">Customer : <b>Dhanushka Balasuriya</b></div>
-          <div class="l2-txt">Mobile : <b>071 225 2258</b></div>
+          <div class="l2-txt">Customer : <b>{{pageView?.customrtName}}</b></div>
+          <div class="l2-txt">Mobile : <b>{{pageView?.customrtMobile}}</b></div>
         </div>
       </div>
 
@@ -405,7 +405,7 @@
       <ion-row class="marg-b-10">
         <div class="flx-1"></div>
         <div class="l2-txt">TOTAL AMOUNT</div>
-        <div class="l-txt">LKR 2500.00</div>
+        <div class="l-txt">LKR {{pageView?.advance + pageView?.balance}}</div>
       </ion-row>
       </ion-col>
 

@@ -20,15 +20,19 @@ export class InvoicePage {
   public pageView: any;
 
   public invoiceType: string = '';
+  public beautician: string = '';
+  public treatment: string = '';
   public customerName: string = '';
   public customerContactNumber: string = '';
   public eventDate: string = '';
-  public advanceDate: string = '';
+  public createdDateTime: string = '';
   public beauticianId: number;
   public treatmentId: number;
   public advance: number;
   public balance: number;
   public total: number;
+
+  public invoiceID: any;
 
   public customerId: number = 1;
 
@@ -37,14 +41,16 @@ export class InvoicePage {
     if (this.pageView) {
     this.invoiceType =this.pageView['invoiceType'];
     this.customerName =this.pageView['customerName'];
-    this.customerContactNumber =this.pageView['customerContactNumber'];
+    this.beautician =this.pageView['beautician'];
+    this.treatment =this.pageView['treatment'];
+    this.customerContactNumber =this.pageView['customrtMobile'];
     this.eventDate =this.pageView['eventDate'];
     this.beauticianId =this.pageView['beauticianId'];
     this.treatmentId =this.pageView['treatmentId'];
     this.advance =this.pageView['advance'];
     this.balance =this.pageView['balance'];
     this.total =this.pageView['total'];
-    this.advanceDate =this.pageView['advanceDate'];
+    this.createdDateTime =this.pageView['createdDateTime'];
     }
   }
 
@@ -55,8 +61,6 @@ export class InvoicePage {
   // submit the data in to backend //
   submit() {
     this.submitInvoice();
-    this.invoiceView = false;
-    this.successView = true;
   }
 
   // close invoice view //
@@ -66,16 +70,19 @@ export class InvoicePage {
 
   // submit invoice //
   submitInvoice() {
-    this.restCall.saveCustomerDetails(this.invoiceType, this.customerName, this.customerContactNumber, this.beauticianId,
-        this.eventDate, this.customerId, this.treatmentId, this.advance, this.balance,  this.total).subscribe(function (res) {
-          if (res['success']) {
-
-          } else {
-            this.submitAlert();
-          }
+    let _self = this;
+    this.restCall.saveCustomerDetails(this.pageView.invoiceType, this.pageView.customrtName, this.pageView.customrtMobile, 1,
+        this.pageView.eventDateTime, 0, this.pageView.treatmentId, this.pageView.advance, this.pageView.balance,  this.pageView.advance + this.pageView.balance).subscribe(function (res) {
+      if (res['success']) {
+        _self.invoiceID = res['data']['invoiceId'];
+        _self.invoiceView = false;
+        _self.successView = true;
+      } else {
+        _self.submitAlert();
+      }
       console.log('save custmer detailse');
     }, err => {
-          this.networkErr();
+      _self.networkErr();
     });
   }
 

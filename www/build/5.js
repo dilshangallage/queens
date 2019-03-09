@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerinfoPageModule", function() { return CustomerinfoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customerinfo__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customerinfo__ = __webpack_require__(417);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var CustomerinfoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 416:
+/***/ 417:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75,8 +75,13 @@ var CustomerinfoPage = /** @class */ (function () {
         this.customerName = '';
         this.customerContactNumber = '';
         this.eventDate = '';
+        this.advance = 0;
+        this.balance = 0;
+        this.total = 0;
+        this.customerId = 0;
         this.selectedData = this.navParams.get('data');
         var viewName = this.navParams.get('view');
+        this.invType = this.navParams.get('invType');
         if (viewName && viewName === 'saloonView') {
             this.saloonView = true;
         }
@@ -92,13 +97,6 @@ var CustomerinfoPage = /** @class */ (function () {
     }
     CustomerinfoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CustomerinfoPage');
-        this.restCall.loadCustomer('0715260606').subscribe(function (res) {
-            console.log('++++++++++++++++++++++++');
-            console.log(res);
-        }, function (err) {
-            console.log('------------------');
-            console.log(err);
-        });
     };
     // settle bill //
     CustomerinfoPage.prototype.settleBill = function () {
@@ -112,28 +110,53 @@ var CustomerinfoPage = /** @class */ (function () {
     };
     // save customer details //
     CustomerinfoPage.prototype.saveCustomer = function (type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total) {
-        this.restCall.saveCustomerDetails(type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total).subscribe(function (res) {
+        this.restCall.saveCustomerDetails(this.invType, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total).subscribe(function (res) {
             console.log('save custmer detailse');
         });
     };
     // next view //
     CustomerinfoPage.prototype.nextView = function () {
         var data = new Object();
-        data['invoiceType'] = this.invoiceType;
-        data['customerName'] = this.customerName;
-        data['customerContactNumber'] = this.customerContactNumber;
-        data['eventDate'] = this.eventDate;
-        data['beauticianId'] = this.beauticianId;
-        data['treatmentId'] = this.treatmentId;
-        data['advance'] = this.advance;
-        data['balance'] = this.balance;
-        data['total'] = this.total;
-        data['advanceDate'] = new Date().getMilliseconds();
+        data['invoiceType'] = this.invType;
+        data['customrtName'] = this.customerName;
+        data['customrtMobile'] = this.customerContactNumber;
+        data['eventDateTime'] = new Date(this.eventDate).getTime();
+        data['beautician'] = (this.invType === 'BD') ? null : this.beautician.id;
+        data['beautician'] = (this.invType === 'BD') ? null : this.beautician.name;
+        data['treatmentId'] = (this.invType === 'BD') ? 1000 : this.treatement.id;
+        data['advance'] = (this.invType === 'SA') ? this.treatement.price : this.advance;
+        data['balance'] = (this.invType === 'SA') ? 0 : this.balance;
+        data['total'] = (this.invType === 'SA') ? this.treatement.price : this.total;
+        data['createdDateTime'] = new Date().getMilliseconds();
         this.navCtrl.push('InvoicePage', { 'data': data });
+    };
+    // load customer details //
+    CustomerinfoPage.prototype.loadCustomerDetails = function () {
+        var _self = this;
+        this.restCall.loadCustomer(this.customerContactNumber).then(function (res) {
+            if (res['success']) {
+                if (res['data']) {
+                    var d = res['data'];
+                    _self.customerId = d['id'];
+                    _self.customerName = d['customerName'];
+                }
+                else {
+                    _self.customerId = 0;
+                    _self.customerName = '';
+                }
+            }
+            else {
+                _self.customerId = 0;
+                _self.customerName = '';
+            }
+        }, function (err) {
+            _self.customerId = 0;
+            _self.customerName = '';
+        });
     };
     CustomerinfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-customerinfo',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/`<!--\n  Generated template for the CustomerinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n  \n  <!-- customer details for saloon job-->\n  <ion-grid *ngIf="saloonView">\n    \n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n    \n    <ion-row class="app-card-1 bacic-app-card">\n      <div class="flx-1">\n        \n        <div class="cust-info-trt">\n          <div class="l1-txt">Hair Cut Baby Girl</div>\n          <div class="l2-txt">Hair wash blow dry</div>\n        </div>\n\n        <div class="cust-info-trt">\n          <div class="l1-txt">Ashani Gunathilaka</div>\n          <div class="l2-txt">Beautician</div>\n        </div>\n      </div>\n\n      <div class="l1-txt">\n        LKR 1500\n      </div>\n    </ion-row>\n\n    \n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n\n\n    <ion-row class="app-form-inpt-row">\n      <input (ng-model)="customerContactNumber" placeholder="Contact number">\n    </ion-row>\n\n    <ion-row class="app-form-inpt-row">\n      <input (ng-model)="customerName" placeholder="Coustommer name">\n    </ion-row>\n\n    <div class="pg-cnt-hdr">PAYMENT OPTION</div>\n\n    <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>\n  </ion-row>\n\n    <ion-row *ngIf="sttlBll" class="app-pay-opt">\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n    <ion-row *ngIf="payAdvnc" class="app-pay-opt">\n\n    <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <input (ng-model)="advance" placeholder="Advance Amount">\n      </ion-col>\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <!-- customer details for saloon job-->\n\n\n  <!-- customer details for bridal job-->\n  <ion-grid *ngIf="bridalView">\n\n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n\n    <ion-row class="app-form-inpt-row">\n      <input (ng-model)="customerName" placeholder="Coustommer name">\n    </ion-row>\n\n    <ion-row class="app-form-inpt-row">\n      <input (ng-model)="customerContactNumber" placeholder="Contact number">\n    </ion-row>\n\n    <ion-col no-padding col-12 class="app-form-inpt-row">\n        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>\n    </ion-col>\n\n    <ion-col no-padding col-12 class="app-form-inpt-row">\n        <input (ng-model)="total" placeholder="Amount">\n      </ion-col>\n\n    <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>\n\n    <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>\n  </ion-row>\n\n    <ion-row *ngIf="sttlBll" class="app-pay-opt">\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n    <ion-row *ngIf="payAdvnc" class="app-pay-opt">\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <input (ng-model)="advance" placeholder="Advance Amount">\n      </ion-col>\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <!-- customer details for bridal job-->\n\n  </ion-content>\n\n<ion-footer class="pg-btm-btn-foot">\n  <ion-row>\n    <ion-col>\n      <button ion-button (click)="nextView()" class="brwn-grd-btn">\n        NEXT\n      </button>\n    </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/,
+            selector: 'page-customerinfo',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/`<!--\n  Generated template for the CustomerinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n\n  <!-- customer details for saloon job-->\n  <ion-grid *ngIf="saloonView">\n\n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n\n    <ion-row class="app-card-1 bacic-app-card">\n      <div class="flx-1">\n\n        <div class="cust-info-trt">\n          <div class="l1-txt">{{treatement?.typeDescription}}</div>\n          <div class="l2-txt">{{treatement?.description}}</div>\n        </div>\n\n        <div class="cust-info-trt">\n          <div class="l1-txt">{{beautician?.name}}</div>\n          <div class="l2-txt">Beautician</div>\n        </div>\n      </div>\n\n      <div class="l1-txt">\n        LKR {{treatement?.price}}\n      </div>\n    </ion-row>\n\n\n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n\n\n    <ion-row class="app-form-inpt-row">\n      <input (blur)="loadCustomerDetails()"  [(ngModel)]="customerContactNumber" placeholder="Contact number">\n    </ion-row>\n\n    <ion-row class="app-form-inpt-row">\n      <input [(ngModel)]="customerName" placeholder="Coustommer name">\n    </ion-row>\n\n    <div class="pg-cnt-hdr">PAYMENT OPTION</div>\n\n    <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>\n  </ion-row>\n\n    <ion-row *ngIf="sttlBll" class="app-pay-opt">\n        <ion-col no-padding>\n            <ion-row class="pay-opt-row">\n                <div><input name="payment" type="radio" value="cardPayment" checked></div>\n                <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n            </ion-row>\n        </ion-col>\n\n        <ion-col no-padding>\n            <ion-row class="pay-opt-row">\n                <div><input name="payment" type="radio" value="cashPayment"></div>\n                <div class="opt-txt">Pay by Cash</div>\n            </ion-row>\n        </ion-col>\n    </ion-row>\n\n    <ion-row *ngIf="payAdvnc" class="app-pay-opt">\n\n    <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <input [(ngModel)]="advance" placeholder="Advance Amount">\n      </ion-col>\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input name="payment" type="radio" value="cardPayment" checked></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input name="payment" type="radio" value="cashPayment"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <!-- customer details for saloon job-->\n\n\n  <!-- customer details for bridal job-->\n  <ion-grid *ngIf="bridalView">\n\n    <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>\n\n      <ion-row class="app-form-inpt-row">\n          <input (blur)="loadCustomerDetails()" [(ngModel)]="customerContactNumber" placeholder="Contact number">\n      </ion-row>\n\n    <ion-row class="app-form-inpt-row">\n      <input [(ngModel)]="customerName" placeholder="Coustommer name">\n    </ion-row>\n\n    <ion-col no-padding col-12 class="app-form-inpt-row">\n        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>\n    </ion-col>\n\n    <ion-col no-padding col-12 class="app-form-inpt-row">\n        <input [(ngModel)]="total" placeholder="Amount">\n      </ion-col>\n\n    <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>\n\n    <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>\n  </ion-row>\n\n    <ion-row *ngIf="sttlBll" class="app-pay-opt">\n        <ion-col no-padding>\n            <ion-row class="pay-opt-row">\n                <div><input name="payment" type="radio" value="cardPayment" checked></div>\n                <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n            </ion-row>\n        </ion-col>\n\n        <ion-col no-padding>\n            <ion-row class="pay-opt-row">\n                <div><input name="payment" type="radio" value="cashPayment"></div>\n                <div class="opt-txt">Pay by Cash</div>\n            </ion-row>\n        </ion-col>\n    </ion-row>\n\n    <ion-row *ngIf="payAdvnc" class="app-pay-opt">\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <input [(ngModel)]="advance" placeholder="Advance Amount">\n      </ion-col>\n\n      <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">\n        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="flx-1"><img src="assets/imgs/visa.png"></div>\n        </ion-row>\n      </ion-col>\n\n      <ion-col no-padding>\n        <ion-row class="pay-opt-row">\n          <div><input type="radio"></div>\n          <div class="opt-txt">Pay by Cash</div>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <!-- customer details for bridal job-->\n\n  </ion-content>\n\n<ion-footer class="pg-btm-btn-foot">\n  <ion-row>\n    <ion-col>\n      <button ion-button (click)="nextView()" class="brwn-grd-btn">\n        NEXT\n      </button>\n    </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/customerinfo/customerinfo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__["a" /* RestcallProvider */]])
     ], CustomerinfoPage);

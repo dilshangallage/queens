@@ -15,41 +15,41 @@
 
 
 <ion-content padding class="app-page-bg">
-  
+
   <!-- customer details for saloon job-->
   <ion-grid *ngIf="saloonView">
-    
+
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
-    
+
     <ion-row class="app-card-1 bacic-app-card">
       <div class="flx-1">
-        
+
         <div class="cust-info-trt">
-          <div class="l1-txt">Hair Cut Baby Girl</div>
-          <div class="l2-txt">Hair wash blow dry</div>
+          <div class="l1-txt">{{treatement?.typeDescription}}</div>
+          <div class="l2-txt">{{treatement?.description}}</div>
         </div>
 
         <div class="cust-info-trt">
-          <div class="l1-txt">Ashani Gunathilaka</div>
+          <div class="l1-txt">{{beautician?.name}}</div>
           <div class="l2-txt">Beautician</div>
         </div>
       </div>
 
       <div class="l1-txt">
-        LKR 1500
+        LKR {{treatement?.price}}
       </div>
     </ion-row>
 
-    
+
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
 
 
     <ion-row class="app-form-inpt-row">
-      <input (ng-model)="customerContactNumber" placeholder="Contact number">
+      <input (blur)="loadCustomerDetails()"  [(ngModel)]="customerContactNumber" placeholder="Contact number">
     </ion-row>
 
     <ion-row class="app-form-inpt-row">
-      <input (ng-model)="customerName" placeholder="Coustommer name">
+      <input [(ngModel)]="customerName" placeholder="Coustommer name">
     </ion-row>
 
     <div class="pg-cnt-hdr">PAYMENT OPTION</div>
@@ -60,41 +60,41 @@
   </ion-row>
 
     <ion-row *ngIf="sttlBll" class="app-pay-opt">
-      <ion-col no-padding>
-        <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
-          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
-        </ion-row>
-      </ion-col>
+        <ion-col no-padding>
+            <ion-row class="pay-opt-row">
+                <div><input name="payment" type="radio" value="cardPayment" checked></div>
+                <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+            </ion-row>
+        </ion-col>
 
-      <ion-col no-padding>
-        <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
-          <div class="opt-txt">Pay by Cash</div>
-        </ion-row>
-      </ion-col>
+        <ion-col no-padding>
+            <ion-row class="pay-opt-row">
+                <div><input name="payment" type="radio" value="cashPayment"></div>
+                <div class="opt-txt">Pay by Cash</div>
+            </ion-row>
+        </ion-col>
     </ion-row>
 
     <ion-row *ngIf="payAdvnc" class="app-pay-opt">
 
     <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <input (ng-model)="advance" placeholder="Advance Amount">
+        <input [(ngModel)]="advance" placeholder="Advance Amount">
       </ion-col>
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
+        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>
       </ion-col>
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
+          <div><input name="payment" type="radio" value="cardPayment" checked></div>
           <div class="flx-1"><img src="assets/imgs/visa.png"></div>
         </ion-row>
       </ion-col>
 
       <ion-col no-padding>
         <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
+          <div><input name="payment" type="radio" value="cashPayment"></div>
           <div class="opt-txt">Pay by Cash</div>
         </ion-row>
       </ion-col>
@@ -109,20 +109,20 @@
 
     <div class="pg-cnt-hdr">CUSTOMER INFORMATION</div>
 
-    <ion-row class="app-form-inpt-row">
-      <input (ng-model)="customerName" placeholder="Coustommer name">
-    </ion-row>
+      <ion-row class="app-form-inpt-row">
+          <input (blur)="loadCustomerDetails()" [(ngModel)]="customerContactNumber" placeholder="Contact number">
+      </ion-row>
 
     <ion-row class="app-form-inpt-row">
-      <input (ng-model)="customerContactNumber" placeholder="Contact number">
+      <input [(ngModel)]="customerName" placeholder="Coustommer name">
     </ion-row>
 
     <ion-col no-padding col-12 class="app-form-inpt-row">
-        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
+        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>
     </ion-col>
 
     <ion-col no-padding col-12 class="app-form-inpt-row">
-        <input (ng-model)="total" placeholder="Amount">
+        <input [(ngModel)]="total" placeholder="Amount">
       </ion-col>
 
     <div class="pg-cnt-hdr marg-top-24">PAYMENT OPTION</div>
@@ -133,29 +133,29 @@
   </ion-row>
 
     <ion-row *ngIf="sttlBll" class="app-pay-opt">
-      <ion-col no-padding>
-        <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
-          <div class="flx-1"><img src="assets/imgs/visa.png"></div>
-        </ion-row>
-      </ion-col>
+        <ion-col no-padding>
+            <ion-row class="pay-opt-row">
+                <div><input name="payment" type="radio" value="cardPayment" checked></div>
+                <div class="flx-1"><img src="assets/imgs/visa.png"></div>
+            </ion-row>
+        </ion-col>
 
-      <ion-col no-padding>
-        <ion-row class="pay-opt-row">
-          <div><input type="radio"></div>
-          <div class="opt-txt">Pay by Cash</div>
-        </ion-row>
-      </ion-col>
+        <ion-col no-padding>
+            <ion-row class="pay-opt-row">
+                <div><input name="payment" type="radio" value="cashPayment"></div>
+                <div class="opt-txt">Pay by Cash</div>
+            </ion-row>
+        </ion-col>
     </ion-row>
 
     <ion-row *ngIf="payAdvnc" class="app-pay-opt">
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <input (ng-model)="advance" placeholder="Advance Amount">
+        <input [(ngModel)]="advance" placeholder="Advance Amount">
       </ion-col>
 
       <ion-col no-padding col-12 class="app-form-inpt-row pay-dadv-input">
-        <ion-datetime (ng-model)="eventDate" placeholder="Event Date"></ion-datetime>
+        <ion-datetime [(ngModel)]="eventDate" placeholder="Event Date"></ion-datetime>
       </ion-col>
 
       <ion-col no-padding>

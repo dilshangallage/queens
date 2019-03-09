@@ -1,5 +1,5 @@
-webpackJsonp([0],Array(281).concat([
-/* 281 */
+webpackJsonp([0],Array(282).concat([
+/* 282 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7,7 +7,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(417);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(418);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,12 +36,12 @@ var DashboardPageModule = /** @class */ (function () {
 //# sourceMappingURL=dashboard.module.js.map
 
 /***/ }),
-/* 282 */,
 /* 283 */,
 /* 284 */,
 /* 285 */,
 /* 286 */,
-/* 287 */
+/* 287 */,
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var require;//! moment.js
@@ -1896,7 +1896,7 @@ var DashboardPageModule = /** @class */ (function () {
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(419)("./" + name);
+                __webpack_require__(420)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4647,16 +4647,16 @@ var DashboardPageModule = /** @class */ (function () {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(418)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(419)(module)))
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -4727,13 +4727,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -4866,13 +4866,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -4929,13 +4929,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -4992,13 +4992,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5118,13 +5118,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5181,13 +5181,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5289,13 +5289,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5352,13 +5352,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5461,13 +5461,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5597,13 +5597,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5691,13 +5691,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5753,13 +5753,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5876,13 +5876,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -5999,13 +5999,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6111,13 +6111,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6266,13 +6266,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6358,13 +6358,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6534,13 +6534,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6601,13 +6601,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6685,13 +6685,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6749,13 +6749,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6829,13 +6829,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6909,13 +6909,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -6989,13 +6989,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7092,13 +7092,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7196,13 +7196,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7267,13 +7267,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7338,13 +7338,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7405,13 +7405,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7476,13 +7476,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7547,13 +7547,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7613,13 +7613,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7684,13 +7684,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7759,13 +7759,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7855,13 +7855,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -7951,13 +7951,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8047,13 +8047,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8131,13 +8131,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8201,13 +8201,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8311,13 +8311,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8424,13 +8424,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8488,13 +8488,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8575,13 +8575,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8653,13 +8653,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8735,13 +8735,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8814,13 +8814,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8895,13 +8895,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -8975,13 +8975,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9056,13 +9056,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9183,13 +9183,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9311,13 +9311,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9412,13 +9412,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9540,13 +9540,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9698,13 +9698,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9812,13 +9812,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9911,13 +9911,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -9997,13 +9997,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10133,13 +10133,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10206,13 +10206,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10279,13 +10279,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10375,13 +10375,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10461,13 +10461,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10554,13 +10554,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10645,13 +10645,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10759,13 +10759,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10889,13 +10889,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -10974,13 +10974,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11097,13 +11097,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11188,13 +11188,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11328,13 +11328,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11402,13 +11402,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11524,13 +11524,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11625,13 +11625,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11741,13 +11741,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11809,13 +11809,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11903,13 +11903,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -11988,13 +11988,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12096,13 +12096,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12260,13 +12260,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12346,13 +12346,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12432,13 +12432,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12496,13 +12496,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12593,13 +12593,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12659,13 +12659,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12786,13 +12786,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12877,13 +12877,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -12968,13 +12968,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13032,13 +13032,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13160,13 +13160,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13290,13 +13290,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13359,13 +13359,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13424,13 +13424,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13503,13 +13503,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13689,13 +13689,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13791,13 +13791,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13855,13 +13855,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -13930,13 +13930,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14090,13 +14090,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14267,13 +14267,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14339,13 +14339,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14454,13 +14454,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14569,13 +14569,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14661,13 +14661,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14734,13 +14734,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14797,13 +14797,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -14930,13 +14930,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15023,13 +15023,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15094,13 +15094,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15214,13 +15214,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15285,13 +15285,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15351,13 +15351,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15477,12 +15477,12 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15575,13 +15575,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15670,13 +15670,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15732,13 +15732,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15794,13 +15794,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -15917,13 +15917,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16075,13 +16075,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16177,13 +16177,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16239,13 +16239,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16301,13 +16301,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16384,13 +16384,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16456,13 +16456,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16520,13 +16520,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16634,13 +16634,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16741,13 +16741,13 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__(287)) :
+    true ? factory(__webpack_require__(288)) :
    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
    factory(global.moment)
 }(this, (function (moment) { 'use strict';
@@ -16848,18 +16848,19 @@ var DashboardPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 415 */,
 /* 416 */,
-/* 417 */
+/* 417 */,
+/* 418 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_restcall_restcall__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboardTemplate__ = __webpack_require__(421);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16873,6 +16874,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the DashboardPage page.
  *
@@ -16880,70 +16882,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var DashboardPage = /** @class */ (function () {
-    function DashboardPage(navCtrl, navParams, restCall) {
+    function DashboardPage(navCtrl, navParams, restCall, alrt) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.restCall = restCall;
-        this.payemntInvoice = '';
-        this.salInvsCnt = 0;
-        this.brdInvsCnt = 0;
-        this.salDailyIncm = 0;
-        this.salIncome = 'LKR ' + 0;
-        this.brdlDailyIncm = 0;
-        this.brdlIncome = 'LKR ' + 0;
+        this.alrt = alrt;
+        this.payemntInvoice = null;
+        this.slnPymnt = [];
+        this.brdPymnt = [];
+        // this.salInvsCnt = 999;
+        // this.brdInvsCnt = 0;
+        // this.salDailyIncm = 0
+        // this.salIncome = 'LKR ' + 0;
+        // this.brdlDailyIncm = 0
+        // this.brdlIncome = 'LKR ' + 0;
         this.crntDate = __WEBPACK_IMPORTED_MODULE_2_moment__().format("MMMM D");
-        this.slnPymnt = [{
-                'name': 'Gayani Maddawaththa',
-                'balance': 'LKR 1250.00',
-                'invId': 'INV#11587',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 7'
-            },
-            {
-                'name': 'Ama; Perera',
-                'balance': 'LKR 6670.00',
-                'invId': 'INV#11887',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 8'
-            },
-            {
-                'name': 'Saman Lenin',
-                'balance': 'LKR 3350.00',
-                'invId': 'INV#11507',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 4'
-            }
-        ];
-        this.brdPymnt = [{
-                'name': 'ddddd Maddawaththa',
-                'balance': 'LKR 1250.00',
-                'invId': 'INV#11587',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 7'
-            },
-            {
-                'name': 'fffff Perera',
-                'balance': 'LKR 6670.00',
-                'invId': 'INV#11887',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 8'
-            },
-            {
-                'name': 'vvvvv Lenin',
-                'balance': 'LKR 3350.00',
-                'invId': 'INV#11507',
-                'job': 'Hair remove/Hair cut',
-                'date': 'November 4'
-            }
-        ];
         this.salView = true;
         this.brdView = false;
-    }
-    DashboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DashboardPage');
         this.loadSummary();
         this.loadHistory('BD');
         this.loadHistory('SA');
+        console.log('constructor-call');
+    }
+    DashboardPage.prototype.ngOnInit = function () {
+        console.log('ionViewDidLoad DashboardPage');
     };
     // saloon payment history //
     DashboardPage.prototype.saloonDailyPymntHstry = function () {
@@ -16957,11 +16919,11 @@ var DashboardPage = /** @class */ (function () {
     };
     // new saloon job //
     DashboardPage.prototype.newsaloonJob = function () {
-        this.navCtrl.push('TreatementPage');
+        this.navCtrl.push('TreatementPage', { 'viewNm': 'saloonView', 'type': 'SA' });
     };
     // new bridal job //
     DashboardPage.prototype.newBridalJob = function () {
-        this.navCtrl.push('CustomerinfoPage', { 'view': 'bridalView' });
+        this.navCtrl.push('CustomerinfoPage', { 'view': 'bridalView', 'type': 'BD', 'invType': 'BD' });
     };
     // bank receipt page //
     DashboardPage.prototype.bankReceiptView = function () {
@@ -16970,7 +16932,12 @@ var DashboardPage = /** @class */ (function () {
     };
     // search receipt details by ref id //
     DashboardPage.prototype.searchRef = function (invoice) {
-        this.navCtrl.push('InvoicesettlePage', { 'conf': invoice });
+        if (this.payemntInvoice) {
+            this.navCtrl.push('InvoicesettlePage', { 'conf': invoice });
+        }
+        else {
+            this.emptySearchField();
+        }
     };
     // load daily invoices counts and amounts //
     DashboardPage.prototype.loadDailyInvoices = function () {
@@ -16986,38 +16953,66 @@ var DashboardPage = /** @class */ (function () {
     };
     // load history data //
     DashboardPage.prototype.loadHistory = function (type) {
-        this.restCall.dailyHistorycalData(type).subscribe(function (res) {
-            if (res['success']) {
-                if (type === 'BD') {
-                    this.brdPymnt = res['data'];
+        var _this = this;
+        try {
+            this.restCall.dailyHistorycalData(type).then(function (res) {
+                if (res['success']) {
+                    console.log('load-history.....3');
+                    if (type === 'BD') {
+                        console.log('load-history.....BD');
+                        _this.brdPymnt = res['data'];
+                        console.log('type ', type, res['data']);
+                    }
+                    else if (type === 'SA') {
+                        console.log('load-history.....SA');
+                        console.log('type ', type, res['data']);
+                        _this.slnPymnt = res['data'];
+                    }
                 }
-                else if (type === 'SA') {
-                    this.slnPymnt = res['data'];
-                }
-            }
-        });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
     };
     // load details daily summary //
     DashboardPage.prototype.loadSummary = function () {
-        this.restCall.getSummary().subscribe(function (res) {
+        var _this = this;
+        console.log('load-summary.....1');
+        this.restCall.getSummary().then(function (res) {
             if (res) {
+                console.log('load-summary.....3');
                 if (res['success']) {
+                    console.log('load-summary.....4');
                     var d = res['data'];
-                    this.salIncome = d['saloonInvoices'];
-                    this.salDailyIncm = d['saloonDailyIncome'];
-                    this.brdlIncome = d['bridalInvoices'];
-                    this.brdlDailyIncm = d['bridalDailyIncome'];
+                    _this.salInvsCnt = d['saloonInvoices'];
+                    _this.salDailyIncm = d['saloonDailyIncome'];
+                    _this.salIncome = 'LKR ' + _this.salDailyIncm;
+                    _this.brdInvsCnt = d['bridalInvoices'];
+                    _this.brdlDailyIncm = d['bridalDailyIncome'];
+                    _this.brdlIncome = 'LKR ' + _this.brdlDailyIncm;
                 }
                 else {
                 }
             }
         });
     };
+    // empty customer field //
+    DashboardPage.prototype.emptySearchField = function () {
+        var emp = this.alrt.create({
+            title: 'Error',
+            subTitle: 'Please fill the field'
+        });
+        emp.present();
+    };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/dashboard/dashboard.html"*/`<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="app-hdr">\n  <ion-navbar>\n    <img src="assets/imgs/app-logo.png" class="hdr-logo">\n    <ion-buttons end>\n      <button ion-button class="menu-ioc"><ion-icon name="menu"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="app-page-bg">\n\n<ion-row class="search-fld">\n    <input (ng-model)="payemntInvoice" class="flx-1" placeholder="Search Payments and Customers"> <button ion-button (click)="searchRef(payemntInvoice)"> <ion-icon name="search"></ion-icon> </button>\n</ion-row>\n\n  <ion-row class="app-card-1 db-card">\n    <ion-col no-padding>\n        <ion-row class="cd-uper-row">\n          <ion-col col-6 class="sec-col" (click)="newsaloonJob()">\n            <img class="sec-img" src="assets/imgs/salon%20invoice%20Icon.png">\n            <div class="sec-hdr">Saloon Invoices</div>\n            <div class="sec-vlue">{{salInvsCnt}}</div>\n          </ion-col>\n\n          <ion-col col-6 class="sec-col" (click)="newBridalJob()">\n            <img class="sec-img" src="assets/imgs/Bridel%20information%20icon.png">\n            <div class="sec-hdr">Bridal Invoices</div>\n            <div class="sec-vlue">{{brdInvsCnt}}</div>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-6 class="sub-sec">\n            <div class="hdr">Daily Income</div>\n            <div class="inc-valu">{{salIncome}}</div>\n            <div class="date">{{crntDate}}</div>\n          </ion-col>\n\n          <ion-col col-6 class="sub-sec">\n            <div class="hdr">Daily Income</div>\n            <div class="inc-valu">{{brdlIncome}}</div>\n            <div class="date">{{crntDate}}</div>\n          </ion-col>\n        </ion-row>\n    </ion-col>\n  </ion-row>\n\n  <!-- <ion-row>\n    <button (click)="newJob()" ion-button>New Job</button>\n  </ion-row> -->\n\n<!--   one button -->\n  <ion-row class="app-button-row">\n    <button (click)="bankReceiptView()" ion-button class="gren-btn app-button">Add Bank Reciept</button>\n  </ion-row>\n\n  <!-- tab button 2 -->\n  <!-- <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" ion-button>Settle the Bill</button>\n      <button class="btn-rgt active-btn-gren" ion-button>Pay Advance</button>\n  </ion-row> -->\n\n<!-- tab-button 1 -->\n  <ion-row class="tab-btn-row">\n      <button class="btn-lft active-btn-brwn" (click)="saloonDailyPymntHstry()" ion-button>Saloon Payments</button>\n      <button class="btn-rgt active-btn-brwn" (click)="bridalDailyPymntHstry()" ion-button>Bridal Payments</button>\n  </ion-row>\n\n<ion-row class="tab-sec-hdr">\n  <img src="assets/imgs/payment%20icon.png">\n  <div class="hdr flx-1">Payment History</div>\n</ion-row>\n\n  <ion-grid *ngIf="salView" class="tab-sec-cnt">\n    \n    <ion-row *ngFor="let saloon of slnPymnt" class="one-payment-rec">\n      <div class="flx-1">\n        <div class="flx-layout pers-info">\n          <div class="flx-1">{{saloon?.name}}</div>\n          <div>{{saloon?.balance}}</div>\n        </div>\n        <div class="flx-layout bil-info">\n          <div>{{saloon?.invId}}</div>\n          <div class="flx-1">{{saloon?.job}}</div>\n          <div>{{saloon?.date}}</div>\n        </div>\n      </div>\n      <div><ion-icon name="checkmark-circle"></ion-icon></div>\n      <!-- <ion-row>\n        <ion-col>\n          {{saloon?.name}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invId}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.job}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.date}}\n        </ion-col>\n      </ion-row> -->\n    </ion-row>\n\n  </ion-grid>\n  \n   <ion-grid *ngIf="brdView" class="tab-sec-cnt">\n    <ion-card *ngFor="let saloon of brdPymnt">\n      <ion-row>\n        <ion-col>\n          {{saloon?.name}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invId}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.job}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.date}}\n        </ion-col>\n      </ion-row>\n    </ion-card>\n  </ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-dashboard',
+            template: __WEBPACK_IMPORTED_MODULE_4__dashboardTemplate__["a" /* DASHBOARDTEMPLATE */]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_restcall_restcall__["a" /* RestcallProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_restcall_restcall__["a" /* RestcallProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], DashboardPage);
     return DashboardPage;
 }());
@@ -17025,7 +17020,7 @@ var DashboardPage = /** @class */ (function () {
 //# sourceMappingURL=dashboard.js.map
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17053,264 +17048,264 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 288,
-	"./af.js": 288,
-	"./ar": 289,
-	"./ar-dz": 290,
-	"./ar-dz.js": 290,
-	"./ar-kw": 291,
-	"./ar-kw.js": 291,
-	"./ar-ly": 292,
-	"./ar-ly.js": 292,
-	"./ar-ma": 293,
-	"./ar-ma.js": 293,
-	"./ar-sa": 294,
-	"./ar-sa.js": 294,
-	"./ar-tn": 295,
-	"./ar-tn.js": 295,
-	"./ar.js": 289,
-	"./az": 296,
-	"./az.js": 296,
-	"./be": 297,
-	"./be.js": 297,
-	"./bg": 298,
-	"./bg.js": 298,
-	"./bm": 299,
-	"./bm.js": 299,
-	"./bn": 300,
-	"./bn.js": 300,
-	"./bo": 301,
-	"./bo.js": 301,
-	"./br": 302,
-	"./br.js": 302,
-	"./bs": 303,
-	"./bs.js": 303,
-	"./ca": 304,
-	"./ca.js": 304,
-	"./cs": 305,
-	"./cs.js": 305,
-	"./cv": 306,
-	"./cv.js": 306,
-	"./cy": 307,
-	"./cy.js": 307,
-	"./da": 308,
-	"./da.js": 308,
-	"./de": 309,
-	"./de-at": 310,
-	"./de-at.js": 310,
-	"./de-ch": 311,
-	"./de-ch.js": 311,
-	"./de.js": 309,
-	"./dv": 312,
-	"./dv.js": 312,
-	"./el": 313,
-	"./el.js": 313,
-	"./en-SG": 314,
-	"./en-SG.js": 314,
-	"./en-au": 315,
-	"./en-au.js": 315,
-	"./en-ca": 316,
-	"./en-ca.js": 316,
-	"./en-gb": 317,
-	"./en-gb.js": 317,
-	"./en-ie": 318,
-	"./en-ie.js": 318,
-	"./en-il": 319,
-	"./en-il.js": 319,
-	"./en-nz": 320,
-	"./en-nz.js": 320,
-	"./eo": 321,
-	"./eo.js": 321,
-	"./es": 322,
-	"./es-do": 323,
-	"./es-do.js": 323,
-	"./es-us": 324,
-	"./es-us.js": 324,
-	"./es.js": 322,
-	"./et": 325,
-	"./et.js": 325,
-	"./eu": 326,
-	"./eu.js": 326,
-	"./fa": 327,
-	"./fa.js": 327,
-	"./fi": 328,
-	"./fi.js": 328,
-	"./fo": 329,
-	"./fo.js": 329,
-	"./fr": 330,
-	"./fr-ca": 331,
-	"./fr-ca.js": 331,
-	"./fr-ch": 332,
-	"./fr-ch.js": 332,
-	"./fr.js": 330,
-	"./fy": 333,
-	"./fy.js": 333,
-	"./ga": 334,
-	"./ga.js": 334,
-	"./gd": 335,
-	"./gd.js": 335,
-	"./gl": 336,
-	"./gl.js": 336,
-	"./gom-latn": 337,
-	"./gom-latn.js": 337,
-	"./gu": 338,
-	"./gu.js": 338,
-	"./he": 339,
-	"./he.js": 339,
-	"./hi": 340,
-	"./hi.js": 340,
-	"./hr": 341,
-	"./hr.js": 341,
-	"./hu": 342,
-	"./hu.js": 342,
-	"./hy-am": 343,
-	"./hy-am.js": 343,
-	"./id": 344,
-	"./id.js": 344,
-	"./is": 345,
-	"./is.js": 345,
-	"./it": 346,
-	"./it-ch": 347,
-	"./it-ch.js": 347,
-	"./it.js": 346,
-	"./ja": 348,
-	"./ja.js": 348,
-	"./jv": 349,
-	"./jv.js": 349,
-	"./ka": 350,
-	"./ka.js": 350,
-	"./kk": 351,
-	"./kk.js": 351,
-	"./km": 352,
-	"./km.js": 352,
-	"./kn": 353,
-	"./kn.js": 353,
-	"./ko": 354,
-	"./ko.js": 354,
-	"./ku": 355,
-	"./ku.js": 355,
-	"./ky": 356,
-	"./ky.js": 356,
-	"./lb": 357,
-	"./lb.js": 357,
-	"./lo": 358,
-	"./lo.js": 358,
-	"./lt": 359,
-	"./lt.js": 359,
-	"./lv": 360,
-	"./lv.js": 360,
-	"./me": 361,
-	"./me.js": 361,
-	"./mi": 362,
-	"./mi.js": 362,
-	"./mk": 363,
-	"./mk.js": 363,
-	"./ml": 364,
-	"./ml.js": 364,
-	"./mn": 365,
-	"./mn.js": 365,
-	"./mr": 366,
-	"./mr.js": 366,
-	"./ms": 367,
-	"./ms-my": 368,
-	"./ms-my.js": 368,
-	"./ms.js": 367,
-	"./mt": 369,
-	"./mt.js": 369,
-	"./my": 370,
-	"./my.js": 370,
-	"./nb": 371,
-	"./nb.js": 371,
-	"./ne": 372,
-	"./ne.js": 372,
-	"./nl": 373,
-	"./nl-be": 374,
-	"./nl-be.js": 374,
-	"./nl.js": 373,
-	"./nn": 375,
-	"./nn.js": 375,
-	"./pa-in": 376,
-	"./pa-in.js": 376,
-	"./pl": 377,
-	"./pl.js": 377,
-	"./pt": 378,
-	"./pt-br": 379,
-	"./pt-br.js": 379,
-	"./pt.js": 378,
-	"./ro": 380,
-	"./ro.js": 380,
-	"./ru": 381,
-	"./ru.js": 381,
-	"./sd": 382,
-	"./sd.js": 382,
-	"./se": 383,
-	"./se.js": 383,
-	"./si": 384,
-	"./si.js": 384,
-	"./sk": 385,
-	"./sk.js": 385,
-	"./sl": 386,
-	"./sl.js": 386,
-	"./sq": 387,
-	"./sq.js": 387,
-	"./sr": 388,
-	"./sr-cyrl": 389,
-	"./sr-cyrl.js": 389,
-	"./sr.js": 388,
-	"./ss": 390,
-	"./ss.js": 390,
-	"./sv": 391,
-	"./sv.js": 391,
-	"./sw": 392,
-	"./sw.js": 392,
-	"./ta": 393,
-	"./ta.js": 393,
-	"./te": 394,
-	"./te.js": 394,
-	"./tet": 395,
-	"./tet.js": 395,
-	"./tg": 396,
-	"./tg.js": 396,
-	"./th": 397,
-	"./th.js": 397,
-	"./tl-ph": 398,
-	"./tl-ph.js": 398,
-	"./tlh": 399,
-	"./tlh.js": 399,
-	"./tr": 400,
-	"./tr.js": 400,
-	"./tzl": 401,
-	"./tzl.js": 401,
-	"./tzm": 402,
-	"./tzm-latn": 403,
-	"./tzm-latn.js": 403,
-	"./tzm.js": 402,
-	"./ug-cn": 404,
-	"./ug-cn.js": 404,
-	"./uk": 405,
-	"./uk.js": 405,
-	"./ur": 406,
-	"./ur.js": 406,
-	"./uz": 407,
-	"./uz-latn": 408,
-	"./uz-latn.js": 408,
-	"./uz.js": 407,
-	"./vi": 409,
-	"./vi.js": 409,
-	"./x-pseudo": 410,
-	"./x-pseudo.js": 410,
-	"./yo": 411,
-	"./yo.js": 411,
-	"./zh-cn": 412,
-	"./zh-cn.js": 412,
-	"./zh-hk": 413,
-	"./zh-hk.js": 413,
-	"./zh-tw": 414,
-	"./zh-tw.js": 414
+	"./af": 289,
+	"./af.js": 289,
+	"./ar": 290,
+	"./ar-dz": 291,
+	"./ar-dz.js": 291,
+	"./ar-kw": 292,
+	"./ar-kw.js": 292,
+	"./ar-ly": 293,
+	"./ar-ly.js": 293,
+	"./ar-ma": 294,
+	"./ar-ma.js": 294,
+	"./ar-sa": 295,
+	"./ar-sa.js": 295,
+	"./ar-tn": 296,
+	"./ar-tn.js": 296,
+	"./ar.js": 290,
+	"./az": 297,
+	"./az.js": 297,
+	"./be": 298,
+	"./be.js": 298,
+	"./bg": 299,
+	"./bg.js": 299,
+	"./bm": 300,
+	"./bm.js": 300,
+	"./bn": 301,
+	"./bn.js": 301,
+	"./bo": 302,
+	"./bo.js": 302,
+	"./br": 303,
+	"./br.js": 303,
+	"./bs": 304,
+	"./bs.js": 304,
+	"./ca": 305,
+	"./ca.js": 305,
+	"./cs": 306,
+	"./cs.js": 306,
+	"./cv": 307,
+	"./cv.js": 307,
+	"./cy": 308,
+	"./cy.js": 308,
+	"./da": 309,
+	"./da.js": 309,
+	"./de": 310,
+	"./de-at": 311,
+	"./de-at.js": 311,
+	"./de-ch": 312,
+	"./de-ch.js": 312,
+	"./de.js": 310,
+	"./dv": 313,
+	"./dv.js": 313,
+	"./el": 314,
+	"./el.js": 314,
+	"./en-SG": 315,
+	"./en-SG.js": 315,
+	"./en-au": 316,
+	"./en-au.js": 316,
+	"./en-ca": 317,
+	"./en-ca.js": 317,
+	"./en-gb": 318,
+	"./en-gb.js": 318,
+	"./en-ie": 319,
+	"./en-ie.js": 319,
+	"./en-il": 320,
+	"./en-il.js": 320,
+	"./en-nz": 321,
+	"./en-nz.js": 321,
+	"./eo": 322,
+	"./eo.js": 322,
+	"./es": 323,
+	"./es-do": 324,
+	"./es-do.js": 324,
+	"./es-us": 325,
+	"./es-us.js": 325,
+	"./es.js": 323,
+	"./et": 326,
+	"./et.js": 326,
+	"./eu": 327,
+	"./eu.js": 327,
+	"./fa": 328,
+	"./fa.js": 328,
+	"./fi": 329,
+	"./fi.js": 329,
+	"./fo": 330,
+	"./fo.js": 330,
+	"./fr": 331,
+	"./fr-ca": 332,
+	"./fr-ca.js": 332,
+	"./fr-ch": 333,
+	"./fr-ch.js": 333,
+	"./fr.js": 331,
+	"./fy": 334,
+	"./fy.js": 334,
+	"./ga": 335,
+	"./ga.js": 335,
+	"./gd": 336,
+	"./gd.js": 336,
+	"./gl": 337,
+	"./gl.js": 337,
+	"./gom-latn": 338,
+	"./gom-latn.js": 338,
+	"./gu": 339,
+	"./gu.js": 339,
+	"./he": 340,
+	"./he.js": 340,
+	"./hi": 341,
+	"./hi.js": 341,
+	"./hr": 342,
+	"./hr.js": 342,
+	"./hu": 343,
+	"./hu.js": 343,
+	"./hy-am": 344,
+	"./hy-am.js": 344,
+	"./id": 345,
+	"./id.js": 345,
+	"./is": 346,
+	"./is.js": 346,
+	"./it": 347,
+	"./it-ch": 348,
+	"./it-ch.js": 348,
+	"./it.js": 347,
+	"./ja": 349,
+	"./ja.js": 349,
+	"./jv": 350,
+	"./jv.js": 350,
+	"./ka": 351,
+	"./ka.js": 351,
+	"./kk": 352,
+	"./kk.js": 352,
+	"./km": 353,
+	"./km.js": 353,
+	"./kn": 354,
+	"./kn.js": 354,
+	"./ko": 355,
+	"./ko.js": 355,
+	"./ku": 356,
+	"./ku.js": 356,
+	"./ky": 357,
+	"./ky.js": 357,
+	"./lb": 358,
+	"./lb.js": 358,
+	"./lo": 359,
+	"./lo.js": 359,
+	"./lt": 360,
+	"./lt.js": 360,
+	"./lv": 361,
+	"./lv.js": 361,
+	"./me": 362,
+	"./me.js": 362,
+	"./mi": 363,
+	"./mi.js": 363,
+	"./mk": 364,
+	"./mk.js": 364,
+	"./ml": 365,
+	"./ml.js": 365,
+	"./mn": 366,
+	"./mn.js": 366,
+	"./mr": 367,
+	"./mr.js": 367,
+	"./ms": 368,
+	"./ms-my": 369,
+	"./ms-my.js": 369,
+	"./ms.js": 368,
+	"./mt": 370,
+	"./mt.js": 370,
+	"./my": 371,
+	"./my.js": 371,
+	"./nb": 372,
+	"./nb.js": 372,
+	"./ne": 373,
+	"./ne.js": 373,
+	"./nl": 374,
+	"./nl-be": 375,
+	"./nl-be.js": 375,
+	"./nl.js": 374,
+	"./nn": 376,
+	"./nn.js": 376,
+	"./pa-in": 377,
+	"./pa-in.js": 377,
+	"./pl": 378,
+	"./pl.js": 378,
+	"./pt": 379,
+	"./pt-br": 380,
+	"./pt-br.js": 380,
+	"./pt.js": 379,
+	"./ro": 381,
+	"./ro.js": 381,
+	"./ru": 382,
+	"./ru.js": 382,
+	"./sd": 383,
+	"./sd.js": 383,
+	"./se": 384,
+	"./se.js": 384,
+	"./si": 385,
+	"./si.js": 385,
+	"./sk": 386,
+	"./sk.js": 386,
+	"./sl": 387,
+	"./sl.js": 387,
+	"./sq": 388,
+	"./sq.js": 388,
+	"./sr": 389,
+	"./sr-cyrl": 390,
+	"./sr-cyrl.js": 390,
+	"./sr.js": 389,
+	"./ss": 391,
+	"./ss.js": 391,
+	"./sv": 392,
+	"./sv.js": 392,
+	"./sw": 393,
+	"./sw.js": 393,
+	"./ta": 394,
+	"./ta.js": 394,
+	"./te": 395,
+	"./te.js": 395,
+	"./tet": 396,
+	"./tet.js": 396,
+	"./tg": 397,
+	"./tg.js": 397,
+	"./th": 398,
+	"./th.js": 398,
+	"./tl-ph": 399,
+	"./tl-ph.js": 399,
+	"./tlh": 400,
+	"./tlh.js": 400,
+	"./tr": 401,
+	"./tr.js": 401,
+	"./tzl": 402,
+	"./tzl.js": 402,
+	"./tzm": 403,
+	"./tzm-latn": 404,
+	"./tzm-latn.js": 404,
+	"./tzm.js": 403,
+	"./ug-cn": 405,
+	"./ug-cn.js": 405,
+	"./uk": 406,
+	"./uk.js": 406,
+	"./ur": 407,
+	"./ur.js": 407,
+	"./uz": 408,
+	"./uz-latn": 409,
+	"./uz-latn.js": 409,
+	"./uz.js": 408,
+	"./vi": 410,
+	"./vi.js": 410,
+	"./x-pseudo": 411,
+	"./x-pseudo.js": 411,
+	"./yo": 412,
+	"./yo.js": 412,
+	"./zh-cn": 413,
+	"./zh-cn.js": 413,
+	"./zh-hk": 414,
+	"./zh-hk.js": 414,
+	"./zh-tw": 415,
+	"./zh-tw.js": 415
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -17326,7 +17321,19 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 419;
+webpackContext.id = 420;
+
+/***/ }),
+/* 421 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DASHBOARDTEMPLATE; });
+/**
+ * Created by dilshan on 3/8/19.
+ */
+var DASHBOARDTEMPLATE = "\n<ion-header class=\"app-hdr\">\n  <ion-navbar>\n    <img src=\"assets/imgs/app-logo.png\" class=\"hdr-logo\">\n    <ion-buttons end>\n      <button ion-button class=\"menu-ioc\"><ion-icon name=\"menu\"></ion-icon></button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class=\"app-page-bg\">\n\n<ion-row class=\"search-fld\">\n    <input [(ngModel)]=\"payemntInvoice\" class=\"flx-1\" placeholder=\"Search Payments and Customers\"> <button ion-button (click)=\"searchRef(payemntInvoice)\"> <ion-icon name=\"search\"></ion-icon> </button>\n</ion-row>\n\n  <ion-row class=\"app-card-1 db-card\">\n    <ion-col no-padding>\n        <ion-row class=\"cd-uper-row\">\n          <ion-col col-6 class=\"sec-col\" (click)=\"newsaloonJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/salon%20invoice%20Icon.png\">\n            <div class=\"sec-hdr\">Saloon Invoices</div>\n            <div class=\"sec-vlue\">{{salInvsCnt}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sec-col\" (click)=\"newBridalJob()\">\n            <img class=\"sec-img\" src=\"assets/imgs/Bridel%20information%20icon.png\">\n            <div class=\"sec-hdr\">Bridal Invoices</div>\n            <div class=\"sec-vlue\">{{brdInvsCnt}}</div>\n          </ion-col>\n        </ion-row>\n\n        <ion-row *ngIf=\"salIncome\">\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{salIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n\n          <ion-col col-6 class=\"sub-sec\">\n            <div class=\"hdr\">Daily Income</div>\n            <div class=\"inc-valu\">{{brdlIncome}}</div>\n            <div class=\"date\">{{crntDate}}</div>\n          </ion-col>\n        </ion-row>\n    </ion-col>\n  </ion-row>\n\n  <!-- <ion-row>\n    <button (click)=\"newJob()\" ion-button>New Job</button>\n  </ion-row> -->\n\n<!--   one button -->\n  <ion-row class=\"app-button-row\">\n    <button (click)=\"bankReceiptView()\" ion-button class=\"gren-btn app-button\">Add Bank Reciept</button>\n  </ion-row>\n\n  <!-- tab button 2 -->\n  <!-- <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" ion-button>Settle the Bill</button>\n      <button class=\"btn-rgt active-btn-gren\" ion-button>Pay Advance</button>\n  </ion-row> -->\n\n<!-- tab-button 1 -->\n  <ion-row class=\"tab-btn-row\">\n      <button class=\"btn-lft active-btn-brwn\" (click)=\"saloonDailyPymntHstry()\" ion-button>Saloon Payments</button>\n      <button class=\"btn-rgt active-btn-brwn\" (click)=\"bridalDailyPymntHstry()\" ion-button>Bridal Payments</button>\n  </ion-row>\n\n<ion-row class=\"tab-sec-hdr\">\n  <img src=\"assets/imgs/payment%20icon.png\">\n  <div class=\"hdr flx-1\">Payment History</div>\n</ion-row>\n\n  <ion-grid *ngIf=\"salView\" class=\"tab-sec-cnt\">\n    <ion-row *ngFor=\"let saloon of slnPymnt\" class=\"one-payment-rec\">\n      <div class=\"flx-1\">\n        <div class=\"flx-layout pers-info\">\n          <div class=\"flx-1\">{{saloon.customrtName}}</div>\n          <div>LKR{{saloon?.balance}}</div>\n        </div>\n        <div class=\"flx-layout bil-info\">\n          <div>{{saloon.invoiceNumber}}</div>\n          <div class=\"flx-1\">{{saloon.treatment}}</div>\n          <div>{{crntDate}}</div>\n        </div>\n      </div>\n      <div><ion-icon name=\"checkmark-circle\"></ion-icon></div>\n      <!-- <ion-row>\n        <ion-col>\n          {{saloon?.name}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invId}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.job}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.date}}\n        </ion-col>\n      </ion-row> -->\n    </ion-row>\n\n  </ion-grid>\n  \n   <ion-grid *ngIf=\"brdView\" class=\"tab-sec-cnt\">\n    <ion-card *ngFor=\"let saloon of brdPymnt\">\n      <ion-row>\n        <ion-col>\n          {{saloon?.customrtName}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.balance}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          {{saloon?.invoiceNumber}}\n        </ion-col>\n        <ion-col>\n          {{saloon?.treatment}}\n        </ion-col>\n        <ion-col>\n          {{crntDate}}\n        </ion-col>\n      </ion-row>\n    </ion-card>\n  </ion-grid>\n</ion-content>\n";
+//# sourceMappingURL=dashboardTemplate.js.map
 
 /***/ })
 ]));

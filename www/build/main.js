@@ -8,6 +8,7 @@ webpackJsonp([8],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loginTemplate__ = __webpack_require__(253);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -17,6 +18,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -33,29 +35,34 @@ var LoginPage = /** @class */ (function () {
         this.restSrv = restSrv;
         this.alrtCtrl = alrtCtrl;
         this.toastCtrl = toastCtrl;
+        this.nm = null;
+        this.pwd = null;
     }
     LoginPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoginPage');
     };
     // login for main dashboard //
-    LoginPage.prototype.loginClick = function (unm, pwd) {
-        var _this = this;
+    LoginPage.prototype.loginClick = function () {
         this.navCtrl.push('DashboardPage');
-        this.restSrv.login(unm, pwd).subscribe(function (res) {
-            if (res) {
-                console.log('response', res);
-                // if (res['success']) {
-                //   this.navCtrl.push('DashboardPage');
-                // } else {
-                //   this.wrongUserAlert();
-                // }
-            }
-            else {
-                _this.wrongUserAlert();
-            }
-        }, function (err) {
-            _this.wrongUserAlert();
-        });
+        // if (this.nm && this.pwd) {
+        //   this.navCtrl.push('DashboardPage');
+        //   this.restSrv.login(this.nm, this.pwd).subscribe(res => {
+        //         if (res) {
+        //           if (!res['success']) {
+        //             this.wrongUserAlert();
+        //           } else {
+        //             this.navCtrl.push('DashboardPage');
+        //           }
+        //         } else {
+        //           this.wrongUserAlert();
+        //         }
+        //       },
+        //       err => {
+        //         this.connectionErr();
+        //       });
+        // } else {
+        //   this.emptyFields();
+        // }
     };
     // credential are wrong alert //
     LoginPage.prototype.wrongUserAlert = function () {
@@ -76,9 +83,26 @@ var LoginPage = /** @class */ (function () {
         });
         tst.present();
     };
+    // network error message //
+    LoginPage.prototype.connectionErr = function () {
+        var cnnErr = this.alrtCtrl.create({
+            title: 'Error',
+            subTitle: 'Network Error..'
+        });
+        cnnErr.present();
+    };
+    // please fill the fields //
+    LoginPage.prototype.emptyFields = function () {
+        var ntErr = this.alrtCtrl.create({
+            title: 'Error',
+            subTitle: 'Please fill the fields'
+        });
+        ntErr.present();
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="log_pg">\n\n<ion-grid>\n  \n  <div class="log_logo">\n      <img src="assets/imgs/quee-logo.png">\n  </div>\n\n    <div class="welcom-msg">\n          Welcome\n    </div>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="person"></ion-icon><input ngModel="unm" placeholder="Username">\n    </ion-row>\n\n    <ion-row class="un-pw-input">\n      <ion-icon name="key"></ion-icon><input ngModel="pwd" type="password" placeholder="Password">\n    </ion-row>\n\n    <ion-row class="fgt-pw-link">\n      <div class="flx-1"></div><button ion-button>Forgot Password</button>\n    </ion-row>\n\n    <ion-row class="log-btn">\n      <button ion-button (click)="loginClick(unm, pwd)">Login</button>\n    </ion-row>\n\n    <ion-row class="reg-link">\n      <div class="flx-1"></div>\n      <div>NOT A MEMBER ?</div> <button ion-button>REGISTER</button>\n      <div class="flx-1"></div>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer class="rights-txt">\n  <ion-row >\n      <ion-col no-padding>\n          Powerd by Smart Saloon Management System\n          <div>Queens Salon - Galle 2019 @ All rights reserved</div>\n      </ion-col>\n    </ion-row>\n</ion-footer>\n`/*ion-inline-end:"/home/dilshan/Documents/queens/src/pages/login/login.html"*/,
+            selector: 'page-login',
+            template: __WEBPACK_IMPORTED_MODULE_3__loginTemplate__["a" /* LOGINTEMPLATE */],
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -114,35 +138,35 @@ webpackEmptyAsyncContext.id = 113;
 
 var map = {
 	"../pages/bankreceipt/bankreceipt.module": [
-		279,
+		280,
 		6
 	],
 	"../pages/customerinfo/customerinfo.module": [
-		280,
+		281,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		281,
+		282,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		282,
+		283,
 		4
 	],
 	"../pages/invoicesettle/invoicesettle.module": [
-		283,
+		284,
 		3
 	],
 	"../pages/login/login.module": [
-		284,
+		285,
 		7
 	],
 	"../pages/register/register.module": [
-		285,
+		286,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		286,
+		287,
 		1
 	]
 };
@@ -184,7 +208,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(100);
@@ -263,7 +287,20 @@ var ENVURL = 'http://13.58.81.91:8080/';
 
 /***/ }),
 
-/***/ 270:
+/***/ 253:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LOGINTEMPLATE; });
+/**
+ * Created by dilshan on 3/8/19.
+ */
+var LOGINTEMPLATE = "\n<ion-content padding class=\"log_pg\">\n\n<ion-grid>\n  \n  <div class=\"log_logo\">\n      <img src=\"assets/imgs/quee-logo.png\">\n  </div>\n\n    <div class=\"welcom-msg\">\n          Welcome\n    </div>\n\n    <ion-row class=\"un-pw-input\">\n      <ion-icon name=\"person\"></ion-icon><input [(ngModel)]=\"nm\" ngModel=\"unm\" placeholder=\"Username\">\n    </ion-row>\n\n    <ion-row class=\"un-pw-input\">\n      <ion-icon name=\"key\"></ion-icon><input [(ngModel)]=\"pwd\" ngModel=\"pwd\" type=\"password\" placeholder=\"Password\">\n    </ion-row>\n\n    <ion-row class=\"fgt-pw-link\">\n      <div class=\"flx-1\"></div><button ion-button>Forgot Password</button>\n    </ion-row>\n\n    <ion-row class=\"log-btn\">\n      <button ion-button (click)=\"loginClick()\">Login</button>\n    </ion-row>\n\n    <ion-row class=\"reg-link\">\n      <div class=\"flx-1\"></div>\n      <div>NOT A MEMBER ?</div> <button ion-button>REGISTER</button>\n      <div class=\"flx-1\"></div>\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer class=\"rights-txt\">\n  <ion-row >\n      <ion-col no-padding>\n          Powerd by Smart Saloon Management System\n          <div>Queens Salon - Galle 2019 @ All rights reserved</div>\n      </ion-col>\n    </ion-row>\n</ion-footer>\n";
+//# sourceMappingURL=loginTemplate.js.map
+
+/***/ }),
+
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -356,11 +393,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the RestcallProvider provider.
+ Generated class for the RestcallProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+ See https://angular.io/guide/dependency-injection for more info on providers
+ and Angular DI.
+ */
 var RestcallProvider = /** @class */ (function () {
     function RestcallProvider(http) {
         this.http = http;
@@ -412,13 +449,25 @@ var RestcallProvider = /** @class */ (function () {
     };
     // loading history daily data //
     RestcallProvider.prototype.dailyHistorycalData = function (type) {
+        var _this = this;
         try {
-            var body = JSON.stringify({
-                'type': type
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'type': type
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
+                // url = url.replace('$data_type', dataType);
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
-            // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -442,10 +491,22 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load treatements //
     RestcallProvider.prototype.allTreatements = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -453,10 +514,22 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load beauticianse //
     RestcallProvider.prototype.allBeatucianse = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-beauticians';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-beauticians';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -477,7 +550,7 @@ var RestcallProvider = /** @class */ (function () {
                 'balance': balance,
                 'total': total
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
+            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-customer-invoice';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
         }
@@ -487,13 +560,25 @@ var RestcallProvider = /** @class */ (function () {
     };
     // load customer details using customer contact id //
     RestcallProvider.prototype.loadCustomer = function (customerId) {
+        var _this = this;
         try {
-            var body = JSON.stringify({
-                'customerContactNumber': customerId
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'customerContactNumber': customerId
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
+                // url = url.replace('$data_type', dataType);
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
             });
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
-            // url = url.replace('$data_type', dataType);
-            return this.http.post(url, body, this.httpOptions);
         }
         catch (e) {
             console.log('ERR:-', e);
@@ -501,13 +586,51 @@ var RestcallProvider = /** @class */ (function () {
     };
     // get summary details //
     RestcallProvider.prototype.getSummary = function () {
+        var _this = this;
         try {
-            var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
-            // url = url.replace('$data_type', dataType);
-            return this.http.get(url, this.httpOptions);
+            return new Promise(function (resolve, reject) {
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
+                // url = url.replace('$data_type', dataType);
+                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
         }
         catch (e) {
             console.log(e);
+        }
+    };
+    // search invoice history //
+    RestcallProvider.prototype.searchInvoiceHistory = function (invoiceID) {
+        var _this = this;
+        try {
+            return new Promise(function (resolve, reject) {
+                var body = JSON.stringify({
+                    'invoiceNumber': invoiceID
+                });
+                var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/search-history';
+                // url = url.replace('$data_type', dataType);
+                return _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
+                    if (res['success']) {
+                        resolve(res);
+                    }
+                    else {
+                        reject(null);
+                    }
+                }, function (err) {
+                    reject(err);
+                });
+            });
+        }
+        catch (e) {
+            console.log('ERR:-', e);
         }
     };
     RestcallProvider = __decorate([

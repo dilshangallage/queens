@@ -16,12 +16,13 @@ import {RestcallProvider} from '../../providers/restcall/restcall';
 })
 export class InvoicesettlePage {
 
-  public customerID: string = '';
+  public invoiceId: number;
   public data: any;
+  public amount: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alert: AlertController) {
-    this.customerID = this.navParams.get('conf');
-    this.loadCustomerDetils(this.customerID);
+    this.invoiceId = this.navParams.get('conf');
+    this.loadCustomerDetils(this.invoiceId);
 
   }
 
@@ -30,26 +31,29 @@ export class InvoicesettlePage {
   }
 
   // load customer details //
-  loadCustomerDetils(invoice: string) {
-    this.restCall.loadCustomer(invoice).subscribe(function (res) {
+  loadCustomerDetils(invoice: number) {
+    this.restCall.searchInvoiceHistory(invoice).then(res => {
       if (res['success']) {
         this.data = res['data'];
       } else {
         this.alertEmptyCustomer();
       }
-    }, err => {
+    }, err =>{
       this.alertEmptyCustomer();
     });
   }
 
   // search suctomer //
-  searchCustomer(id: string) {
+  searchCustomer(id: number) {
     this.loadCustomerDetils(id);
   }
 
   // settle the payment in advance payment receipt //
-  settlePayment() {
-    this.navCtrl.push('InvoicePage')
+  settlePayment(data: any) {
+    if (parseInt( this.amount) === data['balance']) {
+      data['invoiceType'] = 'BD';
+      this.navCtrl.push('InvoicePage', {'data': data});
+    }
   }
 
   // show error msg //
@@ -58,6 +62,7 @@ export class InvoicesettlePage {
       title: 'Failed!',
       subTitle: 'Search customer not valid'
     });
+    alt.present();
   }
 
 }

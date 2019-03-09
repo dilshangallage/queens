@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
 import {RestcallProvider} from "../../providers/restcall/restcall";
+import {LOGINTEMPLATE} from './loginTemplate';
 
 /**
  *  Generated class for the LoginPage page.
@@ -12,9 +13,12 @@ import {RestcallProvider} from "../../providers/restcall/restcall";
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  template: LOGINTEMPLATE,
 })
 export class LoginPage {
+
+  public nm: string = null;
+  public pwd: string = null;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -27,23 +31,27 @@ export class LoginPage {
   }
 
   // login for main dashboard //
-  loginClick(unm: string, pwd: string) {
+  loginClick() {
     this.navCtrl.push('DashboardPage');
-    this.restSrv.login(unm, pwd).subscribe(res => {
-      if (res) {
-        console.log('response', res);
-        // if (res['success']) {
-        //   this.navCtrl.push('DashboardPage');
-        // } else {
-        //   this.wrongUserAlert();
-        // }
-      } else {
-        this.wrongUserAlert();
-      }
-    },
-    err => {
-      this.wrongUserAlert();
-    });
+    // if (this.nm && this.pwd) {
+    //   this.navCtrl.push('DashboardPage');
+    //   this.restSrv.login(this.nm, this.pwd).subscribe(res => {
+    //         if (res) {
+    //           if (!res['success']) {
+    //             this.wrongUserAlert();
+    //           } else {
+    //             this.navCtrl.push('DashboardPage');
+    //           }
+    //         } else {
+    //           this.wrongUserAlert();
+    //         }
+    //       },
+    //       err => {
+    //         this.connectionErr();
+    //       });
+    // } else {
+    //   this.emptyFields();
+    // }
   }
 
   // credential are wrong alert //
@@ -68,4 +76,21 @@ export class LoginPage {
     tst.present();
   }
 
+  // network error message //
+  connectionErr() {
+    let cnnErr = this.alrtCtrl.create({
+      title: 'Error',
+      subTitle: 'Network Error..'
+    })
+    cnnErr.present();
+  }
+
+  // please fill the fields //
+  emptyFields() {
+    let ntErr = this.alrtCtrl.create({
+      title: 'Error',
+      subTitle: 'Please fill the fields'
+    });
+    ntErr.present();
+  }
 }

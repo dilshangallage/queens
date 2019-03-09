@@ -17,11 +17,11 @@
     </div>
 
     <ion-row class="un-pw-input">
-      <ion-icon name="person"></ion-icon><input ngModel="unm" placeholder="Username">
+      <ion-icon name="person"></ion-icon><input [(ngModel)]="nm" ngModel="unm" placeholder="Username">
     </ion-row>
 
     <ion-row class="un-pw-input">
-      <ion-icon name="key"></ion-icon><input ngModel="pwd" type="password" placeholder="Password">
+      <ion-icon name="key"></ion-icon><input [(ngModel)]="pwd" ngModel="pwd" type="password" placeholder="Password">
     </ion-row>
 
     <ion-row class="fgt-pw-link">
@@ -29,7 +29,7 @@
     </ion-row>
 
     <ion-row class="log-btn">
-      <button ion-button (click)="loginClick(unm, pwd)">Login</button>
+      <button ion-button (click)="loginClick()">Login</button>
     </ion-row>
 
     <ion-row class="reg-link">
