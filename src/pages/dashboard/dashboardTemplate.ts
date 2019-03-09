@@ -113,7 +113,7 @@ export const DASHBOARDTEMPLATE = `
 
   </ion-grid>
   
-   <ion-grid *ngIf="brdView" class="tab-sec-cnt">
+<!--    <ion-grid *ngIf="brdView" class="tab-sec-cnt">
     <ion-card *ngFor="let saloon of brdPymnt">
       <ion-row>
         <ion-col>
@@ -135,6 +135,25 @@ export const DASHBOARDTEMPLATE = `
         </ion-col>
       </ion-row>
     </ion-card>
+  </ion-grid> -->
+
+
+  <ion-grid *ngIf="brdView" class="tab-sec-cnt">
+    <ion-row *ngFor="let saloon of brdPymnt" class="one-payment-rec">
+      <div class="flx-1">
+        <div class="flx-layout pers-info">
+          <div class="flx-1">{{saloon?.customrtName}}</div>
+          <div>LKR{{saloon.advance + saloon.balance}}</div>
+        </div>
+        <div class="flx-layout bil-info">
+          <div>{{saloon?.invoiceNumber}}</div>
+          <div class="flx-1">{{saloon?.treatment}}</div>
+          <div>{{crntDate}}</div>
+        </div>
+      </div>
+      <div><ion-icon name="checkmark-circle"></ion-icon></div>
+    </ion-row>
+
   </ion-grid>
 </ion-content>
 `;
