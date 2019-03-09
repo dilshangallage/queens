@@ -38,6 +38,8 @@ export class CustomerinfoPage {
   public invType: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
+    this.sttlBll = true;
+    this.payAdvnc = false;
     this.selectedData = this.navParams.get('data');
     let viewName = this.navParams.get('view');
     this.invType = this.navParams.get('invType');
@@ -45,14 +47,14 @@ export class CustomerinfoPage {
       this.saloonView = true;
     } else if (viewName === 'bridalView') {
       this.bridalView = true;
+      this.sttlBll = false;
+      this.payAdvnc = true;
     }
 
     if (this.selectedData) {
       this.treatement = this.selectedData.treatement;
       this.beautician = this.selectedData.beautician;
     }
-    this.sttlBll = true;
-    this.payAdvnc = false;
   }
 
   ionViewDidLoad() {
@@ -92,7 +94,7 @@ export class CustomerinfoPage {
     data['advance'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.advance);
     data['balance'] = (this.invType === 'SA')? 0: parseInt(this.total) - parseInt(this.advance);
     data['total'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.total);
-    data['createdDateTime'] = new Date().getMilliseconds();
+    data['createdDateTime'] = new Date().getTime();
     this.navCtrl.push('InvoicePage', {'data': data});
   }
 

@@ -142,31 +142,31 @@ var map = {
 		6
 	],
 	"../pages/customerinfo/customerinfo.module": [
-		282,
+		281,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		281,
+		282,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		287,
+		283,
 		4
 	],
 	"../pages/invoicesettle/invoicesettle.module": [
-		283,
+		284,
 		3
 	],
 	"../pages/login/login.module": [
-		284,
+		285,
 		7
 	],
 	"../pages/register/register.module": [
-		285,
+		286,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		286,
+		287,
 		1
 	]
 };
@@ -244,13 +244,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/bankreceipt/bankreceipt.module#BankreceiptPageModule', name: 'BankreceiptPage', segment: 'bankreceipt', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/customerinfo/customerinfo.module#CustomerinfoPageModule', name: 'CustomerinfoPage', segment: 'customerinfo', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -536,7 +536,7 @@ var RestcallProvider = /** @class */ (function () {
         }
     };
     // save customer details //
-    RestcallProvider.prototype.saveCustomerDetails = function (type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total) {
+    RestcallProvider.prototype.saveCustomerDetails = function (type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total, id) {
         try {
             var body = JSON.stringify({
                 'invoiceType': type,
@@ -548,7 +548,8 @@ var RestcallProvider = /** @class */ (function () {
                 'treatmentId': treatId,
                 'advance': advance,
                 'balance': balance,
-                'total': total
+                'total': total,
+                'id': id
             });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-customer-invoice';
             // url = url.replace('$data_type', dataType);

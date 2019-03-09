@@ -78,7 +78,7 @@ export const DASHBOARDTEMPLATE = `
 
   <ion-grid *ngIf="salView" class="tab-sec-cnt">
     <ion-row *ngFor="let saloon of slnPymnt" class="one-payment-rec">
-      <div class="flx-1">
+      <div class="flx-1" (click)="searchRef(saloon.invoiceNumber)">
         <div class="flx-layout pers-info">
           <div class="flx-1">{{saloon.customrtName}}</div>
           <div>LKR{{saloon.advance + saloon.balance}}</div>
@@ -114,7 +114,7 @@ export const DASHBOARDTEMPLATE = `
   </ion-grid>
   
 <!--    <ion-grid *ngIf="brdView" class="tab-sec-cnt">
-    <ion-card *ngFor="let saloon of brdPymnt">
+    <ion-card *ngFor="let saloon of brdPymnt" (click)="searchRef(saloon.invoiceNumber)">
       <ion-row>
         <ion-col>
           {{saloon?.customrtName}}
@@ -140,7 +140,7 @@ export const DASHBOARDTEMPLATE = `
 
   <ion-grid *ngIf="brdView" class="tab-sec-cnt">
     <ion-row *ngFor="let saloon of brdPymnt" class="one-payment-rec">
-      <div class="flx-1">
+      <div class="flx-1" (click)="searchRef(saloon.invoiceNumber)">
         <div class="flx-layout pers-info">
           <div class="flx-1">{{saloon?.customrtName}}</div>
           <div>LKR{{saloon.advance + saloon.balance}}</div>

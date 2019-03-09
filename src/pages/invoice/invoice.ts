@@ -77,7 +77,9 @@ export class InvoicePage {
         if (res['data']) {
           _self.invoiceID = res['data']['invoiceId'];
         } else {
-          _self.invoiceID = this.pageView.invoiceNumber;
+          if (this.pageView) {
+            _self.invoiceID = this.pageView.invoiceNumber;
+          }
         }
         _self.invoiceView = false;
         _self.successView = true;

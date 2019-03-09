@@ -95,7 +95,7 @@ export class DashboardPage {
 
     // search receipt details by ref id //
     searchRef(invoice: string) {
-        if (this.payemntInvoice) {
+        if (invoice) {
             this.navCtrl.push('InvoicesettlePage', {'conf': invoice});
         } else {
             this.emptySearchField();

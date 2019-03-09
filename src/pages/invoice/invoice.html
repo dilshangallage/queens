@@ -30,7 +30,7 @@
 
         <div class="cust-info-trt">
           <div class="l1-txt">{{pageView?.createdDateTime |  date:'MMM d, y, h:mm:ss a'}}</div>
-          <div class="l2-txt">Advance invoice date and time</div>
+          <div class="l2-txt">invoice date and time</div>
         </div>
 
         <div class="cust-info-trt">
@@ -38,7 +38,7 @@
           <div class="l2-txt ">Event date and time</div>
         </div>
 
-        <div class="cust-info-trt">
+        <div class="cust-info-trt" *ngIf="pageView.beautician">
           <div class="l1-txt">{{pageView?.beautician}}</div>
           <div class="l2-txt">Beautician</div>
         </div>
@@ -56,7 +56,7 @@
       <ion-row>
         <div class="flx-1">
         
-        <div class="cust-info-trt">
+        <div class="cust-info-trt" *ngIf="pageView.treatment">
           <div class="l1-txt">{{pageView?.treatment}}</div>
           <div class="l2-txt">Hair wash blow dry</div>
         </div>
@@ -363,7 +363,7 @@
           <div class="l2-txt">Invoice date and time</div>
         </div>
 
-        <div class="cust-info-trt">
+        <div class="cust-info-trt" *ngIf="pageView.beautician">
           <div class="l1-txt">{{pageView?.beautician}}</div>
           <div class="l2-txt">Beautician</div>
         </div>
@@ -382,7 +382,7 @@
       <ion-row>
         <div class="flx-1">
         
-        <div class="cust-info-trt">
+        <div class="cust-info-trt" *ngIf="pageView.treatment">
           <div class="l1-txt">{{pageView?.treatment}}</div>
           <div class="l2-txt">Hair wash blow dry</div>
         </div>
