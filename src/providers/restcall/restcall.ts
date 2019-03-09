@@ -153,7 +153,7 @@ export class RestcallProvider {
     }
 
     // save customer details //
-    saveCustomerDetails(type: string, nm: string, contact: string, beautId: number, eventDt: string, customerId: number, treatId: number, advance: number, balance: number, total: number) {
+    saveCustomerDetails(type: string, nm: string, contact: string, beautId: number, eventDt: string, customerId: number, treatId: number, advance: number, balance: number, total: number, id?: string) {
         try {
             let body = JSON.stringify({
                 'invoiceType': type,
@@ -165,7 +165,8 @@ export class RestcallProvider {
                 'treatmentId': treatId,
                 'advance': advance,
                 'balance': balance,
-                'total': total
+                'total': total,
+                'id': id
 
             });
             let url: any = ENVURL + 'saloon-app/add-customer-invoice';

@@ -72,9 +72,13 @@ export class InvoicePage {
   submitInvoice() {
     let _self = this;
     this.restCall.saveCustomerDetails(this.pageView.invoiceType, this.pageView.customrtName, this.pageView.customrtMobile, 1,
-        this.pageView.eventDateTime, 0, this.pageView.treatmentId, this.pageView.advance, this.pageView.balance,  this.pageView.advance + this.pageView.balance).subscribe(function (res) {
+        this.pageView.eventDateTime, 0, this.pageView.treatmentId, this.pageView.advance, this.pageView.balance,  this.pageView.advance + this.pageView.balance, this.pageView.invoiceNumber).subscribe(function (res) {
       if (res['success']) {
-        _self.invoiceID = res['data']['invoiceId'];
+        if (res['data']) {
+          _self.invoiceID = res['data']['invoiceId'];
+        } else {
+          _self.invoiceID = this.pageView.invoiceNumber;
+        }
         _self.invoiceView = false;
         _self.successView = true;
       } else {

@@ -19,10 +19,12 @@ export class InvoicesettlePage {
   public invoiceId: number;
   public data: any;
   public amount: string;
+  public advanceView: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alert: AlertController) {
     this.invoiceId = this.navParams.get('conf');
     this.loadCustomerDetils(this.invoiceId);
+    this.advanceView = false;
 
   }
 
@@ -35,6 +37,11 @@ export class InvoicesettlePage {
     this.restCall.searchInvoiceHistory(invoice).then(res => {
       if (res['success']) {
         this.data = res['data'];
+        if (this.data) {
+          if (this.data['type'] === 'BD' && this.data['balance'] !== 0) {
+            this.advanceView = true;
+          }
+        }
       } else {
         this.alertEmptyCustomer();
       }
@@ -51,6 +58,7 @@ export class InvoicesettlePage {
   // settle the payment in advance payment receipt //
   settlePayment(data: any) {
     data['invoiceType'] = 'BD';
+    data['id'] = this.invoiceId;
     this.navCtrl.push('InvoicePage', {'data': data});
   }
 

@@ -91,13 +91,13 @@
       </ion-col>
 
       <ion-col no-padding col-12 class="total-sec invo-sec">
-      <ion-row class="marg-b-24">
+      <ion-row class="marg-b-24" *ngIf="advanceView">
         <div class="flx-1"></div>
         <div class="l2-txt">ADVANCE</div>
         <div class="l1-txt gray-txt">LKR {{data?.advance}}</div>
       </ion-row>
 
-      <ion-row class="app-form-inpt-row">
+      <ion-row class="app-form-inpt-row" *ngIf="advanceView">
         <div class="l1-txt gray-txt">LKR {{data?.balance}}</div>
       </ion-row>
       </ion-col>
@@ -106,7 +106,7 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer class="pg-btm-btn-foot">
+<ion-footer class="pg-btm-btn-foot" *ngIf="advanceView">
   <ion-row>
     <ion-col>
       <button class="gren-btn app-button" ion-button (click)="settlePayment(data)">Settle the Payment</button>

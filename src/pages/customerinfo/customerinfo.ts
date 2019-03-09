@@ -31,9 +31,9 @@ export class CustomerinfoPage {
   public eventDate: string = '';
   public beauticianId: number;
   public treatmentId: number;
-  public advance: number;
-  public balance: number;
-  public total: number;
+  public advance: string;
+  public balance: string;
+  public total: string;
   public customerId: number = 0;
   public invType: string;
 
@@ -88,10 +88,10 @@ export class CustomerinfoPage {
     data['beautician'] = (this.invType === 'BD')? null: this.beautician.id;
     data['beautician'] = (this.invType === 'BD')? null: this.beautician.name;
     data['treatment'] = (this.invType === 'BD')? null: this.treatement.description;
-    data['treatmentId'] = (this.invType === 'BD')? 1000: this.treatement.id;
-    data['advance'] = (this.invType === 'SA')? this.treatement.price: this.advance;
-    data['balance'] = (this.invType === 'SA')? 0: this.balance;
-    data['total'] = (this.invType === 'SA')? this.treatement.price: this.total;
+    data['treatmentId'] = (this.invType === 'BD')? 5: this.treatement.id;
+    data['advance'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.advance);
+    data['balance'] = (this.invType === 'SA')? 0: parseInt(this.total) - parseInt(this.advance);
+    data['total'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.total);
     data['createdDateTime'] = new Date().getMilliseconds();
     this.navCtrl.push('InvoicePage', {'data': data});
   }

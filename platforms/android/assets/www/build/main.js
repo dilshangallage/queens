@@ -142,31 +142,31 @@ var map = {
 		6
 	],
 	"../pages/customerinfo/customerinfo.module": [
-		281,
+		282,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		282,
+		281,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		283,
+		287,
 		4
 	],
 	"../pages/invoicesettle/invoicesettle.module": [
-		284,
+		283,
 		3
 	],
 	"../pages/login/login.module": [
-		285,
+		284,
 		7
 	],
 	"../pages/register/register.module": [
-		286,
+		285,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		287,
+		286,
 		1
 	]
 };
@@ -244,13 +244,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/bankreceipt/bankreceipt.module#BankreceiptPageModule', name: 'BankreceiptPage', segment: 'bankreceipt', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/customerinfo/customerinfo.module#CustomerinfoPageModule', name: 'CustomerinfoPage', segment: 'customerinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/customerinfo/customerinfo.module#CustomerinfoPageModule', name: 'CustomerinfoPage', segment: 'customerinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],

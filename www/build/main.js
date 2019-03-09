@@ -162,11 +162,11 @@ var map = {
 		7
 	],
 	"../pages/register/register.module": [
-		287,
+		286,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		286,
+		287,
 		1
 	]
 };
@@ -249,8 +249,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -536,7 +536,7 @@ var RestcallProvider = /** @class */ (function () {
         }
     };
     // save customer details //
-    RestcallProvider.prototype.saveCustomerDetails = function (type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total) {
+    RestcallProvider.prototype.saveCustomerDetails = function (type, nm, contact, beautId, eventDt, customerId, treatId, advance, balance, total, id) {
         try {
             var body = JSON.stringify({
                 'invoiceType': type,
@@ -548,7 +548,8 @@ var RestcallProvider = /** @class */ (function () {
                 'treatmentId': treatId,
                 'advance': advance,
                 'balance': balance,
-                'total': total
+                'total': total,
+                'id': id
             });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-customer-invoice';
             // url = url.replace('$data_type', dataType);
