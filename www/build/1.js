@@ -71,6 +71,7 @@ var TreatementPage = /** @class */ (function () {
         this.restCall = restCall;
         this.toastCtrl = toastCtrl;
         this.alrt = alrt;
+        this.selecttreatement = {};
         this.selectButician = {};
         this.buttonColor = 'active-btn-gren';
         this.viewNm = this.navParams.get('viewNm');
@@ -100,7 +101,7 @@ var TreatementPage = /** @class */ (function () {
     // load next view //
     TreatementPage.prototype.nextView = function () {
         console.log('Beautician name', this.beautiNm);
-        if (JSON.stringify(this.selectButician) !== '{}') {
+        if (JSON.stringify(this.selectButician) !== '{}' && JSON.stringify(this.selecttreatement) !== '{}') {
             this.navCtrl.push('CustomerinfoPage', { 'data': {
                     'treatement': this.selecttreatement,
                     'beautician': this.selectButician,
@@ -157,7 +158,7 @@ var TreatementPage = /** @class */ (function () {
     TreatementPage.prototype.emptyButicianse = function () {
         var empty = this.alrt.create({
             title: 'Error',
-            subTitle: 'Please select a beauticiance'
+            subTitle: 'Please select data'
         });
         empty.present();
     };

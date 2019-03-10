@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import {RestcallProvider} from '../../providers/restcall/restcall';
 
 /**
@@ -37,7 +37,7 @@ export class CustomerinfoPage {
   public customerId: number = 0;
   public invType: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alert: AlertController) {
     this.sttlBll = true;
     this.payAdvnc = false;
     this.selectedData = this.navParams.get('data');
@@ -94,8 +94,22 @@ export class CustomerinfoPage {
     data['advance'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.advance);
     data['balance'] = (this.invType === 'SA')? 0: parseInt(this.total) - parseInt(this.advance);
     data['total'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.total);
-    data['createdDateTime'] = new Date().getTime();
-    this.navCtrl.push('InvoicePage', {'data': data});
+    if (this.customerName && this.customerContactNumber && data['total'] > 0) {
+      if (this.invType === 'BD') {
+        if (data['advance']) {
+          data['createdDateTime'] = new Date().getTime();
+          this.navCtrl.push('InvoicePage', {'data': data});
+        } else {
+          this.emptyDataMsg();
+        }
+      } else {
+        data['createdDateTime'] = new Date().getTime();
+        this.navCtrl.push('InvoicePage', {'data': data});
+      }
+
+    } else {
+      this.emptyDataMsg();
+    }
   }
 
   // load customer details //
@@ -119,6 +133,15 @@ export class CustomerinfoPage {
       _self.customerId = 0;
       _self.customerName = '';
     });
+  }
+
+  // empty data in fields //
+  emptyDataMsg() {
+    let msg = this.alert.create({
+      title: 'Error',
+      subTitle: 'Please fill all fields'
+    });
+    msg.present();
   }
 
 }

@@ -17,7 +17,7 @@ import {RestcallProvider} from '../../providers/restcall/restcall';
 export class TreatementPage {
   public treatementList: any;
   public beauticiansList: any;
-  public selecttreatement: any;
+  public selecttreatement: any = {};
   public selectButician: any = {};
   public viewNm: string;
   public invType: string;
@@ -55,7 +55,7 @@ export class TreatementPage {
   // load next view //
   nextView() {
     console.log('Beautician name', this.beautiNm);
-    if (JSON.stringify(this.selectButician) !== '{}') {
+    if (JSON.stringify(this.selectButician) !== '{}' && JSON.stringify(this.selecttreatement) !== '{}') {
       this.navCtrl.push('CustomerinfoPage',
           {'data': {
               'treatement': this.selecttreatement,
@@ -118,7 +118,7 @@ export class TreatementPage {
         let empty = this.alrt.create(
             {
               title: 'Error',
-              subTitle: 'Please select a beauticiance'
+              subTitle: 'Please select data'
             }
         );
     empty.present();
