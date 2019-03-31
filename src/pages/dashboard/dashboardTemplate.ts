@@ -58,6 +58,14 @@ export const DASHBOARDTEMPLATE = `
   <ion-row class="app-button-row">
     <button (click)="bankReceiptView()" ion-button class="gren-btn app-button">Add Bank Reciept</button>
   </ion-row>
+  <ion-row class="app-button-row">
+     <ion-col col-md-4>
+     Bank Receipt Amount
+     </ion-col>
+     <ion-col col-md-8>
+     {{bank_receipt_amount}}
+     </ion-col>
+  </ion-row>
 
   <!-- tab button 2 -->
   <!-- <ion-row class="tab-btn-row">

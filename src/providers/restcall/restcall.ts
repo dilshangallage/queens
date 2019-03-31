@@ -236,9 +236,11 @@ export class RestcallProvider {
             return new Promise((resolve, reject) => {
                 this.setOptionsToken();
                 let url: any = ENVURL + 'saloon-app/get-summary-details';
-                // url = url.replace('$data_type', dataType);
+                let body = JSON.stringify({
+                    'token': this.tokenSrv.getCurrentToken()
+                });
 
-                this.http.get(url, this.httpOptions).subscribe(res => {
+                this.http.post(url, body, this.httpOptions).subscribe(res => {
                     if (res['success']) {
                         resolve(res);
                     } else {

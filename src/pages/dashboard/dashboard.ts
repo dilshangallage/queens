@@ -34,6 +34,7 @@ export class DashboardPage {
 
     public saloonClz: any;
     public bridalClz: any;
+    public bank_receipt_amount: number = 0;
 
     public payemntInvoice: string = null;
 
@@ -150,6 +151,7 @@ export class DashboardPage {
                     console.log('load-summary.....4');
                     let d = res['data'];
                     this.salInvsCnt = d['saloonInvoices'];
+                    this.bank_receipt_amount = d['bankDeposit'];
                     this.salDailyIncm = d['saloonDailyIncome'];
                     this.salIncome = 'LKR ' + this.salDailyIncm;
                     this.brdInvsCnt = d['bridalInvoices'];

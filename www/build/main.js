@@ -245,8 +245,10 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
-                // url = url.replace('$data_type', dataType);
-                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                var body = JSON.stringify({
+                    'token': _this.tokenSrv.getCurrentToken()
+                });
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
                     if (res['success']) {
                         resolve(res);
                     }
@@ -477,11 +479,11 @@ var map = {
 		7
 	],
 	"../pages/register/register.module": [
-		287,
+		288,
 		2
 	],
 	"../pages/treatement/treatement.module": [
-		288,
+		287,
 		1
 	]
 };
@@ -566,8 +568,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
