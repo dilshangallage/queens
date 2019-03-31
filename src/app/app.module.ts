@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import { RestcallProvider } from '../providers/restcall/restcall';
 import {HttpClientModule} from "@angular/common/http";
+import {TokenIDProvider} from '../providers/token/token-id';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestcallProvider
+    RestcallProvider,
+    TokenIDProvider
   ]
 })
 export class AppModule {}

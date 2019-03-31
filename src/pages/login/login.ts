@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
 import {RestcallProvider} from "../../providers/restcall/restcall";
 import {LOGINTEMPLATE} from './loginTemplate';
+import {TokenIDProvider} from '../../providers/token/token-id';
 
 /**
  *  Generated class for the LoginPage page.
@@ -23,7 +24,9 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private restSrv: RestcallProvider,
-              private alrtCtrl: AlertController, private toastCtrl: ToastController) {
+              private alrtCtrl: AlertController,
+              private toastCtrl: ToastController,
+              private tokenSrv: TokenIDProvider) {
   }
 
   ionViewDidLoad() {
@@ -32,26 +35,31 @@ export class LoginPage {
 
   // login for main dashboard //
   loginClick() {
-    this.navCtrl.push('DashboardPage');
-    // if (this.nm && this.pwd) {
-    //   this.navCtrl.push('DashboardPage');
-    //   this.restSrv.login(this.nm, this.pwd).subscribe(res => {
-    //         if (res) {
-    //           if (!res['success']) {
-    //             this.wrongUserAlert();
-    //           } else {
-    //             this.navCtrl.push('DashboardPage');
-    //           }
-    //         } else {
-    //           this.wrongUserAlert();
-    //         }
-    //       },
-    //       err => {
-    //         this.connectionErr();
-    //       });
-    // } else {
-    //   this.emptyFields();
-    // }
+    // this.navCtrl.push('DashboardPage');
+    if (this.nm && this.pwd) {
+      // this.navCtrl.push('DashboardPage');
+      this.restSrv.login(this.nm, this.pwd).subscribe(res => {
+            if (res) {
+              if (!res['success']) {
+                this.tokenSrv.setCurrentToken(res);
+                this.navCtrl.push('DashboardPage');
+              } else {
+                this.wrongUserAlert();
+              }
+            } else {
+              this.wrongUserAlert();
+            }
+          },
+          err => {
+        if (err['error']['error']) {
+          this.connectionErr(err['error']["error"]["errorMessage"]);
+        } else {
+          this.connectionErr('Network connection error..');
+        }
+          });
+    } else {
+      this.emptyFields();
+    }
   }
 
   // credential are wrong alert //
@@ -77,10 +85,10 @@ export class LoginPage {
   }
 
   // network error message //
-  connectionErr() {
+  connectionErr(msg: string) {
     let cnnErr = this.alrtCtrl.create({
       title: 'Error',
-      subTitle: 'Network Error..'
+      subTitle: msg
     })
     cnnErr.present();
   }

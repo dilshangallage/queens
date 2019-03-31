@@ -16,9 +16,9 @@ import {RestcallProvider} from '../../providers/restcall/restcall';
 })
 export class BankreceiptPage {
 
-  public bankAccountRef: string = '';
-  public receiptRefNumber: string = '';
-  public receiptAmount: number = 0;
+  public bankAccountRef: string;
+  public receiptRefNumber: string;
+  public receiptAmount: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private restCall: RestcallProvider, private alrt: AlertController) {
   }
 
@@ -27,17 +27,23 @@ export class BankreceiptPage {
   }
 
   // save bank details //
-  saveBankReceipt(accRef: string, recpRef: string, amount: number) {
+  saveBankReceipt(accRef: string, recpRef: string, amounts: string) {
     try {
-      this.restCall.addReceipt(accRef, recpRef, amount).subscribe(function (res) {
-        if (res['success']) {
-          this.successAlert();
-        } else {
+      if (accRef && recpRef && amounts) {
+        let amount = parseInt(amounts);
+        this.restCall.addReceipt(accRef, recpRef, amount).subscribe(function (res) {
+          if (res['success']) {
+            this.successAlert();
+            this.close();
+          } else {
+            this.retryAlert();
+          }
+        }, err => {
           this.retryAlert();
-        }
-      }, err => {
-        this.retryAlert();
-      });
+        });
+      } else {
+        this.emptyFields();
+      }
     } catch (e) {
       console.log(e);
     }
@@ -59,5 +65,19 @@ export class BankreceiptPage {
       subTitle: 'Please try again'
     });
     rty.present();
+  }
+
+  // fill all fields //
+  emptyFields() {
+    let empty = this.alrt.create({
+      title: 'Error!',
+      subTitle: 'Please fill all fields'
+    });
+    empty.present();
+  }
+
+  // close invoice view //
+  close() {
+    this.navCtrl.push('DashboardPage');
   }
 }

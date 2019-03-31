@@ -54,10 +54,14 @@
 
     <div class="pg-cnt-hdr">PAYMENT OPTION</div>
 
-    <ion-row class="tab-btn-row">
+    <ion-row class="tab-btn-row" *ngIf="sttlBll">
       <button class="btn-lft active-btn-gren" ion-button (click)="settleBill()">Settle the Bill</button>
       <button [disabled]="true" class="btn-rgt active-btn-brwn" ion-button (click)="payAdvance()">Pay Advance</button>
   </ion-row>
+      <ion-row class="tab-btn-row" *ngIf="payAdvnc">
+          <button [disabled]="true" class="btn-lft active-btn-brwn" ion-button (click)="settleBill()">Settle the Bill</button>
+          <button class="btn-rgt active-btn-gren" ion-button (click)="payAdvance()">Pay Advance</button>
+      </ion-row>
 
     <ion-row *ngIf="sttlBll" class="app-pay-opt">
         <ion-col no-padding>

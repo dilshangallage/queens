@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 287:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TreatementPageModule", function() { return TreatementPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__treatement__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__treatement__ = __webpack_require__(426);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,14 +38,14 @@ var TreatementPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreatementPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_restcall_restcall__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -71,6 +71,7 @@ var TreatementPage = /** @class */ (function () {
         this.restCall = restCall;
         this.toastCtrl = toastCtrl;
         this.alrt = alrt;
+        this.selecttreatement = {};
         this.selectButician = {};
         this.buttonColor = 'active-btn-gren';
         this.viewNm = this.navParams.get('viewNm');
@@ -100,7 +101,7 @@ var TreatementPage = /** @class */ (function () {
     // load next view //
     TreatementPage.prototype.nextView = function () {
         console.log('Beautician name', this.beautiNm);
-        if (JSON.stringify(this.selectButician) !== '{}') {
+        if (JSON.stringify(this.selectButician) !== '{}' && JSON.stringify(this.selecttreatement) !== '{}') {
             this.navCtrl.push('CustomerinfoPage', { 'data': {
                     'treatement': this.selecttreatement,
                     'beautician': this.selectButician,
@@ -157,7 +158,7 @@ var TreatementPage = /** @class */ (function () {
     TreatementPage.prototype.emptyButicianse = function () {
         var empty = this.alrt.create({
             title: 'Error',
-            subTitle: 'Please select a beauticiance'
+            subTitle: 'Please select data'
         });
         empty.present();
     };

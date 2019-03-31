@@ -53,6 +53,11 @@ export class CustomerinfoPage {
 
     if (this.selectedData) {
       this.treatement = this.selectedData.treatement;
+      this.treatement.needAdvance = true;
+      if (this.treatement.needAdvance) {
+        this.sttlBll = false;
+        this.payAdvnc = true;
+      }
       this.beautician = this.selectedData.beautician;
     }
   }
@@ -91,9 +96,15 @@ export class CustomerinfoPage {
     data['beautician'] = (this.invType === 'BD')? null: this.beautician.name;
     data['treatment'] = (this.invType === 'BD')? null: this.treatement.description;
     data['treatmentId'] = (this.invType === 'BD')? 5: this.treatement.id;
-    data['advance'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.advance);
-    data['balance'] = (this.invType === 'SA')? 0: parseInt(this.total) - parseInt(this.advance);
-    data['total'] = (this.invType === 'SA')? this.treatement.price: parseInt(this.total);
+    if (this.invType === 'BD') {
+      data['advance'] =  parseInt(this.advance);
+      data['balance'] = parseInt(this.total) - parseInt(this.advance);
+      data['total'] = parseInt(this.total);
+    } else {
+      data['advance'] = (!this.payAdvnc)? this.treatement.price: parseInt(this.advance);
+      data['balance'] = (!this.payAdvnc)? 0: this.treatement.price - parseInt(this.advance);
+      data['total'] = this.treatement.price;
+    }
     if (this.customerName && this.customerContactNumber && data['total'] > 0) {
       if (this.invType === 'BD') {
         if (data['advance']) {
