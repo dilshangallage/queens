@@ -67,7 +67,9 @@ var RestcallProvider = /** @class */ (function () {
     RestcallProvider.prototype.loadInvoicesDestails = function () {
         try {
             this.setOptionsToken();
-            var body = JSON.stringify({});
+            var body = JSON.stringify({
+                'token': this.tokenSrv.getCurrentToken()
+            });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
             // url = url.replace('$data_type', dataType);
             return this.http.post(url, body, this.httpOptions);
@@ -81,7 +83,8 @@ var RestcallProvider = /** @class */ (function () {
         try {
             this.setOptionsToken();
             var body = JSON.stringify({
-                'invoiceNumber': id
+                'invoiceNumber': id,
+                'token': this.tokenSrv.getCurrentToken()
             });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + '';
             // url = url.replace('$data_type', dataType);
@@ -98,7 +101,8 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var body = JSON.stringify({
-                    'type': type
+                    'type': type,
+                    'token': _this.tokenSrv.getCurrentToken()
                 });
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-history';
                 // url = url.replace('$data_type', dataType);
@@ -125,7 +129,8 @@ var RestcallProvider = /** @class */ (function () {
             var body = JSON.stringify({
                 'bankAccountRef': accRef,
                 'receiptRefNumber': recpRef,
-                'receiptAmount': amount
+                'receiptAmount': amount,
+                'token': this.tokenSrv.getCurrentToken()
             });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-bank-receipt';
             // url = url.replace('$data_type', dataType);
@@ -142,7 +147,8 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var body = JSON.stringify({
-                    'Type': 'SA'
+                    'Type': 'SA',
+                    'token': _this.tokenSrv.getCurrentToken()
                 });
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-treatments';
                 // url = url.replace('$data_type', dataType);
@@ -201,7 +207,8 @@ var RestcallProvider = /** @class */ (function () {
                 'advance': advance,
                 'balance': balance,
                 'total': total,
-                'id': id
+                'id': id,
+                'token': this.tokenSrv.getCurrentToken()
             });
             var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/add-customer-invoice';
             // url = url.replace('$data_type', dataType);
@@ -218,7 +225,8 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var body = JSON.stringify({
-                    'customerContactNumber': customerId
+                    'customerContactNumber': customerId,
+                    'token': _this.tokenSrv.getCurrentToken()
                 });
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-customer';
                 // url = url.replace('$data_type', dataType);
@@ -245,8 +253,10 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/get-summary-details';
-                // url = url.replace('$data_type', dataType);
-                _this.http.get(url, _this.httpOptions).subscribe(function (res) {
+                var body = JSON.stringify({
+                    'token': _this.tokenSrv.getCurrentToken()
+                });
+                _this.http.post(url, body, _this.httpOptions).subscribe(function (res) {
                     if (res['success']) {
                         resolve(res);
                     }
@@ -269,7 +279,8 @@ var RestcallProvider = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.setOptionsToken();
                 var body = JSON.stringify({
-                    'invoiceNumber': invoiceID
+                    'invoiceNumber': invoiceID,
+                    'token': _this.tokenSrv.getCurrentToken()
                 });
                 var url = __WEBPACK_IMPORTED_MODULE_2__env_envVaribles__["a" /* ENVURL */] + 'saloon-app/search-history';
                 // url = url.replace('$data_type', dataType);
@@ -288,6 +299,11 @@ var RestcallProvider = /** @class */ (function () {
         catch (e) {
             console.log('ERR:-', e);
         }
+    };
+    // set token for body //
+    RestcallProvider.prototype.setBodyToken = function (body) {
+        body['token'] = this.tokenSrv.getCurrentToken();
+        return body;
     };
     RestcallProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -461,19 +477,19 @@ var map = {
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		283,
+		284,
 		0
 	],
 	"../pages/invoice/invoice.module": [
-		284,
+		283,
 		4
 	],
 	"../pages/invoicesettle/invoicesettle.module": [
-		286,
+		285,
 		3
 	],
 	"../pages/login/login.module": [
-		285,
+		286,
 		7
 	],
 	"../pages/register/register.module": [
@@ -562,10 +578,10 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/bankreceipt/bankreceipt.module#BankreceiptPageModule', name: 'BankreceiptPage', segment: 'bankreceipt', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/customerinfo/customerinfo.module#CustomerinfoPageModule', name: 'CustomerinfoPage', segment: 'customerinfo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoice/invoice.module#InvoicePageModule', name: 'InvoicePage', segment: 'invoice', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invoicesettle/invoicesettle.module#InvoicesettlePageModule', name: 'InvoicesettlePage', segment: 'invoicesettle', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/treatement/treatement.module#TreatementPageModule', name: 'TreatementPage', segment: 'treatement', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
@@ -600,7 +616,7 @@ var AppModule = /** @class */ (function () {
 /**
  * Created by dilshan on 3/5/19.
  */
-var ENVURL = 'http://13.58.81.91:8080/';
+var ENVURL = 'http://68.183.227.253:8080/';
 //# sourceMappingURL=envVaribles.js.map
 
 /***/ }),

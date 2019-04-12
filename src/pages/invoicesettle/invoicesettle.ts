@@ -40,6 +40,8 @@ export class InvoicesettlePage {
         if (this.data) {
           if (this.data['type'] === 'BD' && this.data['balance'] !== 0) {
             this.advanceView = true;
+          } else if (this.data['balance'] !== 0) {
+            this.advanceView = true;
           }
         }
       } else {

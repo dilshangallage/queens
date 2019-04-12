@@ -53,7 +53,7 @@ export class CustomerinfoPage {
 
     if (this.selectedData) {
       this.treatement = this.selectedData.treatement;
-      this.treatement.needAdvance = true;
+      // this.treatement.needAdvance = true;
       if (this.treatement.needAdvance) {
         this.sttlBll = false;
         this.payAdvnc = true;
@@ -114,8 +114,17 @@ export class CustomerinfoPage {
           this.emptyDataMsg();
         }
       } else {
-        data['createdDateTime'] = new Date().getTime();
-        this.navCtrl.push('InvoicePage', {'data': data});
+        if (this.treatement.needAdvance) {
+          if (data['advance']) {
+            data['createdDateTime'] = new Date().getTime();
+            this.navCtrl.push('InvoicePage', {'data': data});
+          } else {
+            this.emptyDataMsg();
+          }
+        } else {
+          data['createdDateTime'] = new Date().getTime();
+          this.navCtrl.push('InvoicePage', {'data': data});
+        }
       }
 
     } else {

@@ -53,7 +53,9 @@ export class RestcallProvider {
     loadInvoicesDestails() {
         try {
             this.setOptionsToken();
-            let body = JSON.stringify({});
+            let body = JSON.stringify({
+                'token': this.tokenSrv.getCurrentToken()
+            });
             let url: any = ENVURL + '';
             // url = url.replace('$data_type', dataType);
 
@@ -68,7 +70,8 @@ export class RestcallProvider {
         try {
             this.setOptionsToken();
             let body = JSON.stringify({
-                'invoiceNumber': id
+                'invoiceNumber': id,
+                'token': this.tokenSrv.getCurrentToken()
             });
             let url: any = ENVURL + '';
             // url = url.replace('$data_type', dataType);
@@ -85,7 +88,8 @@ export class RestcallProvider {
             return new Promise((resolve, reject) => {
                 this.setOptionsToken();
                 let body = JSON.stringify({
-                    'type': type
+                    'type': type,
+                    'token': this.tokenSrv.getCurrentToken()
                 });
                 let url: any = ENVURL + 'saloon-app/get-history';
                 // url = url.replace('$data_type', dataType);
@@ -112,7 +116,8 @@ export class RestcallProvider {
             let body = JSON.stringify({
                 'bankAccountRef': accRef,
                 'receiptRefNumber': recpRef,
-                'receiptAmount': amount
+                'receiptAmount': amount,
+                'token': this.tokenSrv.getCurrentToken()
 
             });
             let url: any = ENVURL + 'saloon-app/add-bank-receipt';
@@ -130,7 +135,8 @@ export class RestcallProvider {
             return new Promise((resolve, reject) => {
                 this.setOptionsToken();
                 let body = JSON.stringify({
-                    'Type': 'SA'
+                    'Type': 'SA',
+                    'token': this.tokenSrv.getCurrentToken()
 
                 });
                 let url: any = ENVURL + 'saloon-app/get-treatments';
@@ -191,7 +197,8 @@ export class RestcallProvider {
                 'advance': advance,
                 'balance': balance,
                 'total': total,
-                'id': id
+                'id': id,
+                'token': this.tokenSrv.getCurrentToken()
 
             });
             let url: any = ENVURL + 'saloon-app/add-customer-invoice';
@@ -209,7 +216,8 @@ export class RestcallProvider {
             return new Promise((resolve, reject) => {
                 this.setOptionsToken();
                 let body = JSON.stringify({
-                    'customerContactNumber': customerId
+                    'customerContactNumber': customerId,
+                    'token': this.tokenSrv.getCurrentToken()
                 });
                 let url: any = ENVURL + 'saloon-app/get-customer';
                 // url = url.replace('$data_type', dataType);
@@ -261,7 +269,8 @@ export class RestcallProvider {
             return new Promise((resolve, reject) => {
                 this.setOptionsToken();
                 let body = JSON.stringify({
-                    'invoiceNumber': invoiceID
+                    'invoiceNumber': invoiceID,
+                    'token': this.tokenSrv.getCurrentToken()
                 });
                 let url: any = ENVURL + 'saloon-app/search-history';
                 // url = url.replace('$data_type', dataType);
@@ -279,6 +288,12 @@ export class RestcallProvider {
         } catch (e) {
             console.log('ERR:-', e);
         }
+    }
+
+    // set token for body //
+    setBodyToken(body: any) {
+        body['token'] = this.tokenSrv.getCurrentToken();
+        return body;
     }
 
 }

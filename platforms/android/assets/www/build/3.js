@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 286:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85,6 +85,9 @@ var InvoicesettlePage = /** @class */ (function () {
                 _this.data = res['data'];
                 if (_this.data) {
                     if (_this.data['type'] === 'BD' && _this.data['balance'] !== 0) {
+                        _this.advanceView = true;
+                    }
+                    else if (_this.data['balance'] !== 0) {
                         _this.advanceView = true;
                     }
                 }

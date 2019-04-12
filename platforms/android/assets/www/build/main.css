@@ -25900,6 +25900,12 @@ page-dashboard .tab-sec-cnt .one-payment-rec ion-icon {
   color: #32ba7c;
 }
 
+page-dashboard .bnk-recp {
+  padding-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 page-invoice .success-ioc {
   font-size: 8rem;
   margin-top: 16px;

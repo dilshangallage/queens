@@ -29,20 +29,20 @@ export class BankreceiptPage {
   // save bank details //
   saveBankReceipt(accRef: string, recpRef: string, amounts: string) {
     try {
+      let _self = this;
       if (accRef && recpRef && amounts) {
         let amount = parseInt(amounts);
         this.restCall.addReceipt(accRef, recpRef, amount).subscribe(function (res) {
           if (res['success']) {
-            this.successAlert();
-            this.close();
+            _self.successAlert();
           } else {
-            this.retryAlert();
+            _self.retryAlert();
           }
         }, err => {
-          this.retryAlert();
+          _self.retryAlert();
         });
       } else {
-        this.emptyFields();
+        _self.emptyFields();
       }
     } catch (e) {
       console.log(e);
@@ -51,11 +51,16 @@ export class BankreceiptPage {
 
   // success alert //
   successAlert() {
+    let _self = this;
     let msg = this.alrt.create({
       title: 'Successfull',
       subTitle: 'Successfully added new receipt'
     });
     msg.present();
+    setTimeout(function () {
+      _self.closeView();
+      msg.dismiss();
+    }, 1000);
   }
 
   // retry alert //
@@ -77,7 +82,7 @@ export class BankreceiptPage {
   }
 
   // close invoice view //
-  close() {
+  closeView() {
     this.navCtrl.push('DashboardPage');
   }
 }

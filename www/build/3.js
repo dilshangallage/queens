@@ -87,6 +87,9 @@ var InvoicesettlePage = /** @class */ (function () {
                     if (_this.data['type'] === 'BD' && _this.data['balance'] !== 0) {
                         _this.advanceView = true;
                     }
+                    else if (_this.data['balance'] !== 0) {
+                        _this.advanceView = true;
+                    }
                 }
             }
             else {
